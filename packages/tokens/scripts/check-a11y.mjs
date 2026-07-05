@@ -16,10 +16,13 @@ const resolve = (mode, ...path) => { // semantic path -> hex
   const v = n.$value;
   return v.startsWith('{') ? prim(v) : v;
 };
-const rgb = (h) => h.replace('#','').match(/../g).map((x) => parseInt(x, 16));
+// parse #RGB/#RRGGBB (a=1) or #RRGGBBAA (alpha carried) into {r,g,b,a}
+const parse = (h) => { const x = h.replace('#','').match(/../g).map((v) => parseInt(v, 16)); return { r:x[0], g:x[1], b:x[2], a: x[3] === undefined ? 1 : x[3]/255 }; };
 const lin = (c) => { c/=255; return c<=0.03928 ? c/12.92 : ((c+0.055)/1.055)**2.4; };
-const L = (h) => { const [r,g,b]=rgb(h); return 0.2126*lin(r)+0.7152*lin(g)+0.0722*lin(b); };
-const cr = (a,b) => { const x=L(a),y=L(b),hi=Math.max(x,y),lo=Math.min(x,y); return (hi+0.05)/(lo+0.05); };
+const lum = ({r,g,b}) => 0.2126*lin(r)+0.7152*lin(g)+0.0722*lin(b);
+// composite a (possibly translucent) foreground onto a solid background — matches how the browser renders it
+const over = (fg, bg) => ({ r: fg.r*fg.a+bg.r*(1-fg.a), g: fg.g*fg.a+bg.g*(1-fg.a), b: fg.b*fg.a+bg.b*(1-fg.a) });
+const cr = (a,b) => { const bg = parse(b), fg = over(parse(a), bg); const x=lum(fg),y=lum(bg),hi=Math.max(x,y),lo=Math.min(x,y); return (hi+0.05)/(lo+0.05); };
 
 // [label, fg-hex, bg-hex, threshold]
 const pairs = (m) => {
@@ -32,7 +35,10 @@ const pairs = (m) => {
     ['border.default / canvas',  c('border','default'), canvas, 3.0],
     ['onBrand / brand.primary',  c('text','onBrand'),   c('brand','primary'), 4.5],
     ['link / canvas',            c('text','link'),      canvas, 4.5],
-    ['focus.ring / canvas',      c('border','focus'),   canvas, 3.0],
+    ['border.focus / canvas',    c('border','focus'),   canvas, 3.0],
+    // The shadow focus ring: composited over canvas at its actual alpha, it must still clear 3:1 (WCAG 2.4.11).
+    // A translucent ring (alpha<1) that drops below 3:1 will fail here instead of silently passing.
+    ['focus.ring / canvas',      c('focus','ring'),     canvas, 3.0],
   ];
 };
 

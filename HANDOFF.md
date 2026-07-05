@@ -35,6 +35,15 @@ Minor follow-ups (see `.superpowers/sdd/progress.md`): dark-mode Switch off-thum
 green-on-green focus ring on the primary button; no `destructive` button type; `"./styles"`
 export-map change unexercised outside Storybook.
 
+**Focus-ring follow-up (post-PR):** the `Focus Ring` effect style had been manually set to a
+50% hardcoded green (which also cleared its variable binding). A translucent ring can't meet the
+3:1 non-text bar at the brand green — light mode tops out at 2.87 regardless of hue (50% of any
+color over white can't get dark enough). Decision: **keep the ring solid.** Restored the effect
+style's binding to the `color/focus/ring` variable (solid, mode-aware) and re-asserted `spread: 4`
+(the bind call silently resets spread). Hardened `check-a11y.mjs` to composite each pairing at its
+actual alpha, so a future translucent focus ring that drops below 3:1 fails the gate instead of
+passing silently. Code (`focus.css`) was already solid — no change there.
+
 ---
 
 ## What this is
