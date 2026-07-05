@@ -9,4 +9,8 @@
 :root {
   --shadow-focus: 0 0 0 var(--focus-ring-offset) var(--color-bg-canvas), 0 0 0 calc(var(--focus-ring-offset) + var(--focus-ring-width)) var(--color-focus-ring);
   --shadow-focus-danger: 0 0 0 var(--focus-ring-offset) var(--color-bg-canvas), 0 0 0 calc(var(--focus-ring-offset) + var(--focus-ring-width)) var(--color-danger-default);
+  /* On-brand (green-filled) controls: a mode-aware neutral ring (gray.50 dark / gray.900 light).
+     The brand-green ring is invisible on a green fill; the neutral ring stays 3:1 against the page
+     in both modes. The offset gap keeps it detached from the fill. See Button variant=default. */
+  --shadow-focus-on-brand: 0 0 0 var(--focus-ring-offset) var(--color-bg-canvas), 0 0 0 calc(var(--focus-ring-offset) + var(--focus-ring-width)) var(--color-focus-ring-on-brand);
 }

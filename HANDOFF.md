@@ -32,8 +32,8 @@ plan in `docs/superpowers/specs/` and `docs/superpowers/plans/`. Summary:
   `warning` text/fill split (amber.700 in light).
 
 Minor follow-ups (see `.superpowers/sdd/progress.md`): dark-mode Switch off-thumb ~2.6:1;
-green-on-green focus ring on the primary button; no `destructive` button type; `"./styles"`
-export-map change unexercised outside Storybook.
+no `destructive` button type in Figma; `"./styles"` export-map change unexercised outside Storybook.
+(Resolved post-PR: green-on-green focus ring on the primary button — see below.)
 
 **Focus-ring follow-up (post-PR):** the `Focus Ring` effect style had been manually set to a
 50% hardcoded green (which also cleared its variable binding). A translucent ring can't meet the
@@ -43,6 +43,16 @@ style's binding to the `color/focus/ring` variable (solid, mode-aware) and re-as
 (the bind call silently resets spread). Hardened `check-a11y.mjs` to composite each pairing at its
 actual alpha, so a future translucent focus ring that drops below 3:1 fails the gate instead of
 passing silently. Code (`focus.css`) was already solid — no change there.
+
+**Neutral ring for the primary button (post-PR):** the brand-green focus ring is invisible on the
+green primary fill (green-on-green). No single ring color can clear 3:1 against *both* a green fill
+and the page in dark mode (bright green vs near-black page), so the fix leans on the offset gap —
+the ring is adjacent to the page, not the fill — and uses a mode-aware **neutral** ring that stays
+high-contrast against the page: new `color/focus/ringOnBrand` semantic (dark→gray.50, light→gray.900,
+~15–17:1 vs canvas). Figma: new variable + `Focus Ring On Brand` effect style, applied to the three
+`variant=default` Focus variants. Code: `--shadow-focus-on-brand` in `focus.css`; the Button base reads
+`--btn-focus` (fallback `--shadow-focus`) and the `default` variant overrides it — a single-writer
+pattern so there's no Tailwind cascade race. Gate asserts `focus.ringOnBrand / canvas` ≥ 3:1.
 
 ---
 

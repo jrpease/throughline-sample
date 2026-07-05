@@ -39,6 +39,8 @@ const pairs = (m) => {
     // The shadow focus ring: composited over canvas at its actual alpha, it must still clear 3:1 (WCAG 2.4.11).
     // A translucent ring (alpha<1) that drops below 3:1 will fail here instead of silently passing.
     ['focus.ring / canvas',      c('focus','ring'),     canvas, 3.0],
+    // Neutral ring for green-filled (on-brand) controls — must clear 3:1 against the page.
+    ['focus.ringOnBrand / canvas', c('focus','ringOnBrand'), canvas, 3.0],
   ];
 };
 

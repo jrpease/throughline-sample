@@ -29,6 +29,7 @@
   --color-danger-default: var(--color-red-600);
   --color-info-default: var(--color-blue-600);
   --color-focus-ring: var(--color-green-600);
+  --color-focus-ring-on-brand: var(--color-gray-900);
   --space-inset-sm: var(--space-3);
   --space-inset-md: var(--space-4);
   --space-inset-lg: var(--space-6);

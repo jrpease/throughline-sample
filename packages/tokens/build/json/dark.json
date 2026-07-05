@@ -132,7 +132,8 @@
       "default": "#60a5fa"
     },
     "focus": {
-      "ring": "#1db954"
+      "ring": "#1db954",
+      "ringOnBrand": "#f9f9f9"
     }
   },
   "space": {

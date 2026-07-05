@@ -37,9 +37,9 @@
       "Space / Semantic",
       "Effect / Primitives"
     ],
-    "styleGroups": ["Text", "Elevation", "Focus Ring"],
+    "styleGroups": ["Text", "Elevation", "Focus Ring", "Focus Ring On Brand"],
     "wcagAA": true,
-    "lastSync": "2026-07-05T18:15:00Z"
+    "lastSync": "2026-07-05T19:30:00Z"
   },
   "sheets": { "built": true },
   "icons": {

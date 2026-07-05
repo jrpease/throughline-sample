@@ -124,6 +124,10 @@
       "ring": {
         "$value": "{color.green.500}",
         "$type": "color"
+      },
+      "ringOnBrand": {
+        "$value": "{color.gray.50}",
+        "$type": "color"
       }
     }
   },

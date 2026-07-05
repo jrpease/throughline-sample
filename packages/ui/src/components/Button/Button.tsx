@@ -9,11 +9,13 @@ import { cn } from "../../lib/cn";
  * all colors/spacing/radius come from @ds/tokens via Tailwind theme vars.
  */
 export const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:[box-shadow:var(--shadow-focus)] disabled:pointer-events-none disabled:opacity-50",
+  // Focus ring reads --btn-focus (fallback: --shadow-focus). The default (green/brand-filled) variant
+  // overrides it below with the neutral on-brand ring — only one rule sets --btn-focus, so no cascade race.
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:[box-shadow:var(--btn-focus,var(--shadow-focus))] disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-[var(--color-brand-primary-hover)]",
+        default: "bg-primary text-primary-foreground hover:bg-[var(--color-brand-primary-hover)] [--btn-focus:var(--shadow-focus-on-brand)]",
         secondary: "bg-secondary text-secondary-foreground hover:bg-muted",
         destructive: "bg-destructive text-destructive-foreground hover:opacity-90",
         outline: "border border-input bg-transparent text-foreground hover:bg-secondary",
