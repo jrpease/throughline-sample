@@ -5,7 +5,7 @@ machine-readable state, see `design-system.json` (or run
 `/throughline:design-system-status`). This doc captures the **context and
 decisions** that aren't in the manifest.
 
-_Last updated: 2026-07-05, after the accessibility & architecture retrofit._
+_Last updated: 2026-07-05 — accessibility & architecture retrofit + review-round fixes, merged to `main` via **PR #8** (squash). Everything below is now on `main`._
 
 ## 2026-07-05 — Accessibility & architecture retrofit (v0.13 representation)
 
@@ -102,7 +102,7 @@ from design to code."
 - **Figma file:** key `OCiZiGpsJ4ncPD8r205BjC` — "Throughline Plugin Test"
 - **UI framework:** shadcn (React + Vite + Tailwind)
 - **Coding level on record:** `new` (explanations are scaled up)
-- **Current branch:** `main` (PR #6 merged; everything is on main)
+- **Current branch:** `main` (PR #8 merged — the a11y & architecture retrofit + review-round fixes; everything is on main)
 
 ## Current state (high level)
 
