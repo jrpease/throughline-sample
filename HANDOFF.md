@@ -5,7 +5,35 @@ machine-readable state, see `design-system.json` (or run
 `/throughline:design-system-status`). This doc captures the **context and
 decisions** that aren't in the manifest.
 
-_Last updated: 2026-06-02, after merging PR #6._
+_Last updated: 2026-07-05, after the accessibility & architecture retrofit._
+
+## 2026-07-05 — Accessibility & architecture retrofit (v0.13 representation)
+
+A full quality overhaul to bring this sample up to the plugin's current bar. Spec +
+plan in `docs/superpowers/specs/` and `docs/superpowers/plans/`. Summary:
+
+- **Token architecture** — migrated the flat `Primitives` + `Semantic` collections to
+  the canonical **per-category-per-tier** shape: `Color / Primitives`, `Space / Primitives`,
+  `Radius / Primitives`, `Type / Primitives`, `Color / Semantic` (Light/Dark), `Space / Semantic`,
+  `Effect / Primitives`. Mode axis now lives only on `Color / Semantic`. Old collections deleted
+  after a zero-reference migration (3,655 bindings rebound old→new).
+- **Accessibility (WCAG 2.2 AA, text + non-text)** — re-derived the gray ramp on an even
+  perceptual curve (fixes invisible borders 1.3–1.6:1 → 3.3–3.8:1, unreadable disabled text,
+  and the dark `bg.muted == border` collision). Every semantic pairing passes AA in both modes;
+  proven by the committed `tokens:a11y` gate (`packages/tokens/scripts/check-a11y.mjs`) which
+  was red before and is green after.
+- **Focus system** — new shadow-based offset **Focus Ring** (Figma variable-bound effect style +
+  code `--shadow-focus` / `--shadow-focus-danger`), replacing the old border/Tailwind-ring focus.
+- **Components** — all 14 are now proper component sets with complete variant matrices and focus
+  rings, 100% bound to semantic tokens (Tooltip, Select Menu, Select Menu Item promoted from single
+  components; Checkbox/Radio/Switch gained focus + full states; inputs gained hover/active/error/size).
+- **Drift + additions** — reconciled `bg/Base`→`bg/canvas`; promoted the `teal` ramp + `accent/tealSubtle`
+  into code; added `border/strong`, `focus/ring`, `brand/primaryActive`, `bg/mutedActive`, and a
+  `warning` text/fill split (amber.700 in light).
+
+Minor follow-ups (see `.superpowers/sdd/progress.md`): dark-mode Switch off-thumb ~2.6:1;
+green-on-green focus ring on the primary button; no `destructive` button type; `"./styles"`
+export-map change unexercised outside Storybook.
 
 ---
 

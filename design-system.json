@@ -15,7 +15,7 @@
     "mechanism": "console-mcp",
     "fileKey": "OCiZiGpsJ4ncPD8r205BjC",
     "connected": true,
-    "lastVerified": "2026-06-02T15:21:00Z",
+    "lastVerified": "2026-07-05T18:15:00Z",
     "coverPageBuilt": true,
     "canPublish": true,
     "libraryPublished": true,
@@ -24,12 +24,22 @@
   "tokens": {
     "intakeMode": "generative",
     "tiers": 2,
+    "architecture": "per-category-per-tier",
     "primitivesBuilt": true,
     "semanticBuilt": true,
     "stylesBuilt": true,
-    "collections": ["Primitives", "Semantic"],
-    "styleGroups": ["Text", "Elevation"],
-    "lastSync": "2026-06-03T20:40:00Z"
+    "collections": [
+      "Color / Primitives",
+      "Space / Primitives",
+      "Radius / Primitives",
+      "Type / Primitives",
+      "Color / Semantic",
+      "Space / Semantic",
+      "Effect / Primitives"
+    ],
+    "styleGroups": ["Text", "Elevation", "Focus Ring"],
+    "wcagAA": true,
+    "lastSync": "2026-07-05T18:15:00Z"
   },
   "sheets": { "built": true },
   "icons": {
@@ -42,9 +52,13 @@
   "components": {
     "built": ["Button", "Spinner", "Badge", "Avatar", "Input", "Checkbox", "Switch", "Card", "Select", "Radio", "Textarea", "Tooltip", "Select Menu", "Select Menu Item"],
     "meta": {
-      "Select Menu": { "status": "final", "updatedAt": "2026-06-03T00:00:00Z" },
-      "Select Menu Item": { "status": "final", "updatedAt": "2026-06-03T00:00:00Z" }
+      "Tooltip": { "status": "final", "updatedAt": "2026-07-05T18:15:00Z", "note": "promoted to component set with Placement axis (top/right/bottom/left)" },
+      "Select Menu": { "status": "final", "updatedAt": "2026-07-05T18:15:00Z", "note": "promoted to component set with Size axis (sm/md/lg)" },
+      "Select Menu Item": { "status": "final", "updatedAt": "2026-07-05T18:15:00Z" }
     },
+    "allSets": true,
+    "variantMatricesComplete": true,
+    "focusRingApplied": true,
     "instanceSwapUpgradePending": []
   },
   "repo": {
@@ -56,7 +70,7 @@
   "sync": {
     "platforms": ["shadcn"],
     "customAdapters": [],
-    "lastRun": "2026-06-03T20:40:00Z"
+    "lastRun": "2026-07-05T18:15:00Z"
   },
   "storybook": {
     "initialized": true,
