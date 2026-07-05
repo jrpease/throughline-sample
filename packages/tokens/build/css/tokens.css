@@ -139,7 +139,7 @@
   --color-accent-teal-subtle: var(--color-teal-900);
   --color-success-default: var(--color-green-500);
   --color-warning-default: var(--color-amber-400);
-  --color-danger-default: var(--color-red-500);
+  --color-danger-default: var(--color-red-600);
   --color-info-default: var(--color-blue-400);
   --color-focus-ring: var(--color-green-500);
   --color-focus-ring-on-fill: var(--color-gray-50);
@@ -173,7 +173,7 @@
   --color-border-focus: var(--color-green-600);
   --color-brand-primary: var(--color-green-600);
   --color-brand-primary-hover: var(--color-green-500);
-  --color-brand-primary-active: var(--color-green-700);
+  --color-brand-primary-active: var(--color-green-400);
   --color-brand-on-primary: var(--color-gray-950);
   --color-secondary-default: var(--color-blue-600);
   --color-accent-default: var(--color-purple-600);

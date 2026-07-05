@@ -41,6 +41,16 @@ const pairs = (m) => {
     ['focus.ring / canvas',      c('focus','ring'),     canvas, 3.0],
     // Neutral ring for solid-filled controls (brand/destructive) — must clear 3:1 against the page.
     ['focus.ringOnFill / canvas', c('focus','ringOnFill'), canvas, 3.0],
+    // --- Interactive STATE fills (default-state checks above miss these) ---
+    // Primary button, text = onBrand (near-black), across hover/active fills.
+    ['onBrand / brand.primaryHover',  c('text','onBrand'), c('brand','primaryHover'),  4.5],
+    ['onBrand / brand.primaryActive', c('text','onBrand'), c('brand','primaryActive'), 4.5],
+    // Secondary button, text = text.primary, across its fill + hover/active fill.
+    ['text.primary / bg.muted',        c('text','primary'), muted,                 4.5],
+    ['text.primary / bg.mutedActive',  c('text','primary'), c('bg','mutedActive'), 4.5],
+    // Destructive button: white-ish text on the danger fill; and danger as a non-text border/ring.
+    ['destructiveFg / danger.default', prim('{color.gray.50}'), c('danger','default'), 4.5],
+    ['danger.default / canvas (border+ring)', c('danger','default'), canvas,           3.0],
   ];
 };
 

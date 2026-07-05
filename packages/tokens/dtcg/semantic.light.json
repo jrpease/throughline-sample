@@ -72,7 +72,7 @@
         "$type": "color"
       },
       "primaryActive": {
-        "$value": "{color.green.700}",
+        "$value": "{color.green.400}",
         "$type": "color"
       },
       "onPrimary": {

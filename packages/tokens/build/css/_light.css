@@ -19,7 +19,7 @@
   --color-border-focus: var(--color-green-600);
   --color-brand-primary: var(--color-green-600);
   --color-brand-primary-hover: var(--color-green-500);
-  --color-brand-primary-active: var(--color-green-700);
+  --color-brand-primary-active: var(--color-green-400);
   --color-brand-on-primary: var(--color-gray-950);
   --color-secondary-default: var(--color-blue-600);
   --color-accent-default: var(--color-purple-600);

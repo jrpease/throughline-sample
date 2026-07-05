@@ -73,6 +73,22 @@ override it — a single-writer pattern so there's no Tailwind cascade race. Gat
 Parity gaps noted (Figma richer than code, pre-existing, not bugs): the code `Checkbox` has no
 hover/active fill states; the code `Tooltip` supports only `top`/`bottom` (Figma has all four placements).
 
+**Light-mode state-fill accessibility (post-PR):** the a11y gate only checked *default*-state pairings,
+so three interactive-state fills were failing AA:
+- **Secondary hover** — was bound to the primitive `color/gray/600` (non-adaptive), giving dark text on
+  mid-gray = 2.40:1 in light. Re-bound (all sizes) to adaptive `bg/mutedActive` (8.09 light / 8.55 dark).
+- **Primary active** — `brand.primaryActive` light was green.700; near-black text = 3.39:1. Changed light
+  to **green.400** (brighten-on-press instead of darken) → 8.65:1. Figma-only render (code Button has no
+  `:active`), but the token is fixed at source. Dark active (green.600, 4.97) unchanged.
+- **Destructive (dark)** — white on `danger.default` = red.500 (`#EF4444`) = 3.57:1. Darkened dark
+  `danger.default` → **red.600** (`#DC2626`) → 4.59:1. Safe: `danger.default` is used only as fill / focus
+  ring / error border (never text-on-canvas); border/ring vs canvas stays above 3.0 (3.68 dark).
+- **Gate hardened** — `check-a11y.mjs` now also asserts primary hover/active, secondary muted/mutedActive,
+  destructive text, and danger-as-border. 17 checks/mode, all green.
+
+Cosmetic follow-up: secondary hover and active now both resolve to `bg/mutedActive` (identical shade); add a
+dedicated `bg/mutedHover` step if distinct hover/active shading is wanted.
+
 ---
 
 ## What this is

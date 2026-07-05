@@ -110,7 +110,7 @@
     },
     "danger": {
       "default": {
-        "$value": "{color.red.500}",
+        "$value": "{color.red.600}",
         "$type": "color"
       }
     },

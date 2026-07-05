@@ -137,7 +137,7 @@
   --color-accent-teal-subtle: var(--color-teal-900);
   --color-success-default: var(--color-green-500);
   --color-warning-default: var(--color-amber-400);
-  --color-danger-default: var(--color-red-500);
+  --color-danger-default: var(--color-red-600);
   --color-info-default: var(--color-blue-400);
   --color-focus-ring: var(--color-green-500);
   --color-focus-ring-on-fill: var(--color-gray-50);

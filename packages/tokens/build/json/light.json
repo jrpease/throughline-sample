@@ -109,7 +109,7 @@
     "brand": {
       "primary": "#169c46",
       "primaryHover": "#1db954",
-      "primaryActive": "#107d38",
+      "primaryActive": "#2acf6b",
       "onPrimary": "#181818"
     },
     "secondary": {

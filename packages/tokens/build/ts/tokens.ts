@@ -128,7 +128,7 @@ export const tokens = {
       "default": "#fbbf24"
     },
     "danger": {
-      "default": "#ef4444"
+      "default": "#dc2626"
     },
     "info": {
       "default": "#60a5fa"
@@ -317,7 +317,7 @@ export const lightTokens = {
     "brand": {
       "primary": "#169c46",
       "primaryHover": "#1db954",
-      "primaryActive": "#107d38",
+      "primaryActive": "#2acf6b",
       "onPrimary": "#181818"
     },
     "secondary": {
