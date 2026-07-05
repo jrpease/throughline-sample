@@ -216,47 +216,89 @@
         "$type": "color"
       },
       "50": {
-        "$value": "#F7F7F8",
+        "$value": "#F9F9F9",
         "$type": "color"
       },
       "100": {
-        "$value": "#E8E8EA",
+        "$value": "#EBEBEB",
         "$type": "color"
       },
       "200": {
-        "$value": "#CFCFD3",
+        "$value": "#D1D1D1",
         "$type": "color"
       },
       "300": {
-        "$value": "#B0B0B6",
+        "$value": "#BBBBBB",
         "$type": "color"
       },
       "400": {
-        "$value": "#87878F",
+        "$value": "#8E8E8E",
         "$type": "color"
       },
       "500": {
-        "$value": "#6A6A72",
+        "$value": "#747474",
         "$type": "color"
       },
       "600": {
-        "$value": "#4D4D54",
+        "$value": "#5E5E5E",
         "$type": "color"
       },
       "700": {
-        "$value": "#282828",
+        "$value": "#494949",
         "$type": "color"
       },
       "800": {
-        "$value": "#181818",
+        "$value": "#353535",
         "$type": "color"
       },
       "900": {
-        "$value": "#121212",
+        "$value": "#242424",
         "$type": "color"
       },
       "950": {
-        "$value": "#0A0A0A",
+        "$value": "#181818",
+        "$type": "color"
+      }
+    },
+    "teal": {
+      "50": {
+        "$value": "#F0FDFA",
+        "$type": "color"
+      },
+      "100": {
+        "$value": "#CCFBF1",
+        "$type": "color"
+      },
+      "200": {
+        "$value": "#99F6E4",
+        "$type": "color"
+      },
+      "300": {
+        "$value": "#5EEAD4",
+        "$type": "color"
+      },
+      "400": {
+        "$value": "#2DD4BF",
+        "$type": "color"
+      },
+      "500": {
+        "$value": "#14B8A6",
+        "$type": "color"
+      },
+      "600": {
+        "$value": "#0D9488",
+        "$type": "color"
+      },
+      "700": {
+        "$value": "#0F766E",
+        "$type": "color"
+      },
+      "800": {
+        "$value": "#115E59",
+        "$type": "color"
+      },
+      "900": {
+        "$value": "#134E4A",
         "$type": "color"
       }
     }
@@ -421,6 +463,16 @@
         "$value": 1.5,
         "$type": "number"
       }
+    }
+  },
+  "focus": {
+    "ringWidth": {
+      "$value": "2px",
+      "$type": "dimension"
+    },
+    "ringOffset": {
+      "$value": "2px",
+      "$type": "dimension"
     }
   }
 }
