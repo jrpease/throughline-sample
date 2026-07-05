@@ -44,15 +44,17 @@ style's binding to the `color/focus/ring` variable (solid, mode-aware) and re-as
 actual alpha, so a future translucent focus ring that drops below 3:1 fails the gate instead of
 passing silently. Code (`focus.css`) was already solid — no change there.
 
-**Neutral ring for the primary button (post-PR):** the brand-green focus ring is invisible on the
-green primary fill (green-on-green). No single ring color can clear 3:1 against *both* a green fill
-and the page in dark mode (bright green vs near-black page), so the fix leans on the offset gap —
-the ring is adjacent to the page, not the fill — and uses a mode-aware **neutral** ring that stays
-high-contrast against the page: new `color/focus/ringOnBrand` semantic (dark→gray.50, light→gray.900,
-~15–17:1 vs canvas). Figma: new variable + `Focus Ring On Brand` effect style, applied to the three
-`variant=default` Focus variants. Code: `--shadow-focus-on-brand` in `focus.css`; the Button base reads
-`--btn-focus` (fallback `--shadow-focus`) and the `default` variant overrides it — a single-writer
-pattern so there's no Tailwind cascade race. Gate asserts `focus.ringOnBrand / canvas` ≥ 3:1.
+**Neutral ring for solid-filled buttons (post-PR):** a same-hue focus ring is invisible on a colored
+fill (green ring on the green primary, red ring on the red destructive). No single ring color can
+clear 3:1 against *both* a colored fill and the page in dark mode (bright fill vs near-black page),
+so the fix leans on the offset gap — the ring is adjacent to the page, not the fill — and uses a
+mode-aware **neutral** ring that stays high-contrast against the page: new `color/focus/ringOnFill`
+semantic (dark→gray.50, light→gray.900, ~15–17:1 vs canvas). Figma: new variable + `Focus Ring On Fill`
+effect style, applied to the three `variant=default` Focus variants (the Figma Button set has no
+`destructive` variant — shadcn-only). Code: `--shadow-focus-on-fill` in `focus.css`; the Button base
+reads `--btn-focus` (fallback `--shadow-focus`) and the filled variants (`default`, `destructive`)
+override it — a single-writer pattern so there's no Tailwind cascade race. Gate asserts
+`focus.ringOnFill / canvas` ≥ 3:1.
 
 ---
 

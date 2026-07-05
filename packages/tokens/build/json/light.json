@@ -133,7 +133,7 @@
     },
     "focus": {
       "ring": "#169c46",
-      "ringOnBrand": "#242424"
+      "ringOnFill": "#242424"
     }
   },
   "space": {

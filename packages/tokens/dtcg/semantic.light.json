@@ -125,7 +125,7 @@
         "$value": "{color.green.600}",
         "$type": "color"
       },
-      "ringOnBrand": {
+      "ringOnFill": {
         "$value": "{color.gray.900}",
         "$type": "color"
       }

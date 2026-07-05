@@ -135,7 +135,7 @@ export const tokens = {
     },
     "focus": {
       "ring": "#1db954",
-      "ringOnBrand": "#f9f9f9"
+      "ringOnFill": "#f9f9f9"
     }
   },
   "space": {
@@ -341,7 +341,7 @@ export const lightTokens = {
     },
     "focus": {
       "ring": "#169c46",
-      "ringOnBrand": "#242424"
+      "ringOnFill": "#242424"
     }
   },
   "space": {
