@@ -20,10 +20,10 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
       <textarea
         ref={ref}
         className={cn(
-          "w-full min-h-[88px] rounded-md border bg-[var(--color-bg-subtle)] px-3 py-3 text-base text-foreground placeholder:text-muted-foreground outline-none transition-colors focus-visible:ring-2 resize-y disabled:opacity-50 disabled:cursor-not-allowed",
+          "w-full min-h-[88px] rounded-md border bg-[var(--color-bg-subtle)] px-3 py-3 text-base text-foreground placeholder:text-muted-foreground outline-none transition-colors resize-y disabled:opacity-50 disabled:cursor-not-allowed",
           error
-            ? "border-destructive focus-visible:ring-destructive"
-            : "border-input focus-visible:ring-ring",
+            ? "border-destructive focus-visible:[box-shadow:var(--shadow-focus-danger)]"
+            : "border-input focus-visible:[box-shadow:var(--shadow-focus)]",
           className
         )}
         {...props}

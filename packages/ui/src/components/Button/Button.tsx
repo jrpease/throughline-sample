@@ -9,13 +9,16 @@ import { cn } from "../../lib/cn";
  * all colors/spacing/radius come from @ds/tokens via Tailwind theme vars.
  */
 export const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50",
+  // Focus ring reads --btn-focus (fallback: --shadow-focus). Solid-filled variants (default, destructive)
+  // override it below with the neutral on-fill ring so it stays visible on a colored fill. Each variant
+  // sets --btn-focus at most once, so there's no cascade race.
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:[box-shadow:var(--btn-focus,var(--shadow-focus))] disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-[var(--color-brand-primary-hover)]",
+        default: "bg-primary text-primary-foreground hover:bg-[var(--color-brand-primary-hover)] [--btn-focus:var(--shadow-focus-on-fill)]",
         secondary: "bg-secondary text-secondary-foreground hover:bg-muted",
-        destructive: "bg-destructive text-destructive-foreground hover:opacity-90",
+        destructive: "bg-destructive text-destructive-foreground hover:opacity-90 [--btn-focus:var(--shadow-focus-on-fill)]",
         outline: "border border-input bg-transparent text-foreground hover:bg-secondary",
         ghost: "bg-transparent text-foreground hover:bg-secondary",
         link: "bg-transparent text-[var(--color-text-link)] underline-offset-4 hover:underline",

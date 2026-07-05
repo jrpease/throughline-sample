@@ -64,46 +64,62 @@ export const tokens = {
     },
     "gray": {
       "0": "#ffffff",
-      "50": "#f7f7f8",
-      "100": "#e8e8ea",
-      "200": "#cfcfd3",
-      "300": "#b0b0b6",
-      "400": "#87878f",
-      "500": "#6a6a72",
-      "600": "#4d4d54",
-      "700": "#282828",
-      "800": "#181818",
-      "900": "#121212",
-      "950": "#0a0a0a"
+      "50": "#f9f9f9",
+      "100": "#ebebeb",
+      "200": "#d1d1d1",
+      "300": "#bbbbbb",
+      "400": "#8e8e8e",
+      "500": "#747474",
+      "600": "#5e5e5e",
+      "700": "#494949",
+      "800": "#353535",
+      "900": "#242424",
+      "950": "#181818"
+    },
+    "teal": {
+      "50": "#f0fdfa",
+      "100": "#ccfbf1",
+      "200": "#99f6e4",
+      "300": "#5eead4",
+      "400": "#2dd4bf",
+      "500": "#14b8a6",
+      "600": "#0d9488",
+      "700": "#0f766e",
+      "800": "#115e59",
+      "900": "#134e4a"
     },
     "bg": {
-      "canvas": "#121212",
-      "subtle": "#181818",
-      "muted": "#282828",
+      "canvas": "#181818",
+      "subtle": "#242424",
+      "muted": "#353535",
+      "mutedActive": "#494949",
       "inverse": "#ffffff"
     },
     "text": {
-      "primary": "#f7f7f8",
-      "secondary": "#b0b0b6",
-      "disabled": "#4d4d54",
-      "onBrand": "#0a0a0a",
+      "primary": "#f9f9f9",
+      "secondary": "#bbbbbb",
+      "disabled": "#747474",
+      "onBrand": "#181818",
       "link": "#60a5fa"
     },
     "border": {
-      "default": "#282828",
-      "subtle": "#181818",
+      "default": "#747474",
+      "subtle": "#494949",
+      "strong": "#8e8e8e",
       "focus": "#1db954"
     },
     "brand": {
       "primary": "#1db954",
       "primaryHover": "#2acf6b",
-      "onPrimary": "#0a0a0a"
+      "primaryActive": "#169c46",
+      "onPrimary": "#181818"
     },
     "secondary": {
       "default": "#60a5fa"
     },
     "accent": {
-      "default": "#c158f3"
+      "default": "#c158f3",
+      "tealSubtle": "#134e4a"
     },
     "success": {
       "default": "#1db954"
@@ -112,10 +128,14 @@ export const tokens = {
       "default": "#fbbf24"
     },
     "danger": {
-      "default": "#ef4444"
+      "default": "#dc2626"
     },
     "info": {
       "default": "#60a5fa"
+    },
+    "focus": {
+      "ring": "#1db954",
+      "ringOnFill": "#f9f9f9"
     }
   },
   "space": {
@@ -179,6 +199,10 @@ export const tokens = {
       "tight": 1.2,
       "normal": 1.5
     }
+  },
+  "focus": {
+    "ringWidth": "2px",
+    "ringOffset": "2px"
   }
 } as const;
 
@@ -246,58 +270,78 @@ export const lightTokens = {
     },
     "gray": {
       "0": "#ffffff",
-      "50": "#f7f7f8",
-      "100": "#e8e8ea",
-      "200": "#cfcfd3",
-      "300": "#b0b0b6",
-      "400": "#87878f",
-      "500": "#6a6a72",
-      "600": "#4d4d54",
-      "700": "#282828",
-      "800": "#181818",
-      "900": "#121212",
-      "950": "#0a0a0a"
+      "50": "#f9f9f9",
+      "100": "#ebebeb",
+      "200": "#d1d1d1",
+      "300": "#bbbbbb",
+      "400": "#8e8e8e",
+      "500": "#747474",
+      "600": "#5e5e5e",
+      "700": "#494949",
+      "800": "#353535",
+      "900": "#242424",
+      "950": "#181818"
+    },
+    "teal": {
+      "50": "#f0fdfa",
+      "100": "#ccfbf1",
+      "200": "#99f6e4",
+      "300": "#5eead4",
+      "400": "#2dd4bf",
+      "500": "#14b8a6",
+      "600": "#0d9488",
+      "700": "#0f766e",
+      "800": "#115e59",
+      "900": "#134e4a"
     },
     "bg": {
       "canvas": "#ffffff",
-      "subtle": "#f7f7f8",
-      "muted": "#e8e8ea",
-      "inverse": "#121212"
+      "subtle": "#f9f9f9",
+      "muted": "#ebebeb",
+      "mutedActive": "#bbbbbb",
+      "inverse": "#242424"
     },
     "text": {
-      "primary": "#121212",
-      "secondary": "#4d4d54",
-      "disabled": "#87878f",
-      "onBrand": "#0a0a0a",
+      "primary": "#242424",
+      "secondary": "#5e5e5e",
+      "disabled": "#747474",
+      "onBrand": "#181818",
       "link": "#2563eb"
     },
     "border": {
-      "default": "#cfcfd3",
-      "subtle": "#e8e8ea",
+      "default": "#8e8e8e",
+      "subtle": "#d1d1d1",
+      "strong": "#747474",
       "focus": "#169c46"
     },
     "brand": {
       "primary": "#169c46",
       "primaryHover": "#1db954",
-      "onPrimary": "#0a0a0a"
+      "primaryActive": "#2acf6b",
+      "onPrimary": "#181818"
     },
     "secondary": {
       "default": "#2563eb"
     },
     "accent": {
-      "default": "#8e1fc9"
+      "default": "#8e1fc9",
+      "tealSubtle": "#ccfbf1"
     },
     "success": {
       "default": "#169c46"
     },
     "warning": {
-      "default": "#d97706"
+      "default": "#b45309"
     },
     "danger": {
       "default": "#dc2626"
     },
     "info": {
       "default": "#2563eb"
+    },
+    "focus": {
+      "ring": "#169c46",
+      "ringOnFill": "#242424"
     }
   },
   "space": {
@@ -361,6 +405,10 @@ export const lightTokens = {
       "tight": 1.2,
       "normal": 1.5
     }
+  },
+  "focus": {
+    "ringWidth": "2px",
+    "ringOffset": "2px"
   }
 } as const;
 

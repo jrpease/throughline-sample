@@ -1,0 +1,9 @@
+/**
+ * Public styles entry (@ds/ui/styles).
+ * Bundles the base styles with hand-authored additions so consumers get both
+ * from a single import. `global.css` imports the generated token CSS
+ * (`@ds/tokens/css`) and adds Tailwind directives + html/body; `focus.css`
+ * defines the focus-ring shadow tokens. Both are hand-maintained.
+ */
+@import "./global.css";
+@import "./focus.css";

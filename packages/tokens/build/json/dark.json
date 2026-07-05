@@ -62,46 +62,62 @@
     },
     "gray": {
       "0": "#ffffff",
-      "50": "#f7f7f8",
-      "100": "#e8e8ea",
-      "200": "#cfcfd3",
-      "300": "#b0b0b6",
-      "400": "#87878f",
-      "500": "#6a6a72",
-      "600": "#4d4d54",
-      "700": "#282828",
-      "800": "#181818",
-      "900": "#121212",
-      "950": "#0a0a0a"
+      "50": "#f9f9f9",
+      "100": "#ebebeb",
+      "200": "#d1d1d1",
+      "300": "#bbbbbb",
+      "400": "#8e8e8e",
+      "500": "#747474",
+      "600": "#5e5e5e",
+      "700": "#494949",
+      "800": "#353535",
+      "900": "#242424",
+      "950": "#181818"
+    },
+    "teal": {
+      "50": "#f0fdfa",
+      "100": "#ccfbf1",
+      "200": "#99f6e4",
+      "300": "#5eead4",
+      "400": "#2dd4bf",
+      "500": "#14b8a6",
+      "600": "#0d9488",
+      "700": "#0f766e",
+      "800": "#115e59",
+      "900": "#134e4a"
     },
     "bg": {
-      "canvas": "#121212",
-      "subtle": "#181818",
-      "muted": "#282828",
+      "canvas": "#181818",
+      "subtle": "#242424",
+      "muted": "#353535",
+      "mutedActive": "#494949",
       "inverse": "#ffffff"
     },
     "text": {
-      "primary": "#f7f7f8",
-      "secondary": "#b0b0b6",
-      "disabled": "#4d4d54",
-      "onBrand": "#0a0a0a",
+      "primary": "#f9f9f9",
+      "secondary": "#bbbbbb",
+      "disabled": "#747474",
+      "onBrand": "#181818",
       "link": "#60a5fa"
     },
     "border": {
-      "default": "#282828",
-      "subtle": "#181818",
+      "default": "#747474",
+      "subtle": "#494949",
+      "strong": "#8e8e8e",
       "focus": "#1db954"
     },
     "brand": {
       "primary": "#1db954",
       "primaryHover": "#2acf6b",
-      "onPrimary": "#0a0a0a"
+      "primaryActive": "#169c46",
+      "onPrimary": "#181818"
     },
     "secondary": {
       "default": "#60a5fa"
     },
     "accent": {
-      "default": "#c158f3"
+      "default": "#c158f3",
+      "tealSubtle": "#134e4a"
     },
     "success": {
       "default": "#1db954"
@@ -110,10 +126,14 @@
       "default": "#fbbf24"
     },
     "danger": {
-      "default": "#ef4444"
+      "default": "#dc2626"
     },
     "info": {
       "default": "#60a5fa"
+    },
+    "focus": {
+      "ring": "#1db954",
+      "ringOnFill": "#f9f9f9"
     }
   },
   "space": {
@@ -177,5 +197,9 @@
       "tight": 1.2,
       "normal": 1.5
     }
+  },
+  "focus": {
+    "ringWidth": "2px",
+    "ringOffset": "2px"
   }
 }

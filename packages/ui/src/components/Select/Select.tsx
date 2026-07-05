@@ -11,7 +11,7 @@ import { cn } from "../../lib/cn";
  * All colors/spacing/radius come from @ds/tokens via Tailwind theme vars.
  */
 export const selectVariants = cva(
-  "appearance-none w-full rounded-md border bg-[var(--color-bg-subtle)] text-foreground outline-none transition-colors focus-visible:ring-2 focus-visible:ring-ring pr-9 disabled:cursor-not-allowed",
+  "appearance-none w-full rounded-md border bg-[var(--color-bg-subtle)] text-foreground outline-none transition-colors pr-9 disabled:cursor-not-allowed",
   {
     variants: {
       size: {
@@ -42,8 +42,8 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
           className={cn(
             selectVariants({ size }),
             error
-              ? "border-destructive focus-visible:ring-destructive"
-              : "border-input",
+              ? "border-destructive focus-visible:[box-shadow:var(--shadow-focus-danger)]"
+              : "border-input focus-visible:[box-shadow:var(--shadow-focus)]",
             disabled && "opacity-50",
             className
           )}

@@ -5,7 +5,89 @@ machine-readable state, see `design-system.json` (or run
 `/throughline:design-system-status`). This doc captures the **context and
 decisions** that aren't in the manifest.
 
-_Last updated: 2026-06-02, after merging PR #6._
+_Last updated: 2026-07-05 — accessibility & architecture retrofit + review-round fixes, merged to `main` via **PR #8** (squash). Everything below is now on `main`._
+
+## 2026-07-05 — Accessibility & architecture retrofit (v0.13 representation)
+
+A full quality overhaul to bring this sample up to the plugin's current bar. Spec +
+plan in `docs/superpowers/specs/` and `docs/superpowers/plans/`. Summary:
+
+- **Token architecture** — migrated the flat `Primitives` + `Semantic` collections to
+  the canonical **per-category-per-tier** shape: `Color / Primitives`, `Space / Primitives`,
+  `Radius / Primitives`, `Type / Primitives`, `Color / Semantic` (Light/Dark), `Space / Semantic`,
+  `Effect / Primitives`. Mode axis now lives only on `Color / Semantic`. Old collections deleted
+  after a zero-reference migration (3,655 bindings rebound old→new).
+- **Accessibility (WCAG 2.2 AA, text + non-text)** — re-derived the gray ramp on an even
+  perceptual curve (fixes invisible borders 1.3–1.6:1 → 3.3–3.8:1, unreadable disabled text,
+  and the dark `bg.muted == border` collision). Every semantic pairing passes AA in both modes;
+  proven by the committed `tokens:a11y` gate (`packages/tokens/scripts/check-a11y.mjs`) which
+  was red before and is green after.
+- **Focus system** — new shadow-based offset **Focus Ring** (Figma variable-bound effect style +
+  code `--shadow-focus` / `--shadow-focus-danger`), replacing the old border/Tailwind-ring focus.
+- **Components** — all 14 are now proper component sets with complete variant matrices and focus
+  rings, 100% bound to semantic tokens (Tooltip, Select Menu, Select Menu Item promoted from single
+  components; Checkbox/Radio/Switch gained focus + full states; inputs gained hover/active/error/size).
+- **Drift + additions** — reconciled `bg/Base`→`bg/canvas`; promoted the `teal` ramp + `accent/tealSubtle`
+  into code; added `border/strong`, `focus/ring`, `brand/primaryActive`, `bg/mutedActive`, and a
+  `warning` text/fill split (amber.700 in light).
+
+Minor follow-ups (see `.superpowers/sdd/progress.md`): dark-mode Switch off-thumb ~2.6:1;
+no `destructive` button type in Figma; `"./styles"` export-map change unexercised outside Storybook.
+(Resolved post-PR: green-on-green focus ring on the primary button — see below.)
+
+**Focus-ring follow-up (post-PR):** the `Focus Ring` effect style had been manually set to a
+50% hardcoded green (which also cleared its variable binding). A translucent ring can't meet the
+3:1 non-text bar at the brand green — light mode tops out at 2.87 regardless of hue (50% of any
+color over white can't get dark enough). Decision: **keep the ring solid.** Restored the effect
+style's binding to the `color/focus/ring` variable (solid, mode-aware) and re-asserted `spread: 4`
+(the bind call silently resets spread). Hardened `check-a11y.mjs` to composite each pairing at its
+actual alpha, so a future translucent focus ring that drops below 3:1 fails the gate instead of
+passing silently. Code (`focus.css`) was already solid — no change there.
+
+**Neutral ring for solid-filled buttons (post-PR):** a same-hue focus ring is invisible on a colored
+fill (green ring on the green primary, red ring on the red destructive). No single ring color can
+clear 3:1 against *both* a colored fill and the page in dark mode (bright fill vs near-black page),
+so the fix leans on the offset gap — the ring is adjacent to the page, not the fill — and uses a
+mode-aware **neutral** ring that stays high-contrast against the page: new `color/focus/ringOnFill`
+semantic (dark→gray.50, light→gray.900, ~15–17:1 vs canvas). Figma: new variable + `Focus Ring On Fill`
+effect style, applied to the three `variant=default` Focus variants (the Figma Button set has no
+`destructive` variant — shadcn-only). Code: `--shadow-focus-on-fill` in `focus.css`; the Button base
+reads `--btn-focus` (fallback `--shadow-focus`) and the filled variants (`default`, `destructive`)
+override it — a single-writer pattern so there's no Tailwind cascade race. Gate asserts
+`focus.ringOnFill / canvas` ≥ 3:1.
+
+**Figma component fixes (post-PR, Figma-only — no code diff):**
+- **Checkbox** — all 15 variants' `box` fill/stroke bindings were *orphaned*: `boundVariables` metadata
+  was present but not driving the render, so Figma painted stale literals. Hover/Active/Focus had black
+  (`0,0,0`) literals → invisible strokes (and Focus had a black fill). Re-bound every box fill+stroke
+  with a fresh `setBoundVariableForPaint` (literal = resolved value), which restores live, mode-aware
+  bindings. Verified correct in both Dark and Light. Likely the same bulk-migration artifact could
+  affect other migrated components — worth a spot-check on Radio/Switch if anything looks off.
+- **Tooltip** — every variant had `layoutMode: NONE` with an absolutely-placed 9×9 square-at-45° arrow
+  overlapping the bubble by only ~2px, so it read as a floating diamond and didn't reflow with text.
+  Rebuilt each variant as auto-layout (VERTICAL for Top/Bottom, HORIZONTAL for Left/Right) stacking
+  `[bubble, arrow]`/`[arrow, bubble]`, `counterAxisAlignItems: CENTER`, `itemSpacing: -6.36` (square
+  center on the bubble edge → clean triangle notch), hugging both axes. Now responsive (verified: label
+  grew to 351px, arrow stayed centered).
+
+Parity gaps noted (Figma richer than code, pre-existing, not bugs): the code `Checkbox` has no
+hover/active fill states; the code `Tooltip` supports only `top`/`bottom` (Figma has all four placements).
+
+**Light-mode state-fill accessibility (post-PR):** the a11y gate only checked *default*-state pairings,
+so three interactive-state fills were failing AA:
+- **Secondary hover** — was bound to the primitive `color/gray/600` (non-adaptive), giving dark text on
+  mid-gray = 2.40:1 in light. Re-bound (all sizes) to adaptive `bg/mutedActive` (8.09 light / 8.55 dark).
+- **Primary active** — `brand.primaryActive` light was green.700; near-black text = 3.39:1. Changed light
+  to **green.400** (brighten-on-press instead of darken) → 8.65:1. Figma-only render (code Button has no
+  `:active`), but the token is fixed at source. Dark active (green.600, 4.97) unchanged.
+- **Destructive (dark)** — white on `danger.default` = red.500 (`#EF4444`) = 3.57:1. Darkened dark
+  `danger.default` → **red.600** (`#DC2626`) → 4.59:1. Safe: `danger.default` is used only as fill / focus
+  ring / error border (never text-on-canvas); border/ring vs canvas stays above 3.0 (3.68 dark).
+- **Gate hardened** — `check-a11y.mjs` now also asserts primary hover/active, secondary muted/mutedActive,
+  destructive text, and danger-as-border. 17 checks/mode, all green.
+
+Cosmetic follow-up: secondary hover and active now both resolve to `bg/mutedActive` (identical shade); add a
+dedicated `bg/mutedHover` step if distinct hover/active shading is wanted.
 
 ---
 
@@ -20,7 +102,7 @@ from design to code."
 - **Figma file:** key `OCiZiGpsJ4ncPD8r205BjC` — "Throughline Plugin Test"
 - **UI framework:** shadcn (React + Vite + Tailwind)
 - **Coding level on record:** `new` (explanations are scaled up)
-- **Current branch:** `main` (PR #6 merged; everything is on main)
+- **Current branch:** `main` (PR #8 merged — the a11y & architecture retrofit + review-round fixes; everything is on main)
 
 ## Current state (high level)
 

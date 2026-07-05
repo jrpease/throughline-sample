@@ -11,7 +11,7 @@ import { cn } from "../../lib/cn";
  * All colors/spacing/radius come from @ds/tokens via Tailwind theme vars.
  */
 export const inputVariants = cva(
-  "inline-flex w-full items-center rounded-md border bg-[var(--color-bg-subtle)] text-foreground outline-none transition-colors focus-within:ring-2",
+  "inline-flex w-full items-center rounded-md border bg-[var(--color-bg-subtle)] text-foreground outline-none transition-colors",
   {
     variants: {
       size: {
@@ -41,8 +41,8 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
         className={cn(
           inputVariants({ size }),
           error
-            ? "border-destructive focus-within:ring-destructive"
-            : "border-input focus-within:ring-ring",
+            ? "border-destructive focus-within:[box-shadow:var(--shadow-focus-danger)]"
+            : "border-input focus-within:[box-shadow:var(--shadow-focus)]",
           disabled && "opacity-50",
           className
         )}

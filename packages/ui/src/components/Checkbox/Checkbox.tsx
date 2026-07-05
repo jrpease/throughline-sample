@@ -29,7 +29,7 @@ export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxProps>(
         aria-disabled={disabled || undefined}
         disabled={disabled}
         className={cn(
-          "h-5 w-5 rounded-sm border border-input inline-flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring shrink-0",
+          "h-5 w-5 rounded-sm border border-input inline-flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:[box-shadow:var(--shadow-focus)] shrink-0",
           active && "bg-primary border-transparent text-primary-foreground",
           disabled && "opacity-50 pointer-events-none",
           className
