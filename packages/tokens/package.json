@@ -11,7 +11,8 @@
     "./ts": "./build/ts/tokens.ts"
   },
   "scripts": {
-    "build": "node build.mjs"
+    "build": "node build.mjs",
+    "tokens:a11y": "node scripts/check-a11y.mjs"
   },
   "devDependencies": {
     "style-dictionary": "^4.3.0"
