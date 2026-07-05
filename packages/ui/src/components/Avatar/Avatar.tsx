@@ -47,7 +47,7 @@ export const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
         {status ? (
           <span
             aria-hidden
-            className="absolute bottom-0 right-0 h-[28%] w-[28%] rounded-full bg-[var(--color-success-default)] ring-2 ring-[var(--color-bg-default)]"
+            className="absolute bottom-0 right-0 h-[28%] w-[28%] rounded-full bg-[var(--color-success-default)] ring-2 ring-[var(--color-bg-canvas)]"
           />
         ) : null}
       </div>

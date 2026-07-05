@@ -6,7 +6,7 @@
   "description": "React component library, built on @ds/tokens.",
   "exports": {
     ".": "./src/index.ts",
-    "./styles": "./src/styles/global.css"
+    "./styles": "./src/styles/index.css"
   },
   "scripts": {
     "storybook": "storybook dev -p 6006",

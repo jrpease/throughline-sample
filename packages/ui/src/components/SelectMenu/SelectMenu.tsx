@@ -19,7 +19,7 @@ export const SelectMenu = React.forwardRef<HTMLDivElement, SelectMenuProps>(
       role="listbox"
       className={cn(
         "flex flex-col gap-0.5 rounded-md border p-1 shadow-md",
-        "border-[var(--color-border-subtle)] bg-[var(--color-bg-default)] text-[var(--color-text-primary)]",
+        "border-[var(--color-border-subtle)] bg-[var(--color-bg-canvas)] text-[var(--color-text-primary)]",
         className
       )}
       {...props}
