@@ -56,6 +56,23 @@ reads `--btn-focus` (fallback `--shadow-focus`) and the filled variants (`defaul
 override it — a single-writer pattern so there's no Tailwind cascade race. Gate asserts
 `focus.ringOnFill / canvas` ≥ 3:1.
 
+**Figma component fixes (post-PR, Figma-only — no code diff):**
+- **Checkbox** — all 15 variants' `box` fill/stroke bindings were *orphaned*: `boundVariables` metadata
+  was present but not driving the render, so Figma painted stale literals. Hover/Active/Focus had black
+  (`0,0,0`) literals → invisible strokes (and Focus had a black fill). Re-bound every box fill+stroke
+  with a fresh `setBoundVariableForPaint` (literal = resolved value), which restores live, mode-aware
+  bindings. Verified correct in both Dark and Light. Likely the same bulk-migration artifact could
+  affect other migrated components — worth a spot-check on Radio/Switch if anything looks off.
+- **Tooltip** — every variant had `layoutMode: NONE` with an absolutely-placed 9×9 square-at-45° arrow
+  overlapping the bubble by only ~2px, so it read as a floating diamond and didn't reflow with text.
+  Rebuilt each variant as auto-layout (VERTICAL for Top/Bottom, HORIZONTAL for Left/Right) stacking
+  `[bubble, arrow]`/`[arrow, bubble]`, `counterAxisAlignItems: CENTER`, `itemSpacing: -6.36` (square
+  center on the bubble edge → clean triangle notch), hugging both axes. Now responsive (verified: label
+  grew to 351px, arrow stayed centered).
+
+Parity gaps noted (Figma richer than code, pre-existing, not bugs): the code `Checkbox` has no
+hover/active fill states; the code `Tooltip` supports only `top`/`bottom` (Figma has all four placements).
+
 ---
 
 ## What this is
