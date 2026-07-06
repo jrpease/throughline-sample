@@ -8,7 +8,7 @@ const meta = {
   tags: ["autodocs"],
   args: { label: "Tooltip text", children: <Button>Hover me</Button>, side: "top" },
   argTypes: {
-    side: { control: "select", options: ["top", "bottom"] },
+    side: { control: "select", options: ["top", "right", "bottom", "left"] },
   },
 } satisfies Meta<typeof Tooltip>;
 
@@ -29,3 +29,7 @@ export const Sides: Story = {
     </div>
   ),
 };
+
+export const Left: Story = { args: { side: "left" } };
+
+export const Right: Story = { args: { side: "right" } };
