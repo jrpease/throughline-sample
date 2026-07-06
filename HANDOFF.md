@@ -5,7 +5,7 @@ machine-readable state, see `design-system.json` (or run
 `/throughline:design-system-status`). This doc captures the **context and
 decisions** that aren't in the manifest.
 
-_Last updated: 2026-07-06 — close-open-loops phase, on branch `close-open-loops`. See below._
+_Last updated: 2026-07-06 — close-open-loops phase, **merged to `main` via PR #9** (squash). Everything below is on `main`._
 
 ## 2026-07-06 — Close open loops
 
@@ -30,7 +30,12 @@ Closed out the parity/follow-up gaps left after the accessibility & architecture
   plus a new fast CI job (`.github/workflows/ci.yml`) that runs it alongside typecheck/build.
 
 Full local validation run clean: `tokens:a11y` **ALL PASS** (both modes, 18 checks/mode),
-`typecheck` clean, `build-storybook` succeeds, `check:styles` **PASS**.
+`typecheck` clean, `build-storybook` succeeds, `check:styles` **PASS**. Merged via **PR #9**
+(CI + Chromatic build green; Chromatic "UI Tests" was blocked pending a plan/billing limit,
+not a real diff).
+
+**Remaining manual item:** set the **Cover** frame as the Figma file thumbnail (right-click →
+*Set as thumbnail*) — the Figma API can't do this. Still not done.
 
 ## 2026-07-05 — Accessibility & architecture retrofit (v0.13 representation)
 
