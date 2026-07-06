@@ -12,7 +12,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "chromatic": "chromatic --build-script-name build-storybook --exit-zero-on-changes",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "check:styles": "node scripts/check-styles-export.mjs"
   },
   "dependencies": {
     "@ds/tokens": "workspace:*",
