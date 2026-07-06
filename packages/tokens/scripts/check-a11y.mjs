@@ -48,6 +48,7 @@ const pairs = (m) => {
     // Secondary button, text = text.primary, across its fill + hover/active fill.
     ['text.primary / bg.muted',        c('text','primary'), muted,                 4.5],
     ['text.primary / bg.mutedActive',  c('text','primary'), c('bg','mutedActive'), 4.5],
+    ['text.primary / bg.mutedHover',   c('text','primary'), c('bg','mutedHover'), 4.5],
     // Destructive button: white-ish text on the danger fill; and danger as a non-text border/ring.
     ['destructiveFg / danger.default', prim('{color.gray.50}'), c('danger','default'), 4.5],
     ['danger.default / canvas (border+ring)', c('danger','default'), canvas,           3.0],

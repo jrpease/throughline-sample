@@ -17,6 +17,10 @@
         "$value": "{color.gray.700}",
         "$type": "color"
       },
+      "mutedHover": {
+        "$value": "{color.gray.750}",
+        "$type": "color"
+      },
       "inverse": {
         "$value": "{color.gray.0}",
         "$type": "color"
