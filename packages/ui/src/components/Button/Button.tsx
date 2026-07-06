@@ -17,7 +17,7 @@ export const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-primary text-primary-foreground hover:bg-[var(--color-brand-primary-hover)] [--btn-focus:var(--shadow-focus-on-fill)]",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-muted",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-[var(--color-bg-muted-hover)]",
         destructive: "bg-destructive text-destructive-foreground hover:opacity-90 [--btn-focus:var(--shadow-focus-on-fill)]",
         outline: "border border-input bg-transparent text-foreground hover:bg-secondary",
         ghost: "bg-transparent text-foreground hover:bg-secondary",

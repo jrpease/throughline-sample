@@ -30,7 +30,8 @@ export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxProps>(
         disabled={disabled}
         className={cn(
           "h-5 w-5 rounded-sm border border-input inline-flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:[box-shadow:var(--shadow-focus)] shrink-0",
-          active && "bg-primary border-transparent text-primary-foreground",
+          !active && "hover:border-[var(--color-border-strong)]",
+          active && "bg-primary border-transparent text-primary-foreground hover:bg-[var(--color-brand-primary-hover)]",
           disabled && "opacity-50 pointer-events-none",
           className
         )}

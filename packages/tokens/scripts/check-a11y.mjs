@@ -48,9 +48,23 @@ const pairs = (m) => {
     // Secondary button, text = text.primary, across its fill + hover/active fill.
     ['text.primary / bg.muted',        c('text','primary'), muted,                 4.5],
     ['text.primary / bg.mutedActive',  c('text','primary'), c('bg','mutedActive'), 4.5],
+    ['text.primary / bg.mutedHover',   c('text','primary'), c('bg','mutedHover'), 4.5],
     // Destructive button: white-ish text on the danger fill; and danger as a non-text border/ring.
     ['destructiveFg / danger.default', prim('{color.gray.50}'), c('danger','default'), 4.5],
     ['danger.default / canvas (border+ring)', c('danger','default'), canvas,           3.0],
+    // --- Switch thumb boundary (WCAG 1.4.11 non-text) — bordered-thumb fix guard ---
+    // OFF state: the thumb FILL (bg.canvas) collides with the muted track, so the >=3:1
+    // boundary is carried by the thumb BORDER (border.strong) vs the off-track (bg.muted).
+    ['switch border (off): border.strong / bg.muted', c('border','strong'), muted, 3.0],
+    // ON state: the thumb sits on the brand track; the boundary is carried by the thumb
+    // FILL (bg.canvas) vs the on-track (brand.primary). (Border shares the green's luminance,
+    // so it can't carry this edge — the fill must, and does: 6.87 dark / 3.57 light.)
+    ['switch thumb (on): bg.canvas / brand.primary', canvas, c('brand','primary'), 3.0],
+    // NOTE (focus.ring vs border.focus): in dark both resolve to green.500 by design — a
+    // focused field shows border.focus AND the offset shadow focus ring in the same green,
+    // separated by the canvas offset gap (already gated via focus.ring/canvas + border.focus/canvas,
+    // both >=3). We deliberately do NOT assert these two DIFFER: sharing the focus hue is intended;
+    // separation is structural (the offset), not a token-contrast property.
   ];
 };
 

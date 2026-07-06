@@ -4,7 +4,7 @@ import { cn } from "../../lib/cn";
 /**
  * Switch — mirrors the Figma `Switch` component.
  * A toggle rendered as a <button role="switch">; colors come from @ds/tokens
- * via Tailwind theme vars, with the thumb pinned to the white gray-0 token.
+ * via Tailwind theme vars, with an adaptive thumb (bg.canvas) whose >=3:1 edge is carried by a border/strong outline.
  */
 export interface SwitchProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -33,7 +33,7 @@ export const Switch = React.forwardRef<HTMLButtonElement, SwitchProps>(
       >
         <span
           className={cn(
-            "h-5 w-5 rounded-full bg-[var(--color-gray-0)] shadow transition-transform",
+            "h-5 w-5 rounded-full border border-[var(--color-border-strong)] bg-[var(--color-bg-canvas)] shadow transition-transform",
             checked ? "translate-x-5" : "translate-x-0"
           )}
         />

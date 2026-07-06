@@ -72,6 +72,7 @@ export const tokens = {
       "500": "#747474",
       "600": "#5e5e5e",
       "700": "#494949",
+      "750": "#3f3f3f",
       "800": "#353535",
       "900": "#242424",
       "950": "#181818"
@@ -93,6 +94,7 @@ export const tokens = {
       "subtle": "#242424",
       "muted": "#353535",
       "mutedActive": "#494949",
+      "mutedHover": "#3f3f3f",
       "inverse": "#ffffff"
     },
     "text": {
@@ -278,6 +280,7 @@ export const lightTokens = {
       "500": "#747474",
       "600": "#5e5e5e",
       "700": "#494949",
+      "750": "#3f3f3f",
       "800": "#353535",
       "900": "#242424",
       "950": "#181818"
@@ -299,6 +302,7 @@ export const lightTokens = {
       "subtle": "#f9f9f9",
       "muted": "#ebebeb",
       "mutedActive": "#bbbbbb",
+      "mutedHover": "#d1d1d1",
       "inverse": "#242424"
     },
     "text": {
