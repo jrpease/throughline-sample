@@ -5,7 +5,32 @@ machine-readable state, see `design-system.json` (or run
 `/throughline:design-system-status`). This doc captures the **context and
 decisions** that aren't in the manifest.
 
-_Last updated: 2026-07-05 — accessibility & architecture retrofit + review-round fixes, merged to `main` via **PR #8** (squash). Everything below is now on `main`._
+_Last updated: 2026-07-06 — close-open-loops phase, on branch `close-open-loops`. See below._
+
+## 2026-07-06 — Close open loops
+
+Closed out the parity/follow-up gaps left after the accessibility & architecture retrofit
+(PR #8). Spec + plan in `docs/superpowers/specs/` and `docs/superpowers/plans/`. Summary:
+
+- **Switch bordered thumb** — Figma thumbs got a 1px `border/strong` stroke; code `Switch`
+  thumb changed to match, an adaptive `bg.canvas` fill + `border/strong` border. Two new
+  boundary assertions in the `tokens:a11y` gate cover both states (off = border, 3.74 dark /
+  3.92 light; on = fill, 6.87 dark / 3.57 light).
+- **Figma `destructive` Button** — added the `destructive` type (18 cells) to the Figma
+  Button set, at parity with code (which already had it).
+- **Code/Figma parity** — code `Checkbox` gained hover/active fills; code `Tooltip` gained
+  left/right placements — both now matching what Figma already had.
+- **`bg/mutedHover`** — new tokens `gray.750` (`#3F3F3F`) and `bg/mutedHover` (Light →
+  gray.200, Dark → gray.750), authored in Figma and mirrored into DTCG (a future real Figma
+  sync should be a no-op for these two values). Secondary Button hover is now visually
+  distinct from active instead of sharing `bg/mutedActive`. Gated:
+  `text.primary / bg.mutedHover` = 10.17 light / 10.00 dark.
+- **Component status** — already `final` for all components; no change needed.
+- **CI** — added a `@ds/ui/styles` export-map smoke test (`packages/ui/scripts/check-styles-export.mjs`)
+  plus a new fast CI job (`.github/workflows/ci.yml`) that runs it alongside typecheck/build.
+
+Full local validation run clean: `tokens:a11y` **ALL PASS** (both modes, 18 checks/mode),
+`typecheck` clean, `build-storybook` succeeds, `check:styles` **PASS**.
 
 ## 2026-07-05 — Accessibility & architecture retrofit (v0.13 representation)
 
@@ -214,7 +239,6 @@ pnpm storybook        # dev server on :6006
 ## Open loops / suggested next steps
 
 - [ ] Set the Cover frame as the file thumbnail (manual, in Figma).
-- [ ] Bump Select Menu / Select Menu Item `draft` → `stable` when ready.
 - [ ] (Optional) Publish the Figma library → unlocks Code Connect + typed
       instance-swap dropdowns; then re-run component-builder for the upgrade pass.
 - [ ] Add more components via `/throughline:new-component`.
