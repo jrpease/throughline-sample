@@ -5,7 +5,30 @@ machine-readable state, see `design-system.json` (or run
 `/throughline:design-system-status`). This doc captures the **context and
 decisions** that aren't in the manifest.
 
-_Last updated: 2026-07-06 — close-open-loops phase, **merged to `main` via PR #9** (squash). Everything below is on `main`._
+_Last updated: 2026-07-13 — Storybook rendering bug fixes, **merged to `main` via PR #11** (squash). Everything below is on `main`._
+
+## 2026-07-13 — Storybook rendering bug fixes (Avatar, Select)
+
+Two visual bugs spotted in Storybook, both root-caused and fixed (PR #11):
+
+- **Avatar status dot cropped** — the root element combined `rounded-full` with
+  `overflow-hidden`, so the status dot (`absolute bottom-0 right-0`, at the square
+  box's corner, outside the circle) was sliced into a crescent. Fix: dropped
+  `overflow-hidden` from the root and moved the circular mask onto the `<img>`
+  itself (`rounded-full`). The image is still clipped to a circle; the dot renders
+  fully on the edge with its ring.
+- **Select text overlapped the chevron** — the base `selectVariants` reserved
+  chevron clearance with `pr-9`, but the size variants used `px-3`/`px-4`, which
+  *also* set `padding-right`. cva appends variant classes after the base and
+  `twMerge` keeps the **last** conflicting class, so `px-3`'s 12px clobbered the
+  36px clearance. Fix: removed `pr-9` from the base and set left/right padding
+  explicitly per size (`pl-3 pr-8` / `pl-3 pr-9` / `pl-4 pr-10`).
+
+**Gotcha worth remembering:** in this repo's `cva` + `cn`(=`twMerge`) pattern, a
+`px-*`/`py-*` shorthand in a *variant* silently overrides a `pl-*`/`pr-*` set in
+the *base* (base classes come first, twMerge keeps the last). When the base
+reserves space on one side (icon clearance, etc.), use side-specific padding in
+variants, not the axis shorthand.
 
 ## 2026-07-06 — Close open loops
 
