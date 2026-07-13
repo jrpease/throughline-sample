@@ -9,7 +9,7 @@ import { cn } from "../../lib/cn";
  * bottom-right. All colors/sizing/radius come from @ds/tokens via Tailwind.
  */
 export const avatarVariants = cva(
-  "relative inline-flex shrink-0 items-center justify-center overflow-hidden rounded-full bg-muted text-foreground font-medium",
+  "relative inline-flex shrink-0 items-center justify-center rounded-full bg-muted text-foreground font-medium",
   {
     variants: {
       size: {
@@ -40,7 +40,7 @@ export const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
     return (
       <div ref={ref} className={cn(avatarVariants({ size }), className)} {...props}>
         {src ? (
-          <img src={src} alt={alt} className="h-full w-full object-cover" />
+          <img src={src} alt={alt} className="h-full w-full rounded-full object-cover" />
         ) : (
           <span>{initials}</span>
         )}

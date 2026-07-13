@@ -11,13 +11,16 @@ import { cn } from "../../lib/cn";
  * All colors/spacing/radius come from @ds/tokens via Tailwind theme vars.
  */
 export const selectVariants = cva(
-  "appearance-none w-full rounded-md border bg-[var(--color-bg-subtle)] text-foreground outline-none transition-colors pr-9 disabled:cursor-not-allowed",
+  "appearance-none w-full rounded-md border bg-[var(--color-bg-subtle)] text-foreground outline-none transition-colors disabled:cursor-not-allowed",
   {
     variants: {
+      // Right padding reserves clearance for the absolutely-positioned
+      // ChevronDown. Left/right are set explicitly (not `px-*`) so nothing
+      // overrides the chevron clearance when cva/twMerge compose classes.
       size: {
-        sm: "h-9 px-3 text-sm",
-        md: "h-10 px-3 text-base",
-        lg: "h-11 px-4 text-lg",
+        sm: "h-9 pl-3 pr-8 text-sm",
+        md: "h-10 pl-3 pr-9 text-base",
+        lg: "h-11 pl-4 pr-10 text-lg",
       },
     },
     defaultVariants: { size: "md" },
