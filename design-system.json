@@ -37,24 +37,195 @@
       "Space / Semantic",
       "Effect / Primitives"
     ],
-    "styleGroups": ["Text", "Elevation", "Focus Ring", "Focus Ring On Fill"],
+    "styleGroups": [
+      "Text",
+      "Elevation",
+      "Focus Ring",
+      "Focus Ring On Fill"
+    ],
     "wcagAA": true,
     "lastSync": "2026-07-06T00:00:00Z"
   },
-  "sheets": { "built": true },
+  "sheets": {
+    "built": true
+  },
   "icons": {
     "library": "lucide",
     "version": "1.17.0",
     "built": true,
     "packageInstalled": true,
-    "subset": ["arrow-up","arrow-down","arrow-left","arrow-right","chevron-up","chevron-down","chevron-left","chevron-right","chevrons-left","chevrons-right","x","check","plus","minus","search","menu","more-horizontal","more-vertical","settings","sliders-horizontal","pencil","trash-2","copy","download","upload","share-2","filter","refresh-cw","external-link","info","circle-alert","triangle-alert","circle-check","circle-x","circle-help","loader-circle","bell","user","users","log-in","log-out","lock","eye","eye-off","house","calendar","clock","mail","star","bookmark","folder","link","play","pause","skip-back","skip-forward","shuffle","repeat","repeat-1","volume-1","volume-2","volume-x","heart","mic","music","list","headphones","disc"]
+    "subset": [
+      "arrow-up",
+      "arrow-down",
+      "arrow-left",
+      "arrow-right",
+      "chevron-up",
+      "chevron-down",
+      "chevron-left",
+      "chevron-right",
+      "chevrons-left",
+      "chevrons-right",
+      "x",
+      "check",
+      "plus",
+      "minus",
+      "search",
+      "menu",
+      "more-horizontal",
+      "more-vertical",
+      "settings",
+      "sliders-horizontal",
+      "pencil",
+      "trash-2",
+      "copy",
+      "download",
+      "upload",
+      "share-2",
+      "filter",
+      "refresh-cw",
+      "external-link",
+      "info",
+      "circle-alert",
+      "triangle-alert",
+      "circle-check",
+      "circle-x",
+      "circle-help",
+      "loader-circle",
+      "bell",
+      "user",
+      "users",
+      "log-in",
+      "log-out",
+      "lock",
+      "eye",
+      "eye-off",
+      "house",
+      "calendar",
+      "clock",
+      "mail",
+      "star",
+      "bookmark",
+      "folder",
+      "link",
+      "play",
+      "pause",
+      "skip-back",
+      "skip-forward",
+      "shuffle",
+      "repeat",
+      "repeat-1",
+      "volume-1",
+      "volume-2",
+      "volume-x",
+      "heart",
+      "mic",
+      "music",
+      "list",
+      "headphones",
+      "disc"
+    ]
   },
   "components": {
-    "built": ["Button", "Spinner", "Badge", "Avatar", "Input", "Checkbox", "Switch", "Card", "Select", "Radio", "Textarea", "Tooltip", "Select Menu", "Select Menu Item"],
+    "built": [
+      "Button",
+      "Spinner",
+      "Badge",
+      "Avatar",
+      "Input",
+      "Checkbox",
+      "Switch",
+      "Card",
+      "Select",
+      "Radio",
+      "Textarea",
+      "Tooltip",
+      "Select Menu",
+      "Select Menu Item"
+    ],
     "meta": {
-      "Tooltip": { "status": "final", "updatedAt": "2026-07-05T18:15:00Z", "note": "promoted to component set with Placement axis (top/right/bottom/left)" },
-      "Select Menu": { "status": "final", "updatedAt": "2026-07-05T18:15:00Z", "note": "promoted to component set with Size axis (sm/md/lg)" },
-      "Select Menu Item": { "status": "final", "updatedAt": "2026-07-05T18:15:00Z" }
+      "Tooltip": {
+        "status": "final",
+        "updatedAt": "2026-07-05T18:15:00Z",
+        "note": "promoted to component set with Placement axis (top/right/bottom/left)"
+      },
+      "Select Menu": {
+        "status": "final",
+        "updatedAt": "2026-07-05T18:15:00Z",
+        "note": "promoted to component set with Size axis (sm/md/lg)"
+      },
+      "Select Menu Item": {
+        "status": "final",
+        "updatedAt": "2026-07-05T18:15:00Z"
+      },
+      "Button": {
+        "status": "stable",
+        "updatedAt": "2026-07-14",
+        "doc": {
+          "path": "design-system/docs/components/Button.doc.json",
+          "fingerprint": "73a4867a2a5248d4",
+          "surfaces": {
+            "figmaDescription": {
+              "src": "73a4867a2a5248d4",
+              "render": "e678c5059f63585f"
+            },
+            "docCard": {
+              "src": "73a4867a2a5248d4",
+              "render": "d7cd64433c84d07c"
+            },
+            "storybookMdx": {
+              "src": "73a4867a2a5248d4",
+              "render": "81a7961056c9c645",
+              "file": "packages/ui/src/components/Button/Button.mdx"
+            }
+          }
+        }
+      },
+      "Input": {
+        "status": "stable",
+        "updatedAt": "2026-07-14",
+        "doc": {
+          "path": "design-system/docs/components/Input.doc.json",
+          "fingerprint": "25b4bb89aa167109",
+          "surfaces": {
+            "figmaDescription": {
+              "src": "25b4bb89aa167109",
+              "render": "c6db21e3086c81ce"
+            },
+            "docCard": {
+              "src": "25b4bb89aa167109",
+              "render": "847df8ee9750823c"
+            },
+            "storybookMdx": {
+              "src": "25b4bb89aa167109",
+              "render": "0f0107b62f688bdc",
+              "file": "packages/ui/src/components/Input/Input.mdx"
+            }
+          }
+        }
+      },
+      "Card": {
+        "status": "stable",
+        "updatedAt": "2026-07-14",
+        "doc": {
+          "path": "design-system/docs/components/Card.doc.json",
+          "fingerprint": "c354e4fd864a8fd7",
+          "surfaces": {
+            "figmaDescription": {
+              "src": "c354e4fd864a8fd7",
+              "render": "4f9def2eb3761a82"
+            },
+            "docCard": {
+              "src": "c354e4fd864a8fd7",
+              "render": "934576e85662a56b"
+            },
+            "storybookMdx": {
+              "src": "c354e4fd864a8fd7",
+              "render": "bc46d417f5137eec",
+              "file": "packages/ui/src/components/Card/Card.mdx"
+            }
+          }
+        }
+      }
     },
     "allSets": true,
     "variantMatricesComplete": true,
@@ -68,7 +239,9 @@
     "remote": "https://github.com/jrpease/throughline-sample"
   },
   "sync": {
-    "platforms": ["shadcn"],
+    "platforms": [
+      "shadcn"
+    ],
     "customAdapters": [],
     "lastRun": "2026-07-05T18:15:00Z"
   },
@@ -77,5 +250,14 @@
     "chromatic": true,
     "codeConnect": false
   },
-  "completedSkills": ["figma-environment-setup", "token-builder", "token-sheet-builder", "icon-system-builder", "component-builder", "repository-builder", "token-sync-layer", "storybook-chromatic-builder"]
+  "completedSkills": [
+    "figma-environment-setup",
+    "token-builder",
+    "token-sheet-builder",
+    "icon-system-builder",
+    "component-builder",
+    "repository-builder",
+    "token-sync-layer",
+    "storybook-chromatic-builder"
+  ]
 }

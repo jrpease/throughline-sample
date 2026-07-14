@@ -1,0 +1,72 @@
+{/* docFingerprint: 73a4867a2a5248d4 — generated from Button.doc.json by docs render. Do not edit by hand; change the record and re-render via /document-component. */}
+
+import { Meta } from "@storybook/blocks";
+import * as Stories from "./Button.stories";
+
+<Meta of={Stories} />
+
+# Button
+
+_Triggers an action or event._
+
+A clickable control that triggers an action — submitting a form, confirming a decision, or opening a dialog. It comes in six emphasis variants across three sizes, supports optional leading and trailing icons and a loading state, and binds every color, spacing, radius, and type value to the system's semantic tokens.
+
+## When to use
+
+- Trigger an action or event — submit, confirm, open a dialog
+- Give a view a single, clear primary action
+
+## When not to use
+
+- Navigating to another page or URL — use a Link (the link variant looks like a link but still triggers an action)
+
+## Do
+
+- Lead the label with a verb
+- Keep one primary (default) button per view
+- Keep labels short — about three words or fewer
+
+## Don't
+
+- Don't use a button for navigation — use a Link
+- Don't stack multiple primary buttons in one view
+- Don't disable a button without telling the user why
+
+## Variants
+
+### variant
+
+- `default` — Highest-emphasis, solid brand fill — the one primary action in a view.
+- `secondary` — Medium-emphasis, muted fill — sits alongside a primary action.
+- `destructive` — Solid danger fill — irreversible or destructive actions such as delete.
+- `outline` — Bordered with a transparent fill — low emphasis that still needs a visible edge.
+- `ghost` — No fill until hover — lowest emphasis, for toolbars and dense UI.
+- `link` — Styled as an inline text link — least chrome.
+
+### size
+
+- `sm` — Compact — dense layouts and toolbars.
+- `md` — Default size for most uses.
+- `lg` — Prominent — hero or high-emphasis moments.
+
+## States
+
+- `default` — Resting state.
+- `hover` — Pointer over the button — fill shifts to the hover token.
+- `focus` — Keyboard focus — shows the focus ring (neutral ring, or the on-fill ring over solid variants).
+- `disabled` — Non-interactive and not focusable; reduced opacity.
+- `loading` — Shows a spinner in place of the leading icon and disables the button until the action resolves.
+
+## Accessibility
+
+- **Role:** `button`
+- **Keyboard:** Enter activates the button
+- **Keyboard:** Space activates the button
+- Renders a native &lt;button&gt;, so role="button" is implicit
+- An icon-only button needs an aria-label
+- Disabled and loading buttons are not focusable
+
+## Tokens used
+
+`color/brand/primary` · `color/brand/primaryHover` · `color/brand/primaryActive` · `color/brand/onPrimary` · `color/bg/muted` · `color/bg/mutedHover` · `color/bg/mutedActive` · `color/text/primary` · `color/focus/ring` · `color/focus/ringOnFill` · `radius/md` · `space/2` · `space/3` · `space/4` · `space/6` · `font/family/body` · `font/size/100` · `font/size/200` · `font/size/300` · `Focus Ring` · `Focus Ring On Fill`
+

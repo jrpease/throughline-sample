@@ -1,0 +1,61 @@
+{/* docFingerprint: 25b4bb89aa167109 — generated from Input.doc.json by docs render. Do not edit by hand; change the record and re-render via /document-component. */}
+
+import { Meta } from "@storybook/blocks";
+import * as Stories from "./Input.stories";
+
+<Meta of={Stories} />
+
+# Input
+
+_Collects a single line of free-form text._
+
+A single-line text field for free-form input. It comes in three sizes with default, focus, error, and disabled states, and an optional leading icon. Border, background, radius, and type are bound to semantic tokens; the focus state uses the focus-ring and border/focus tokens and the error state uses the danger tokens.
+
+## When to use
+
+- Collect a single line of free-form text — a name, email, or search query
+
+## When not to use
+
+- Choosing from a fixed set of options — use Select or Radio
+- Long, multi-line text — use Textarea
+
+## Do
+
+- Always pair the field with a visible label
+- Show format hints as helper text
+- Reserve space for error text to avoid layout shift
+
+## Don't
+
+- Don't use placeholder text as the only label
+- Don't validate on every keystroke before the first blur
+
+## Variants
+
+### size
+
+- `sm` — Compact — dense forms and toolbars.
+- `md` — Default size for most forms.
+- `lg` — Prominent — large or high-emphasis forms.
+
+## States
+
+- `default` — Resting state.
+- `focus` — Keyboard focus — shows the focus ring and the border shifts to border/focus.
+- `error` — Invalid input — border and ring use the danger token.
+- `disabled` — Non-interactive; reduced opacity and the field can't be edited.
+
+## Accessibility
+
+- **Role:** `textbox`
+- **Keyboard:** Standard text-editing keys
+- **Keyboard:** Tab moves focus to and from the field
+- Every input needs a programmatically associated &lt;label&gt; — a placeholder is not a label
+- In the error state, set aria-invalid and link the message with aria-describedby
+- The leading icon is decorative (aria-hidden)
+
+## Tokens used
+
+`color/bg/subtle` · `color/bg/muted` · `color/border/default` · `color/border/focus` · `color/border/strong` · `color/border/subtle` · `color/danger/default` · `color/focus/ring` · `color/text/secondary` · `radius/md` · `space/2` · `space/3` · `space/4` · `font/family/body` · `font/size/100` · `font/size/200` · `font/size/300` · `Focus Ring`
+

@@ -1,0 +1,204 @@
+{
+  "generatedFrom": "design-system/docs/components/*.doc.json",
+  "components": [
+    {
+      "name": "Button",
+      "summary": "Triggers an action or event.",
+      "description": "A clickable control that triggers an action — submitting a form, confirming a decision, or opening a dialog. It comes in six emphasis variants across three sizes, supports optional leading and trailing icons and a loading state, and binds every color, spacing, radius, and type value to the system's semantic tokens.",
+      "whenToUse": [
+        "Trigger an action or event — submit, confirm, open a dialog",
+        "Give a view a single, clear primary action"
+      ],
+      "whenNotToUse": [
+        "Navigating to another page or URL — use a Link (the link variant looks like a link but still triggers an action)"
+      ],
+      "variants": {
+        "variant": {
+          "default": "Highest-emphasis, solid brand fill — the one primary action in a view.",
+          "secondary": "Medium-emphasis, muted fill — sits alongside a primary action.",
+          "destructive": "Solid danger fill — irreversible or destructive actions such as delete.",
+          "outline": "Bordered with a transparent fill — low emphasis that still needs a visible edge.",
+          "ghost": "No fill until hover — lowest emphasis, for toolbars and dense UI.",
+          "link": "Styled as an inline text link — least chrome."
+        },
+        "size": {
+          "sm": "Compact — dense layouts and toolbars.",
+          "md": "Default size for most uses.",
+          "lg": "Prominent — hero or high-emphasis moments."
+        }
+      },
+      "states": {
+        "default": "Resting state.",
+        "hover": "Pointer over the button — fill shifts to the hover token.",
+        "focus": "Keyboard focus — shows the focus ring (neutral ring, or the on-fill ring over solid variants).",
+        "disabled": "Non-interactive and not focusable; reduced opacity.",
+        "loading": "Shows a spinner in place of the leading icon and disables the button until the action resolves."
+      },
+      "dos": [
+        "Lead the label with a verb",
+        "Keep one primary (default) button per view",
+        "Keep labels short — about three words or fewer"
+      ],
+      "donts": [
+        "Don't use a button for navigation — use a Link",
+        "Don't stack multiple primary buttons in one view",
+        "Don't disable a button without telling the user why"
+      ],
+      "accessibility": {
+        "role": "button",
+        "keyboard": [
+          "Enter activates the button",
+          "Space activates the button"
+        ],
+        "notes": [
+          "Renders a native <button>, so role=\"button\" is implicit",
+          "An icon-only button needs an aria-label",
+          "Disabled and loading buttons are not focusable"
+        ]
+      },
+      "tokensUsed": [
+        "color/brand/primary",
+        "color/brand/primaryHover",
+        "color/brand/primaryActive",
+        "color/brand/onPrimary",
+        "color/bg/muted",
+        "color/bg/mutedHover",
+        "color/bg/mutedActive",
+        "color/text/primary",
+        "color/focus/ring",
+        "color/focus/ringOnFill",
+        "radius/md",
+        "space/2",
+        "space/3",
+        "space/4",
+        "space/6",
+        "font/family/body",
+        "font/size/100",
+        "font/size/200",
+        "font/size/300",
+        "Focus Ring",
+        "Focus Ring On Fill"
+      ],
+      "status": "stable"
+    },
+    {
+      "name": "Card",
+      "summary": "Groups related content and actions about a single subject.",
+      "description": "A surface that groups related content and actions about one subject. It has two variants — default (bordered) and elevated (shadow) — and is built from composable parts (header, title, description, content, footer), with slots for an Avatar in the header and a Button in the footer. Background, border, radius, and elevation are bound to semantic tokens.",
+      "whenToUse": [
+        "Group related content and actions about a single subject"
+      ],
+      "whenNotToUse": [
+        "Primary page layout scaffolding",
+        "A bare list of text with no grouping"
+      ],
+      "variants": {
+        "variant": {
+          "default": "Bordered surface — the default.",
+          "elevated": "Raised with a shadow (Elevation) instead of a border — for emphasis or layering over content."
+        }
+      },
+      "states": {},
+      "dos": [
+        "Make the primary action obvious",
+        "Keep one main call-to-action per card"
+      ],
+      "donts": [
+        "Don't nest cards more than one level deep",
+        "Don't make the whole card and an inner button separately clickable in conflicting ways"
+      ],
+      "accessibility": {
+        "notes": [
+          "Card renders a plain container with no implicit role — add role and aria-labelledby only if it's a meaningful region or is itself interactive",
+          "If the whole card is clickable, give it an accessible name and keyboard access",
+          "Don't rely on the shadow alone to convey meaning"
+        ]
+      },
+      "tokensUsed": [
+        "color/bg/subtle",
+        "color/border/default",
+        "color/text/primary",
+        "color/text/secondary",
+        "radius/lg",
+        "space/1",
+        "space/2",
+        "space/3",
+        "space/4",
+        "space/6",
+        "font/family/heading",
+        "font/family/body",
+        "font/size/100",
+        "font/size/200",
+        "font/size/400"
+      ],
+      "status": "stable"
+    },
+    {
+      "name": "Input",
+      "summary": "Collects a single line of free-form text.",
+      "description": "A single-line text field for free-form input. It comes in three sizes with default, focus, error, and disabled states, and an optional leading icon. Border, background, radius, and type are bound to semantic tokens; the focus state uses the focus-ring and border/focus tokens and the error state uses the danger tokens.",
+      "whenToUse": [
+        "Collect a single line of free-form text — a name, email, or search query"
+      ],
+      "whenNotToUse": [
+        "Choosing from a fixed set of options — use Select or Radio",
+        "Long, multi-line text — use Textarea"
+      ],
+      "variants": {
+        "size": {
+          "sm": "Compact — dense forms and toolbars.",
+          "md": "Default size for most forms.",
+          "lg": "Prominent — large or high-emphasis forms."
+        }
+      },
+      "states": {
+        "default": "Resting state.",
+        "focus": "Keyboard focus — shows the focus ring and the border shifts to border/focus.",
+        "error": "Invalid input — border and ring use the danger token.",
+        "disabled": "Non-interactive; reduced opacity and the field can't be edited."
+      },
+      "dos": [
+        "Always pair the field with a visible label",
+        "Show format hints as helper text",
+        "Reserve space for error text to avoid layout shift"
+      ],
+      "donts": [
+        "Don't use placeholder text as the only label",
+        "Don't validate on every keystroke before the first blur"
+      ],
+      "accessibility": {
+        "role": "textbox",
+        "keyboard": [
+          "Standard text-editing keys",
+          "Tab moves focus to and from the field"
+        ],
+        "notes": [
+          "Every input needs a programmatically associated <label> — a placeholder is not a label",
+          "In the error state, set aria-invalid and link the message with aria-describedby",
+          "The leading icon is decorative (aria-hidden)"
+        ]
+      },
+      "tokensUsed": [
+        "color/bg/subtle",
+        "color/bg/muted",
+        "color/border/default",
+        "color/border/focus",
+        "color/border/strong",
+        "color/border/subtle",
+        "color/danger/default",
+        "color/focus/ring",
+        "color/text/secondary",
+        "radius/md",
+        "space/2",
+        "space/3",
+        "space/4",
+        "font/family/body",
+        "font/size/100",
+        "font/size/200",
+        "font/size/300",
+        "Focus Ring"
+      ],
+      "status": "stable"
+    }
+  ]
+}
