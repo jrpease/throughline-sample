@@ -13,7 +13,7 @@ import { Button } from "../Button/Button";
 const meta = {
   title: "Components/Card",
   component: Card,
-  tags: ["autodocs"],
+  // Docs page is provided by Card.mdx (rendered from the doc record); no autodocs.
   args: { variant: "default" },
   argTypes: {
     variant: { control: "select", options: ["default", "elevated"] },
