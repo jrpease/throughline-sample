@@ -23,3 +23,7 @@ jobs:
         run: pnpm --filter @ds/ui typecheck
       - name: Styles export smoke test
         run: pnpm --filter @ds/ui check:styles
+      - name: Doc tooling tests
+        run: pnpm run test:scripts
+      - name: Docs drift gate
+        run: pnpm run docs:check

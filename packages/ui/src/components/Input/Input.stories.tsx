@@ -5,7 +5,7 @@ import { Input } from "./Input";
 const meta = {
   title: "Components/Input",
   component: Input,
-  tags: ["autodocs"],
+  // Docs page is provided by Input.mdx (rendered from the doc record); no autodocs.
   args: { placeholder: "Placeholder" },
   argTypes: {
     size: { control: "select", options: ["sm", "md", "lg"] },

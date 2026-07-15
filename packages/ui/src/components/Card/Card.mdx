@@ -1,0 +1,49 @@
+{/* docFingerprint: c354e4fd864a8fd7 — generated from Card.doc.json by docs render. Do not edit by hand; change the record and re-render via /document-component. */}
+
+import { Meta } from "@storybook/blocks";
+import * as Stories from "./Card.stories";
+
+<Meta of={Stories} />
+
+# Card
+
+_Groups related content and actions about a single subject._
+
+A surface that groups related content and actions about one subject. It has two variants — default (bordered) and elevated (shadow) — and is built from composable parts (header, title, description, content, footer), with slots for an Avatar in the header and a Button in the footer. Background, border, radius, and elevation are bound to semantic tokens.
+
+## When to use
+
+- Group related content and actions about a single subject
+
+## When not to use
+
+- Primary page layout scaffolding
+- A bare list of text with no grouping
+
+## Do
+
+- Make the primary action obvious
+- Keep one main call-to-action per card
+
+## Don't
+
+- Don't nest cards more than one level deep
+- Don't make the whole card and an inner button separately clickable in conflicting ways
+
+## Variants
+
+### variant
+
+- `default` — Bordered surface — the default.
+- `elevated` — Raised with a shadow (Elevation) instead of a border — for emphasis or layering over content.
+
+## Accessibility
+
+- Card renders a plain container with no implicit role — add role and aria-labelledby only if it's a meaningful region or is itself interactive
+- If the whole card is clickable, give it an accessible name and keyboard access
+- Don't rely on the shadow alone to convey meaning
+
+## Tokens used
+
+`color/bg/subtle` · `color/border/default` · `color/text/primary` · `color/text/secondary` · `radius/lg` · `space/1` · `space/2` · `space/3` · `space/4` · `space/6` · `font/family/heading` · `font/family/body` · `font/size/100` · `font/size/200` · `font/size/400`
+

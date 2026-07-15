@@ -6,7 +6,10 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
-    "lint": "turbo run lint"
+    "lint": "turbo run lint",
+    "docs:digest": "node scripts/build-docs-digest.mjs",
+    "docs:check": "node scripts/docs-check.mjs",
+    "test:scripts": "node --test scripts/*.test.mjs scripts/lib/*.test.mjs"
   },
   "devDependencies": {
     "turbo": "^2"

@@ -5,7 +5,7 @@ import { Button } from "./Button";
 const meta = {
   title: "Components/Button",
   component: Button,
-  tags: ["autodocs"],
+  // Docs page is provided by Button.mdx (rendered from the doc record); no autodocs.
   args: { children: "Button", variant: "default", size: "md" },
   argTypes: {
     variant: {
