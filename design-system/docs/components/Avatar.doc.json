@@ -1,0 +1,69 @@
+{
+  "name": "Avatar",
+  "summary": "Represents a user or entity.",
+  "description": "A circular container that represents a person or entity — showing their image when available and falling back to initials otherwise. It comes in three sizes (sm / md / lg), can carry an optional online status dot, and binds its surface, text, and circular shape to the system's semantic tokens.",
+  "whenToUse": [
+    "Represent a person or entity with an image or their initials",
+    "Show presence with the optional online status dot"
+  ],
+  "whenNotToUse": [
+    "Displaying a decorative or brand image — use a plain image",
+    "As a button — wrap it in a Button or link if it must be interactive"
+  ],
+  "variants": {
+    "size": {
+      "sm": "32px — dense lists, comments, and inline mentions.",
+      "md": "40px — default, for most rows and headers.",
+      "lg": "48px — profile headers and other prominent placements."
+    }
+  },
+  "states": {
+    "default": "Shows the image when a source is provided.",
+    "fallback": "No image — shows the initials on the muted surface instead.",
+    "status": "Optional online dot anchored to the bottom-right corner."
+  },
+  "dos": [
+    "Provide meaningful alt text when showing a photo",
+    "Give a sensible initials fallback for when the image is missing",
+    "Keep initials to one or two characters"
+  ],
+  "donts": [
+    "Don't rely on the status dot alone to convey presence — pair with text where it matters",
+    "Don't stretch non-square images — the image is cropped to a circle",
+    "Don't use an avatar as the only label for a person in dense UI without a name nearby"
+  ],
+  "accessibility": {
+    "role": "img (when showing a photo)",
+    "keyboard": [
+      "Not interactive on its own; if made actionable, wrap in a focusable control"
+    ],
+    "notes": [
+      "A photo needs descriptive alt text; initials are read as text",
+      "The status dot is decorative (aria-hidden) — surface presence in text where it matters",
+      "Sufficient contrast between initials and the muted background is token-guaranteed"
+    ]
+  },
+  "tokensUsed": [
+    "color/bg/muted",
+    "color/text/primary",
+    "color/success/default",
+    "color/bg/canvas",
+    "radius/full",
+    "font/size/100",
+    "font/size/200",
+    "font/size/300"
+  ],
+  "status": "stable",
+  "updatedAt": "2026-07-15",
+  "provenance": {
+    "description": "ai-inferred",
+    "whenToUse": "best-practice",
+    "whenNotToUse": "best-practice",
+    "variants": "ai-inferred+framework",
+    "states": "ai-inferred",
+    "dos": "best-practice",
+    "donts": "best-practice",
+    "accessibility": "w3c-apg+framework",
+    "tokensUsed": "ai-inferred"
+  }
+}

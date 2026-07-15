@@ -1,0 +1,61 @@
+{/* docFingerprint: 7609b79609801994 — generated from Textarea.doc.json by docs render. Do not edit by hand; change the record and re-render via /document-component. */}
+
+import { Meta } from "@storybook/blocks";
+import * as Stories from "./Textarea.stories";
+
+<Meta of={Stories} />
+
+# Textarea
+
+_Collects multi-line free-form text._
+
+The multi-line sibling of Input: a styled native textarea that fills its container, grows vertically as needed, and shares Input's token-driven border, background, and focus ring. It covers default, focus, error, and disabled states and can flag invalid input with a destructive border and ring.
+
+## When to use
+
+- Collect longer, multi-line free-form text — comments, descriptions, notes
+- Give users room to write more than a single line comfortably
+
+## When not to use
+
+- A single line of text — use an Input
+- Choosing from a fixed set of options — use a Select or Radio group
+
+## Do
+
+- Always pair with a visible label
+- Show format or length hints as helper text
+- Reserve space for error text to avoid layout shift
+
+## Don't
+
+- Don't use placeholder text as the only label
+- Don't validate on every keystroke before the first blur
+- Don't fix the height so short that users can't see what they wrote
+
+## Variants
+
+### error
+
+- `false` — Default — neutral border and focus ring.
+- `true` — Error — destructive border and ring to flag invalid input.
+
+## States
+
+- `default` — Resting, empty or filled.
+- `focus` — Keyboard focus — shows the focus ring.
+- `error` — Invalid — destructive border and ring.
+- `disabled` — Dimmed and non-interactive.
+
+## Accessibility
+
+- **Role:** `textbox (multiline)`
+- **Keyboard:** Standard text editing and caret navigation
+- **Keyboard:** Tab moves focus to and from the field
+- Associate a visible &lt;label&gt; with the field programmatically
+- The error state sets aria-invalid and links the message via aria-describedby
+- Users can resize vertically; don't disable resize without reason
+
+## Tokens used
+
+`color/bg/subtle` · `color/text/primary` · `color/text/muted` · `color/border/default` · `color/danger/default` · `radius/md` · `space/3` · `font/size/300` · `Focus Ring`

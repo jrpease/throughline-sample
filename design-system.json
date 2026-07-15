@@ -145,17 +145,74 @@
     "meta": {
       "Tooltip": {
         "status": "final",
-        "updatedAt": "2026-07-05T18:15:00Z",
-        "note": "promoted to component set with Placement axis (top/right/bottom/left)"
+        "updatedAt": "2026-07-15",
+        "note": "promoted to component set with Placement axis (top/right/bottom/left)",
+        "doc": {
+          "path": "design-system/docs/components/Tooltip.doc.json",
+          "fingerprint": "0d965b3f82efb6b4",
+          "surfaces": {
+            "figmaDescription": {
+              "src": "0d965b3f82efb6b4",
+              "render": "4e4811f8dff170f9"
+            },
+            "docCard": {
+              "src": "0d965b3f82efb6b4",
+              "render": "8b13af1b55514890"
+            },
+            "storybookMdx": {
+              "src": "0d965b3f82efb6b4",
+              "render": "432d47f078eb262a",
+              "file": "packages/ui/src/components/Tooltip/Tooltip.mdx"
+            }
+          }
+        }
       },
       "Select Menu": {
         "status": "final",
-        "updatedAt": "2026-07-05T18:15:00Z",
-        "note": "promoted to component set with Size axis (sm/md/lg)"
+        "updatedAt": "2026-07-15",
+        "note": "promoted to component set with Size axis (sm/md/lg)",
+        "doc": {
+          "path": "design-system/docs/components/SelectMenu.doc.json",
+          "fingerprint": "9ccc2c0f7482424e",
+          "surfaces": {
+            "figmaDescription": {
+              "src": "9ccc2c0f7482424e",
+              "render": "ad4d394b0460cb55"
+            },
+            "docCard": {
+              "src": "9ccc2c0f7482424e",
+              "render": "8102f4966a7fd6a6"
+            },
+            "storybookMdx": {
+              "src": "9ccc2c0f7482424e",
+              "render": "abdf0efa992678fe",
+              "file": "packages/ui/src/components/SelectMenu/SelectMenu.mdx"
+            }
+          }
+        }
       },
       "Select Menu Item": {
         "status": "final",
-        "updatedAt": "2026-07-05T18:15:00Z"
+        "updatedAt": "2026-07-15",
+        "doc": {
+          "path": "design-system/docs/components/SelectMenuItem.doc.json",
+          "fingerprint": "5535d843089ef629",
+          "surfaces": {
+            "figmaDescription": {
+              "src": "5535d843089ef629",
+              "render": "4b131ead89d8ca1c"
+            },
+            "docCard": {
+              "src": "5535d843089ef629",
+              "render": "4fb2e1ed1f54faeb"
+            },
+            "storybookMdx": {
+              "src": "5535d843089ef629",
+              "render": "d93c4c6525b7dac1",
+              "file": "packages/ui/src/components/SelectMenu/SelectMenuItem.mdx"
+            }
+          }
+        }
       },
       "Button": {
         "status": "stable",
@@ -222,6 +279,190 @@
               "src": "c354e4fd864a8fd7",
               "render": "bc46d417f5137eec",
               "file": "packages/ui/src/components/Card/Card.mdx"
+            }
+          }
+        }
+      },
+      "Spinner": {
+        "status": "stable",
+        "updatedAt": "2026-07-15",
+        "doc": {
+          "path": "design-system/docs/components/Spinner.doc.json",
+          "fingerprint": "a1ce7449bd2cae89",
+          "surfaces": {
+            "figmaDescription": {
+              "src": "a1ce7449bd2cae89",
+              "render": "b4bba21a65cfc33e"
+            },
+            "docCard": {
+              "src": "a1ce7449bd2cae89",
+              "render": "5d82b90b9c0e31ba"
+            },
+            "storybookMdx": {
+              "src": "a1ce7449bd2cae89",
+              "render": "c8840719612fe898",
+              "file": "packages/ui/src/components/Spinner/Spinner.mdx"
+            }
+          }
+        }
+      },
+      "Badge": {
+        "status": "stable",
+        "updatedAt": "2026-07-15",
+        "doc": {
+          "path": "design-system/docs/components/Badge.doc.json",
+          "fingerprint": "ff71370d3e66b48f",
+          "surfaces": {
+            "figmaDescription": {
+              "src": "ff71370d3e66b48f",
+              "render": "4e48c4e42ecceef0"
+            },
+            "docCard": {
+              "src": "ff71370d3e66b48f",
+              "render": "1137450d086e6215"
+            },
+            "storybookMdx": {
+              "src": "ff71370d3e66b48f",
+              "render": "24afeddd799b819f",
+              "file": "packages/ui/src/components/Badge/Badge.mdx"
+            }
+          }
+        }
+      },
+      "Avatar": {
+        "status": "stable",
+        "updatedAt": "2026-07-15",
+        "doc": {
+          "path": "design-system/docs/components/Avatar.doc.json",
+          "fingerprint": "5c48511d559718ba",
+          "surfaces": {
+            "figmaDescription": {
+              "src": "5c48511d559718ba",
+              "render": "3bc19b7cabc3a44b"
+            },
+            "docCard": {
+              "src": "5c48511d559718ba",
+              "render": "f39c3a63e8af4da9"
+            },
+            "storybookMdx": {
+              "src": "5c48511d559718ba",
+              "render": "7d8a989718316094",
+              "file": "packages/ui/src/components/Avatar/Avatar.mdx"
+            }
+          }
+        }
+      },
+      "Checkbox": {
+        "status": "stable",
+        "updatedAt": "2026-07-15",
+        "doc": {
+          "path": "design-system/docs/components/Checkbox.doc.json",
+          "fingerprint": "e5a53df120aa51a0",
+          "surfaces": {
+            "figmaDescription": {
+              "src": "e5a53df120aa51a0",
+              "render": "9f2aa7ec40a04475"
+            },
+            "docCard": {
+              "src": "e5a53df120aa51a0",
+              "render": "36b899cf049f73e4"
+            },
+            "storybookMdx": {
+              "src": "e5a53df120aa51a0",
+              "render": "8e9993fdea111620",
+              "file": "packages/ui/src/components/Checkbox/Checkbox.mdx"
+            }
+          }
+        }
+      },
+      "Radio": {
+        "status": "stable",
+        "updatedAt": "2026-07-15",
+        "doc": {
+          "path": "design-system/docs/components/Radio.doc.json",
+          "fingerprint": "ef538fafb97bb031",
+          "surfaces": {
+            "figmaDescription": {
+              "src": "ef538fafb97bb031",
+              "render": "0e702ce5a1aaa354"
+            },
+            "docCard": {
+              "src": "ef538fafb97bb031",
+              "render": "734f3b23fb25ea04"
+            },
+            "storybookMdx": {
+              "src": "ef538fafb97bb031",
+              "render": "5afbd6e90051fd6f",
+              "file": "packages/ui/src/components/Radio/Radio.mdx"
+            }
+          }
+        }
+      },
+      "Switch": {
+        "status": "stable",
+        "updatedAt": "2026-07-15",
+        "doc": {
+          "path": "design-system/docs/components/Switch.doc.json",
+          "fingerprint": "14cc7d07f9012941",
+          "surfaces": {
+            "figmaDescription": {
+              "src": "14cc7d07f9012941",
+              "render": "5325c823cbd8e07c"
+            },
+            "docCard": {
+              "src": "14cc7d07f9012941",
+              "render": "49bbb8f0b33bf674"
+            },
+            "storybookMdx": {
+              "src": "14cc7d07f9012941",
+              "render": "b1ae0791516137d8",
+              "file": "packages/ui/src/components/Switch/Switch.mdx"
+            }
+          }
+        }
+      },
+      "Textarea": {
+        "status": "stable",
+        "updatedAt": "2026-07-15",
+        "doc": {
+          "path": "design-system/docs/components/Textarea.doc.json",
+          "fingerprint": "7609b79609801994",
+          "surfaces": {
+            "figmaDescription": {
+              "src": "7609b79609801994",
+              "render": "36567850806aa243"
+            },
+            "docCard": {
+              "src": "7609b79609801994",
+              "render": "30509a5e604aeb21"
+            },
+            "storybookMdx": {
+              "src": "7609b79609801994",
+              "render": "4935ca997fd0642b",
+              "file": "packages/ui/src/components/Textarea/Textarea.mdx"
+            }
+          }
+        }
+      },
+      "Select": {
+        "status": "stable",
+        "updatedAt": "2026-07-15",
+        "doc": {
+          "path": "design-system/docs/components/Select.doc.json",
+          "fingerprint": "15847a241c7d654c",
+          "surfaces": {
+            "figmaDescription": {
+              "src": "15847a241c7d654c",
+              "render": "32fd50ba139f5260"
+            },
+            "docCard": {
+              "src": "15847a241c7d654c",
+              "render": "17b63a8be0005432"
+            },
+            "storybookMdx": {
+              "src": "15847a241c7d654c",
+              "render": "e1ce5731bbba8087",
+              "file": "packages/ui/src/components/Select/Select.mdx"
             }
           }
         }

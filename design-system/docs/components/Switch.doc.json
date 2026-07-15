@@ -1,0 +1,68 @@
+{
+  "name": "Switch",
+  "summary": "Toggles a single setting on or off.",
+  "description": "A toggle for a single on/off setting that takes effect immediately, rendered as a button with role=\"switch\". The track fills with the brand color when on and a muted color when off, with an adaptive thumb whose visible edge is carried by a strong border. It covers off, on, and disabled states and binds every color and the focus ring to the system's semantic tokens.",
+  "whenToUse": [
+    "Turn a single setting on or off with an immediate effect",
+    "Offer a binary preference that doesn't need a separate Save"
+  ],
+  "whenNotToUse": [
+    "A choice that only applies after submitting a form — use a Checkbox",
+    "Choosing one of several options — use a Radio group"
+  ],
+  "variants": {
+    "checked": {
+      "false": "Off — muted track, thumb to the left.",
+      "true": "On — brand track, thumb slid to the right."
+    }
+  },
+  "states": {
+    "default": "Resting (off or on).",
+    "focus": "Keyboard focus — shows the focus ring.",
+    "disabled": "Dimmed and non-interactive."
+  },
+  "dos": [
+    "Use a clear label that reads as an on/off state",
+    "Apply the change immediately when toggled",
+    "Keep the label stable — don't relabel the switch as it flips"
+  ],
+  "donts": [
+    "Don't require a separate Save for a switch — that's a Checkbox pattern",
+    "Don't use a switch for non-binary choices",
+    "Don't rely on the thumb position alone — pair with a visible label"
+  ],
+  "accessibility": {
+    "role": "switch",
+    "keyboard": [
+      "Space toggles the switch",
+      "Tab moves focus to and from the control"
+    ],
+    "notes": [
+      "On/off is exposed via aria-checked",
+      "The thumb keeps a >=3:1 edge against the track via a strong border for low-vision users",
+      "Disabled switches are dimmed and not interactive"
+    ]
+  },
+  "tokensUsed": [
+    "color/brand/primary",
+    "color/bg/muted",
+    "color/bg/canvas",
+    "color/border/strong",
+    "radius/full",
+    "space/1",
+    "Focus Ring"
+  ],
+  "status": "stable",
+  "updatedAt": "2026-07-15",
+  "provenance": {
+    "description": "ai-inferred",
+    "whenToUse": "best-practice",
+    "whenNotToUse": "best-practice",
+    "variants": "ai-inferred+framework",
+    "states": "ai-inferred",
+    "dos": "best-practice",
+    "donts": "best-practice",
+    "accessibility": "w3c-apg+framework",
+    "tokensUsed": "ai-inferred"
+  }
+}
