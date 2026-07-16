@@ -12,7 +12,7 @@ const options = (
 const meta = {
   title: "Components/Select",
   component: Select,
-  tags: ["autodocs"],
+  // Docs page is provided by Select.mdx (rendered from the doc record); no autodocs.
   args: { children: options },
   argTypes: {
     size: { control: "select", options: ["sm", "md", "lg"] },

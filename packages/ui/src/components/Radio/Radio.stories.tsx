@@ -5,7 +5,7 @@ import { Radio, RadioGroup } from "./Radio";
 const meta = {
   title: "Components/Radio",
   component: RadioGroup,
-  tags: ["autodocs"],
+  // Docs page is provided by Radio.mdx (rendered from the doc record); no autodocs.
 } satisfies Meta<typeof RadioGroup>;
 
 export default meta;

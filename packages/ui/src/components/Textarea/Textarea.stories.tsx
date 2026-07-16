@@ -4,7 +4,7 @@ import { Textarea } from "./Textarea";
 const meta = {
   title: "Components/Textarea",
   component: Textarea,
-  tags: ["autodocs"],
+  // Docs page is provided by Textarea.mdx (rendered from the doc record); no autodocs.
   args: { placeholder: "Type your message..." },
   argTypes: {
     error: { control: "boolean" },

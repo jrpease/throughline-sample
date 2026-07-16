@@ -5,7 +5,7 @@ import { Button } from "../Button/Button";
 const meta = {
   title: "Components/Tooltip",
   component: Tooltip,
-  tags: ["autodocs"],
+  // Docs page is provided by Tooltip.mdx (rendered from the doc record); no autodocs.
   args: { label: "Tooltip text", children: <Button>Hover me</Button>, side: "top" },
   argTypes: {
     side: { control: "select", options: ["top", "right", "bottom", "left"] },

@@ -8,7 +8,7 @@ import { SelectMenu, SelectMenuItem } from "./SelectMenu";
 const meta = {
   title: "Components/Select Menu",
   component: SelectMenu,
-  tags: ["autodocs"],
+  // Docs page is provided by SelectMenu.mdx (rendered from the doc record); no autodocs.
   decorators: [
     (Story) => (
       <div style={{ width: 280 }}>

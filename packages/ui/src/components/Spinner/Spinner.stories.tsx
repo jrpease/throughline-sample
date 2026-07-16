@@ -4,7 +4,7 @@ import { Spinner } from "./Spinner";
 const meta = {
   title: "Components/Spinner",
   component: Spinner,
-  tags: ["autodocs"],
+  // Docs page is provided by Spinner.mdx (rendered from the doc record); no autodocs.
   args: { size: "md" },
   argTypes: {
     size: { control: "select", options: ["sm", "md", "lg"] },

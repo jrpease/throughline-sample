@@ -4,7 +4,7 @@ import { Checkbox } from "./Checkbox";
 const meta = {
   title: "Components/Checkbox",
   component: Checkbox,
-  tags: ["autodocs"],
+  // Docs page is provided by Checkbox.mdx (rendered from the doc record); no autodocs.
   argTypes: {
     checked: { control: "boolean" },
     indeterminate: { control: "boolean" },

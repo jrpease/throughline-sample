@@ -4,7 +4,7 @@ import { Avatar } from "./Avatar";
 const meta = {
   title: "Components/Avatar",
   component: Avatar,
-  tags: ["autodocs"],
+  // Docs page is provided by Avatar.mdx (rendered from the doc record); no autodocs.
   args: { initials: "JP", size: "md" },
   argTypes: {
     size: { control: "select", options: ["sm", "md", "lg"] },
