@@ -5,7 +5,48 @@ machine-readable state, see `design-system.json` (or run
 `/throughline:design-system-status`). This doc captures the **context and
 decisions** that aren't in the manifest.
 
-_Last updated: 2026-07-13 — Storybook rendering bug fixes, **merged to `main` via PR #11** (squash). Everything below is on `main`._
+_Last updated: 2026-07-16 — usage docs for the 11 remaining components, **merged to `main` via PR #13**. Everything below is on `main`._
+
+## 2026-07-16 — Usage docs for the 11 remaining components
+
+Completed component documentation coverage. Button/Input/Card were already
+documented (PR #12); this pass did **every other component** — Spinner, Badge,
+Avatar, Checkbox, Radio, Switch, Textarea, Select, Tooltip, Select Menu, and
+Select Menu Item — end to end, via `/throughline:document-component` looped over
+the remaining list. All 14 components now have full usage docs on **all four
+surfaces**. Merged via **PR #13**.
+
+Per component:
+- **Canonical doc record** — `design-system/docs/components/<Name>.doc.json`,
+  inferred from the built component's real API (variants/states/slots/tokens),
+  enriched from the archetype KB, framed for shadcn; `provenance` per block.
+- **Figma component `description`** — compact markdown + `<!-- tl:doc <fp> -->` marker.
+- **Figma doc-card Usage frame** — token-styled (When to use/not, Do/Don't,
+  Accessibility, Variants/States, Doc fingerprint), cloned from the Button doc-card
+  pattern and visually validated.
+- **Storybook MDX** — `<Name>.mdx` in the Button format.
+- **Manifest + digest** — `components.meta[*].doc` pointers with per-surface
+  fingerprints in `design-system.json`; `docs:digest` regenerated (`index.json` +
+  `llms.txt` now cover all 14).
+
+**Gotchas worth remembering:**
+- **Select Menu + Select Menu Item share one doc card** (`Select Menu — Documentation`,
+  node `24:773`). Handled by appending **two labeled, stacked Usage frames**
+  ("Usage — Select Menu" / "Usage — Select Menu Item") — one card, two doc bodies.
+- **Doc-card enrichment is a clone-and-rewrite**, not a rebuild: clone the Button
+  card's `Usage` frame (`197:512`), re-parent into each target card (all are
+  VERTICAL auto-layout, so set the clone `layoutSizingHorizontal = "FILL"`), then
+  overwrite the 2nd TEXT node in each named block frame. Preserves all token
+  bindings and styling for free.
+- **The `.doc.json` fingerprint must be computed with the repo's own
+  `scripts/lib/doc-record.mjs` (`canonicalFingerprint`)** so it matches `docs:check`
+  — the same 16-hex value is stamped into the MDX frontmatter comment, the Figma
+  description marker, the doc-card `Doc Fingerprint` node, and the manifest surfaces.
+- **Card header build-notes were left as-is** — the old header blurb (e.g. Spinner's
+  "Lucide loader-circle…") is separate from the Usage body added here; not refreshed.
+
+Validation clean: `docs:check` — no drift (Figma surfaces are `edit-unverified` by
+design, checked live in the Figma session); `pnpm test:scripts` 18/18.
 
 ## 2026-07-13 — Storybook rendering bug fixes (Avatar, Select)
 
@@ -185,8 +226,9 @@ from design to code."
   a memory note about this; the cover page initially got wrongly pinned to Light.)
 - **Cover page thumbnail is a manual step.** The Figma API can't set a file
   thumbnail — right-click the Cover frame in Figma → **Set as thumbnail**. Not yet done.
-- **Select Menu / Select Menu Item are `status: draft`.** Bump to `stable` in
-  `design-system.json` (`components.meta`) + the Figma doc card when confident.
+- **All 14 components are documented** (doc record + Figma description + doc-card
+  Usage frame + Storybook MDX + digest). Re-run `/throughline:document-component`
+  for a component after its API changes; `docs:check` gates drift.
 - **Code Connect is OFF** (`storybook.codeConnect: false`). It needs a Figma
   Organization plan AND a published library (`figma.libraryPublished: false`).
   Until then, the repo component spec records the Figma↔code mapping.
@@ -269,8 +311,10 @@ pnpm storybook        # dev server on :6006
 - [ ] Set the Cover frame as the file thumbnail (manual, in Figma).
 - [ ] (Optional) Publish the Figma library → unlocks Code Connect + typed
       instance-swap dropdowns; then re-run component-builder for the upgrade pass.
-- [ ] Add more components via `/throughline:new-component`.
+- [ ] Add more components via `/throughline:new-component` — new components should
+      also be documented via `/throughline:document-component`.
 - [ ] Token changes flow through `/sync-figma-tokens` (opens a PR; Chromatic re-snapshots).
+- [x] ~~Document all 14 components~~ — done (PR #12 + PR #13).
 
 ## How to resume in a new session
 

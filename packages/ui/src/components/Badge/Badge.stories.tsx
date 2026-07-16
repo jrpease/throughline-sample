@@ -5,7 +5,7 @@ import { Badge } from "./Badge";
 const meta = {
   title: "Components/Badge",
   component: Badge,
-  tags: ["autodocs"],
+  // Docs page is provided by Badge.mdx (rendered from the doc record); no autodocs.
   args: { children: "Badge", variant: "default" },
   argTypes: {
     variant: {

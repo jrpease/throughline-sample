@@ -1,0 +1,74 @@
+{
+  "name": "Checkbox",
+  "summary": "Toggles an independent on/off choice.",
+  "description": "A control for an independent on/off choice, rendered as a button with role=\"checkbox\". It supports checked, unchecked, and indeterminate (a partial-selection dash) states across the full interaction set — default, hover, focus, active, and disabled — and binds its fill, border, radius, and focus ring to the system's semantic tokens.",
+  "whenToUse": [
+    "Offer an independent on/off choice, like accepting terms",
+    "Select any number of options from a list (zero, one, or many)",
+    "Represent a parent's partial selection with the indeterminate state"
+  ],
+  "whenNotToUse": [
+    "Choosing exactly one option from a set — use a Radio group",
+    "A single setting that applies immediately with no Save — use a Switch"
+  ],
+  "variants": {
+    "checked": {
+      "false": "Unchecked — empty box with a neutral border.",
+      "true": "Checked — brand fill with a check glyph.",
+      "indeterminate": "Partial — brand fill with a dash, for a mixed parent state."
+    }
+  },
+  "states": {
+    "default": "Resting.",
+    "hover": "Pointer over the box — border strengthens when unchecked.",
+    "focus": "Keyboard focus — shows the focus ring.",
+    "active": "Being pressed.",
+    "disabled": "Dimmed and non-interactive."
+  },
+  "dos": [
+    "Give every checkbox a visible, clickable label",
+    "Use the indeterminate state only for a parent summarizing mixed children",
+    "Group related checkboxes under a clear group label"
+  ],
+  "donts": [
+    "Don't use a checkbox for a one-of-many choice — that's a Radio group",
+    "Don't use it for a setting that takes effect instantly — prefer a Switch",
+    "Don't leave the box unlabeled or rely on placement alone for meaning"
+  ],
+  "accessibility": {
+    "role": "checkbox",
+    "keyboard": [
+      "Space toggles the checkbox",
+      "Tab moves focus to and from the control"
+    ],
+    "notes": [
+      "State is exposed via aria-checked, with \"mixed\" for indeterminate",
+      "Disabled checkboxes are dimmed and not interactive",
+      "The visible label should be programmatically associated with the control"
+    ]
+  },
+  "tokensUsed": [
+    "color/brand/primary",
+    "color/brand/primaryHover",
+    "color/brand/onPrimary",
+    "color/bg/canvas",
+    "color/border/default",
+    "color/border/strong",
+    "radius/sm",
+    "space/1",
+    "Focus Ring"
+  ],
+  "status": "stable",
+  "updatedAt": "2026-07-15",
+  "provenance": {
+    "description": "ai-inferred",
+    "whenToUse": "best-practice",
+    "whenNotToUse": "best-practice",
+    "variants": "ai-inferred+framework",
+    "states": "ai-inferred",
+    "dos": "best-practice",
+    "donts": "best-practice",
+    "accessibility": "w3c-apg+framework",
+    "tokensUsed": "ai-inferred"
+  }
+}

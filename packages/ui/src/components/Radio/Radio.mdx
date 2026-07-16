@@ -1,0 +1,62 @@
+{/* docFingerprint: ef538fafb97bb031 — generated from Radio.doc.json by docs render. Do not edit by hand; change the record and re-render via /document-component. */}
+
+import { Meta } from "@storybook/blocks";
+import * as Stories from "./Radio.stories";
+
+<Meta of={Stories} />
+
+# Radio
+
+_Selects one option from a set._
+
+A control for choosing exactly one option from a set, rendered as a button with role="radio" and coordinated by a RadioGroup wrapper that holds the selected value. Each radio shows selected or unselected across the full interaction set — default, hover, focus, active, and disabled — and binds its border, brand inner dot, circular shape, and focus ring to the system's semantic tokens.
+
+## When to use
+
+- Choose exactly one option from a small, visible set of choices
+- Present mutually exclusive options where seeing them all matters
+
+## When not to use
+
+- Selecting more than one option — use Checkboxes
+- Choosing from a long list — use a Select to save space
+
+## Do
+
+- Wrap radios in a RadioGroup with a clear group label
+- Give each radio a visible, clickable label
+- Preselect a sensible default when one clearly applies
+
+## Don't
+
+- Don't use a radio group to allow multiple selections — use Checkboxes
+- Don't offer a single lone radio — that choice can't be deselected; use a Checkbox
+- Don't split one logical choice across multiple groups
+
+## Variants
+
+### selected
+
+- `false` — Unselected — empty circle with a neutral border.
+- `true` — Selected — brand ring with a filled brand inner dot.
+
+## States
+
+- `default` — Resting.
+- `hover` — Pointer over the control.
+- `focus` — Keyboard focus — shows the focus ring.
+- `active` — Being pressed.
+- `disabled` — Dimmed and non-interactive.
+
+## Accessibility
+
+- **Role:** `radio (within a radiogroup)`
+- **Keyboard:** Arrow keys move selection between radios in the group
+- **Keyboard:** Tab moves focus into and out of the group as a whole
+- The group carries role="radiogroup"; each option exposes aria-checked
+- Only the selected radio (or the first, if none) is in the tab order
+- Disabled radios are dimmed and skipped
+
+## Tokens used
+
+`color/brand/primary` · `color/border/default` · `color/text/primary` · `radius/full` · `space/2` · `font/size/200` · `Focus Ring`

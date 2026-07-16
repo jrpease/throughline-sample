@@ -4,7 +4,7 @@ import { Switch } from "./Switch";
 const meta = {
   title: "Components/Switch",
   component: Switch,
-  tags: ["autodocs"],
+  // Docs page is provided by Switch.mdx (rendered from the doc record); no autodocs.
   args: { checked: false, disabled: false },
   argTypes: {
     checked: { control: "boolean" },

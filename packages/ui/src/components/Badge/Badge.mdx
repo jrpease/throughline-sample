@@ -1,0 +1,59 @@
+{/* docFingerprint: ff71370d3e66b48f — generated from Badge.doc.json by docs render. Do not edit by hand; change the record and re-render via /document-component. */}
+
+import { Meta } from "@storybook/blocks";
+import * as Stories from "./Badge.stories";
+
+<Meta of={Stories} />
+
+# Badge
+
+_Labels a status, count, or category._
+
+A small pill-shaped label for short status, counts, or categories. It comes in four tones (default / secondary / destructive / outline), takes an optional leading icon, and binds its color, spacing, and full-radius shape to the system's semantic tokens.
+
+## When to use
+
+- Call out a status, state, or category — "Active", "Beta", "3 new"
+- Attach a short, at-a-glance label to another element
+
+## When not to use
+
+- Triggering an action — use a Button
+- A removable or selectable token in an input — use a Chip
+
+## Do
+
+- Keep the text to a word or two
+- Bind the color to a semantic tone that matches the meaning
+- Pair color with text or an icon so the meaning survives without color
+
+## Don't
+
+- Don't rely on color alone to convey status
+- Don't put an interactive control inside a badge — use a Button or Chip
+- Don't write full sentences — a badge is a label, not a message
+
+## Variants
+
+### variant
+
+- `default` — Solid brand fill — highest emphasis, for the primary status.
+- `secondary` — Muted fill — neutral, lower-emphasis labels.
+- `destructive` — Solid danger fill — errors, blocked, or critical states.
+- `outline` — Bordered with a transparent fill — the quietest tone.
+
+## States
+
+- `default` — Static label — a Badge is presentational and has no interactive states.
+
+## Accessibility
+
+- **Role:** `none (presentational text)`
+- **Keyboard:** Not interactive and not focusable
+- Renders as inline text, so the label is read in reading order
+- Convey status with text or an icon, not color alone (WCAG 1.4.1)
+- A leading icon is decorative (aria-hidden) — the text carries the meaning
+
+## Tokens used
+
+`color/brand/primary` · `color/brand/onPrimary` · `color/bg/muted` · `color/text/primary` · `color/danger/default` · `color/danger/onDanger` · `color/border/default` · `radius/full` · `space/1` · `space/2` · `font/size/100`

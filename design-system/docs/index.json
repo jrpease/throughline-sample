@@ -2,6 +2,122 @@
   "generatedFrom": "design-system/docs/components/*.doc.json",
   "components": [
     {
+      "name": "Avatar",
+      "summary": "Represents a user or entity.",
+      "description": "A circular container that represents a person or entity — showing their image when available and falling back to initials otherwise. It comes in three sizes (sm / md / lg), can carry an optional online status dot, and binds its surface, text, and circular shape to the system's semantic tokens.",
+      "whenToUse": [
+        "Represent a person or entity with an image or their initials",
+        "Show presence with the optional online status dot"
+      ],
+      "whenNotToUse": [
+        "Displaying a decorative or brand image — use a plain image",
+        "As a button — wrap it in a Button or link if it must be interactive"
+      ],
+      "variants": {
+        "size": {
+          "sm": "32px — dense lists, comments, and inline mentions.",
+          "md": "40px — default, for most rows and headers.",
+          "lg": "48px — profile headers and other prominent placements."
+        }
+      },
+      "states": {
+        "default": "Shows the image when a source is provided.",
+        "fallback": "No image — shows the initials on the muted surface instead.",
+        "status": "Optional online dot anchored to the bottom-right corner."
+      },
+      "dos": [
+        "Provide meaningful alt text when showing a photo",
+        "Give a sensible initials fallback for when the image is missing",
+        "Keep initials to one or two characters"
+      ],
+      "donts": [
+        "Don't rely on the status dot alone to convey presence — pair with text where it matters",
+        "Don't stretch non-square images — the image is cropped to a circle",
+        "Don't use an avatar as the only label for a person in dense UI without a name nearby"
+      ],
+      "accessibility": {
+        "role": "img (when showing a photo)",
+        "keyboard": [
+          "Not interactive on its own; if made actionable, wrap in a focusable control"
+        ],
+        "notes": [
+          "A photo needs descriptive alt text; initials are read as text",
+          "The status dot is decorative (aria-hidden) — surface presence in text where it matters",
+          "Sufficient contrast between initials and the muted background is token-guaranteed"
+        ]
+      },
+      "tokensUsed": [
+        "color/bg/muted",
+        "color/text/primary",
+        "color/success/default",
+        "color/bg/canvas",
+        "radius/full",
+        "font/size/100",
+        "font/size/200",
+        "font/size/300"
+      ],
+      "status": "stable"
+    },
+    {
+      "name": "Badge",
+      "summary": "Labels a status, count, or category.",
+      "description": "A small pill-shaped label for short status, counts, or categories. It comes in four tones (default / secondary / destructive / outline), takes an optional leading icon, and binds its color, spacing, and full-radius shape to the system's semantic tokens.",
+      "whenToUse": [
+        "Call out a status, state, or category — \"Active\", \"Beta\", \"3 new\"",
+        "Attach a short, at-a-glance label to another element"
+      ],
+      "whenNotToUse": [
+        "Triggering an action — use a Button",
+        "A removable or selectable token in an input — use a Chip"
+      ],
+      "variants": {
+        "variant": {
+          "default": "Solid brand fill — highest emphasis, for the primary status.",
+          "secondary": "Muted fill — neutral, lower-emphasis labels.",
+          "destructive": "Solid danger fill — errors, blocked, or critical states.",
+          "outline": "Bordered with a transparent fill — the quietest tone."
+        }
+      },
+      "states": {
+        "default": "Static label — a Badge is presentational and has no interactive states."
+      },
+      "dos": [
+        "Keep the text to a word or two",
+        "Bind the color to a semantic tone that matches the meaning",
+        "Pair color with text or an icon so the meaning survives without color"
+      ],
+      "donts": [
+        "Don't rely on color alone to convey status",
+        "Don't put an interactive control inside a badge — use a Button or Chip",
+        "Don't write full sentences — a badge is a label, not a message"
+      ],
+      "accessibility": {
+        "role": "none (presentational text)",
+        "keyboard": [
+          "Not interactive and not focusable"
+        ],
+        "notes": [
+          "Renders as inline text, so the label is read in reading order",
+          "Convey status with text or an icon, not color alone (WCAG 1.4.1)",
+          "A leading icon is decorative (aria-hidden) — the text carries the meaning"
+        ]
+      },
+      "tokensUsed": [
+        "color/brand/primary",
+        "color/brand/onPrimary",
+        "color/bg/muted",
+        "color/text/primary",
+        "color/danger/default",
+        "color/danger/onDanger",
+        "color/border/default",
+        "radius/full",
+        "space/1",
+        "space/2",
+        "font/size/100"
+      ],
+      "status": "stable"
+    },
+    {
       "name": "Button",
       "summary": "Triggers an action or event.",
       "description": "A clickable control that triggers an action — submitting a form, confirming a decision, or opening a dialog. It comes in six emphasis variants across three sizes, supports optional leading and trailing icons and a loading state, and binds every color, spacing, radius, and type value to the system's semantic tokens.",
@@ -134,6 +250,68 @@
       "status": "stable"
     },
     {
+      "name": "Checkbox",
+      "summary": "Toggles an independent on/off choice.",
+      "description": "A control for an independent on/off choice, rendered as a button with role=\"checkbox\". It supports checked, unchecked, and indeterminate (a partial-selection dash) states across the full interaction set — default, hover, focus, active, and disabled — and binds its fill, border, radius, and focus ring to the system's semantic tokens.",
+      "whenToUse": [
+        "Offer an independent on/off choice, like accepting terms",
+        "Select any number of options from a list (zero, one, or many)",
+        "Represent a parent's partial selection with the indeterminate state"
+      ],
+      "whenNotToUse": [
+        "Choosing exactly one option from a set — use a Radio group",
+        "A single setting that applies immediately with no Save — use a Switch"
+      ],
+      "variants": {
+        "checked": {
+          "false": "Unchecked — empty box with a neutral border.",
+          "true": "Checked — brand fill with a check glyph.",
+          "indeterminate": "Partial — brand fill with a dash, for a mixed parent state."
+        }
+      },
+      "states": {
+        "default": "Resting.",
+        "hover": "Pointer over the box — border strengthens when unchecked.",
+        "focus": "Keyboard focus — shows the focus ring.",
+        "active": "Being pressed.",
+        "disabled": "Dimmed and non-interactive."
+      },
+      "dos": [
+        "Give every checkbox a visible, clickable label",
+        "Use the indeterminate state only for a parent summarizing mixed children",
+        "Group related checkboxes under a clear group label"
+      ],
+      "donts": [
+        "Don't use a checkbox for a one-of-many choice — that's a Radio group",
+        "Don't use it for a setting that takes effect instantly — prefer a Switch",
+        "Don't leave the box unlabeled or rely on placement alone for meaning"
+      ],
+      "accessibility": {
+        "role": "checkbox",
+        "keyboard": [
+          "Space toggles the checkbox",
+          "Tab moves focus to and from the control"
+        ],
+        "notes": [
+          "State is exposed via aria-checked, with \"mixed\" for indeterminate",
+          "Disabled checkboxes are dimmed and not interactive",
+          "The visible label should be programmatically associated with the control"
+        ]
+      },
+      "tokensUsed": [
+        "color/brand/primary",
+        "color/brand/primaryHover",
+        "color/brand/onPrimary",
+        "color/bg/canvas",
+        "color/border/default",
+        "color/border/strong",
+        "radius/sm",
+        "space/1",
+        "Focus Ring"
+      ],
+      "status": "stable"
+    },
+    {
       "name": "Input",
       "summary": "Collects a single line of free-form text.",
       "description": "A single-line text field for free-form input. It comes in three sizes with default, focus, error, and disabled states, and an optional leading icon. Border, background, radius, and type are bound to semantic tokens; the focus state uses the focus-ring and border/focus tokens and the error state uses the danger tokens.",
@@ -197,6 +375,472 @@
         "font/size/200",
         "font/size/300",
         "Focus Ring"
+      ],
+      "status": "stable"
+    },
+    {
+      "name": "Radio",
+      "summary": "Selects one option from a set.",
+      "description": "A control for choosing exactly one option from a set, rendered as a button with role=\"radio\" and coordinated by a RadioGroup wrapper that holds the selected value. Each radio shows selected or unselected across the full interaction set — default, hover, focus, active, and disabled — and binds its border, brand inner dot, circular shape, and focus ring to the system's semantic tokens.",
+      "whenToUse": [
+        "Choose exactly one option from a small, visible set of choices",
+        "Present mutually exclusive options where seeing them all matters"
+      ],
+      "whenNotToUse": [
+        "Selecting more than one option — use Checkboxes",
+        "Choosing from a long list — use a Select to save space"
+      ],
+      "variants": {
+        "selected": {
+          "false": "Unselected — empty circle with a neutral border.",
+          "true": "Selected — brand ring with a filled brand inner dot."
+        }
+      },
+      "states": {
+        "default": "Resting.",
+        "hover": "Pointer over the control.",
+        "focus": "Keyboard focus — shows the focus ring.",
+        "active": "Being pressed.",
+        "disabled": "Dimmed and non-interactive."
+      },
+      "dos": [
+        "Wrap radios in a RadioGroup with a clear group label",
+        "Give each radio a visible, clickable label",
+        "Preselect a sensible default when one clearly applies"
+      ],
+      "donts": [
+        "Don't use a radio group to allow multiple selections — use Checkboxes",
+        "Don't offer a single lone radio — that choice can't be deselected; use a Checkbox",
+        "Don't split one logical choice across multiple groups"
+      ],
+      "accessibility": {
+        "role": "radio (within a radiogroup)",
+        "keyboard": [
+          "Arrow keys move selection between radios in the group",
+          "Tab moves focus into and out of the group as a whole"
+        ],
+        "notes": [
+          "The group carries role=\"radiogroup\"; each option exposes aria-checked",
+          "Only the selected radio (or the first, if none) is in the tab order",
+          "Disabled radios are dimmed and skipped"
+        ]
+      },
+      "tokensUsed": [
+        "color/brand/primary",
+        "color/border/default",
+        "color/text/primary",
+        "radius/full",
+        "space/2",
+        "font/size/200",
+        "Focus Ring"
+      ],
+      "status": "stable"
+    },
+    {
+      "name": "Select",
+      "summary": "Chooses one option from a dropdown list.",
+      "description": "An accessible trigger for choosing one option from a list, wrapping a native select so it inherits the platform's open/close and keyboard behavior. A non-interactive chevron sits on the trailing edge. It comes in three sizes (sm / md / lg) with default, focus, error, and disabled states, and binds its background, border, radius, and focus ring to the system's semantic tokens.",
+      "whenToUse": [
+        "Choose a single option from a moderate-to-long list",
+        "Save vertical space when a Radio group would be too many options"
+      ],
+      "whenNotToUse": [
+        "A short set of a few options that benefit from being visible — use Radios",
+        "Selecting more than one value — use a multi-select or checkboxes"
+      ],
+      "variants": {
+        "size": {
+          "sm": "Compact — dense forms and toolbars.",
+          "md": "Default size for most forms.",
+          "lg": "Prominent — larger or high-emphasis forms."
+        },
+        "error": {
+          "false": "Default — neutral border and focus ring.",
+          "true": "Error — destructive border and ring to flag an invalid choice."
+        }
+      },
+      "states": {
+        "default": "Resting, showing the current value.",
+        "focus": "Keyboard focus — shows the focus ring.",
+        "error": "Invalid — destructive border and ring.",
+        "disabled": "Dimmed and non-interactive."
+      },
+      "dos": [
+        "Always pair with a visible label",
+        "Order options predictably (alphabetical, or by frequency)",
+        "Provide a clear default or an unselected placeholder option"
+      ],
+      "donts": [
+        "Don't use a Select for only two or three visible options — use Radios",
+        "Don't hide critical actions inside a Select — it's for choosing values",
+        "Don't rely on the placeholder as the field's only label"
+      ],
+      "accessibility": {
+        "role": "combobox (native select)",
+        "keyboard": [
+          "Enter or Space / Arrow keys open and move through options",
+          "Typing jumps to matching options; Tab moves focus to and from the field"
+        ],
+        "notes": [
+          "Built on a native <select>, so platform semantics and behavior come for free",
+          "The chevron is decorative (aria-hidden) — the native control carries behavior",
+          "The error state sets aria-invalid and links the message via aria-describedby"
+        ]
+      },
+      "tokensUsed": [
+        "color/bg/subtle",
+        "color/text/primary",
+        "color/text/muted",
+        "color/border/default",
+        "color/danger/default",
+        "radius/md",
+        "space/3",
+        "space/4",
+        "font/size/200",
+        "font/size/300",
+        "Focus Ring"
+      ],
+      "status": "stable"
+    },
+    {
+      "name": "Select Menu",
+      "summary": "The dropdown surface that holds selectable options.",
+      "description": "The popover surface opened from a Select trigger — a bordered, elevated panel with role=\"listbox\" that holds a list of Select Menu Items passed as its content. It comes in three sizes (sm / md / lg) and binds its surface, border, radius, and elevation to the system's semantic tokens.",
+      "whenToUse": [
+        "Present the list of options opened from a Select trigger",
+        "Group a set of Select Menu Items into one scrollable, elevated surface"
+      ],
+      "whenNotToUse": [
+        "A menu of actions or commands — use a Menu, not a listbox",
+        "Free-form text entry — use an Input or Textarea"
+      ],
+      "variants": {
+        "size": {
+          "sm": "Compact — pairs with a small Select trigger.",
+          "md": "Default size for most menus.",
+          "lg": "Roomier — pairs with a large Select trigger."
+        }
+      },
+      "states": {
+        "default": "Open surface holding its items; visibility is controlled by the Select."
+      },
+      "dos": [
+        "Fill it with Select Menu Items and keep them consistently sized",
+        "Match the menu size to the Select trigger that opens it",
+        "Let long lists scroll rather than overflowing the surface"
+      ],
+      "donts": [
+        "Don't mix unrelated actions into an option listbox",
+        "Don't nest another menu surface inside a single option",
+        "Don't hardcode its elevation or radius — they come from tokens"
+      ],
+      "accessibility": {
+        "role": "listbox",
+        "keyboard": [
+          "Arrow keys move through options; Enter selects",
+          "Escape closes the menu and returns focus to the trigger"
+        ],
+        "notes": [
+          "Carries role=\"listbox\"; its children are role=\"option\"",
+          "Selection and active option are exposed via aria-selected and focus",
+          "Opened and closed from the Select trigger, which owns the expanded state"
+        ]
+      },
+      "tokensUsed": [
+        "color/bg/canvas",
+        "color/text/primary",
+        "color/border/subtle",
+        "radius/md",
+        "space/1",
+        "Elevation"
+      ],
+      "status": "stable"
+    },
+    {
+      "name": "Select Menu Item",
+      "summary": "One selectable row inside a Select Menu.",
+      "description": "A single selectable option within a Select Menu, rendered with role=\"option\". Its label is passed as content and a trailing check appears when it is the current selection. It covers the full interaction set — default, hover, focused (keyboard navigation), selected, and disabled — and binds its text, surfaces, and the selected check to the system's semantic tokens.",
+      "whenToUse": [
+        "Represent one choosable option inside a Select Menu listbox",
+        "Mark the currently selected value with the trailing check"
+      ],
+      "whenNotToUse": [
+        "A clickable action or command — use a Menu item, not an option",
+        "Standalone outside a Select Menu — items only make sense within the listbox"
+      ],
+      "variants": {
+        "selected": {
+          "false": "Not the current value — no trailing check.",
+          "true": "Current value — subtle fill and a trailing brand check."
+        },
+        "disabled": {
+          "false": "Interactive.",
+          "true": "Dimmed and not selectable."
+        }
+      },
+      "states": {
+        "default": "Resting option.",
+        "hover": "Pointer over the row — subtle background.",
+        "focused": "Keyboard navigation highlight — muted background with a focus ring.",
+        "selected": "The current value — subtle fill and trailing check.",
+        "disabled": "Dimmed and non-interactive."
+      },
+      "dos": [
+        "Keep option labels short and scannable",
+        "Let the trailing check be the single, consistent selected indicator",
+        "Keep items visually uniform within one menu"
+      ],
+      "donts": [
+        "Don't put multiple interactive controls inside one option row",
+        "Don't convey selection by color alone — the check carries it too",
+        "Don't use an option row for an action — that belongs in a Menu"
+      ],
+      "accessibility": {
+        "role": "option",
+        "keyboard": [
+          "Reachable via the parent listbox's arrow-key navigation",
+          "Enter selects the focused option"
+        ],
+        "notes": [
+          "Carries role=\"option\" with aria-selected reflecting the current value",
+          "Disabled options set aria-disabled and leave the tab order",
+          "Selection is shown with a check, not color alone (WCAG 1.4.1)"
+        ]
+      },
+      "tokensUsed": [
+        "color/text/primary",
+        "color/text/disabled",
+        "color/bg/subtle",
+        "color/bg/muted",
+        "color/border/focus",
+        "color/brand/primary",
+        "radius/sm",
+        "space/2",
+        "space/3",
+        "font/size/200"
+      ],
+      "status": "stable"
+    },
+    {
+      "name": "Spinner",
+      "summary": "Indicates that something is loading.",
+      "description": "A continuously spinning loader that signals an indeterminate wait — an action in progress or a region still loading. It comes in three sizes (sm / md / lg), takes its color from the foreground token, and exposes an accessible \"Loading\" status to assistive technology.",
+      "whenToUse": [
+        "Signal that an action is in progress — a button submitting, a panel fetching",
+        "Fill a region that is still loading when you can't show real content yet"
+      ],
+      "whenNotToUse": [
+        "Showing how far along a known task is — use a determinate progress bar",
+        "Long or content-heavy loads where a skeleton better previews the layout"
+      ],
+      "variants": {
+        "size": {
+          "sm": "16px — inline with text or inside a small control like a button.",
+          "md": "24px — default, for standalone or region-level loading.",
+          "lg": "32px — prominent, for full-panel or page-level waits."
+        }
+      },
+      "states": {
+        "default": "Continuously animating (spinning) — the spinner has no resting or interactive states."
+      },
+      "dos": [
+        "Give the spinner an accessible label so screen readers announce the wait",
+        "Match the size to its context — small inside controls, larger for regions",
+        "Pair a longer wait with a short message so users know what's happening"
+      ],
+      "donts": [
+        "Don't use a spinner for progress you can actually measure",
+        "Don't leave a spinner running with no resolution or timeout",
+        "Don't rely on the spin alone — expose a text status for assistive tech"
+      ],
+      "accessibility": {
+        "role": "status",
+        "keyboard": [
+          "Not interactive and not focusable — it conveys status only"
+        ],
+        "notes": [
+          "Wrapper carries role=\"status\" with an aria-label (defaults to \"Loading\")",
+          "The spinning glyph is aria-hidden so only the status text is announced",
+          "role=\"status\" announces politely without stealing focus"
+        ]
+      },
+      "tokensUsed": [
+        "color/text/primary",
+        "space/2",
+        "space/3",
+        "space/4"
+      ],
+      "status": "stable"
+    },
+    {
+      "name": "Switch",
+      "summary": "Toggles a single setting on or off.",
+      "description": "A toggle for a single on/off setting that takes effect immediately, rendered as a button with role=\"switch\". The track fills with the brand color when on and a muted color when off, with an adaptive thumb whose visible edge is carried by a strong border. It covers off, on, and disabled states and binds every color and the focus ring to the system's semantic tokens.",
+      "whenToUse": [
+        "Turn a single setting on or off with an immediate effect",
+        "Offer a binary preference that doesn't need a separate Save"
+      ],
+      "whenNotToUse": [
+        "A choice that only applies after submitting a form — use a Checkbox",
+        "Choosing one of several options — use a Radio group"
+      ],
+      "variants": {
+        "checked": {
+          "false": "Off — muted track, thumb to the left.",
+          "true": "On — brand track, thumb slid to the right."
+        }
+      },
+      "states": {
+        "default": "Resting (off or on).",
+        "focus": "Keyboard focus — shows the focus ring.",
+        "disabled": "Dimmed and non-interactive."
+      },
+      "dos": [
+        "Use a clear label that reads as an on/off state",
+        "Apply the change immediately when toggled",
+        "Keep the label stable — don't relabel the switch as it flips"
+      ],
+      "donts": [
+        "Don't require a separate Save for a switch — that's a Checkbox pattern",
+        "Don't use a switch for non-binary choices",
+        "Don't rely on the thumb position alone — pair with a visible label"
+      ],
+      "accessibility": {
+        "role": "switch",
+        "keyboard": [
+          "Space toggles the switch",
+          "Tab moves focus to and from the control"
+        ],
+        "notes": [
+          "On/off is exposed via aria-checked",
+          "The thumb keeps a >=3:1 edge against the track via a strong border for low-vision users",
+          "Disabled switches are dimmed and not interactive"
+        ]
+      },
+      "tokensUsed": [
+        "color/brand/primary",
+        "color/bg/muted",
+        "color/bg/canvas",
+        "color/border/strong",
+        "radius/full",
+        "space/1",
+        "Focus Ring"
+      ],
+      "status": "stable"
+    },
+    {
+      "name": "Textarea",
+      "summary": "Collects multi-line free-form text.",
+      "description": "The multi-line sibling of Input: a styled native textarea that fills its container, grows vertically as needed, and shares Input's token-driven border, background, and focus ring. It covers default, focus, error, and disabled states and can flag invalid input with a destructive border and ring.",
+      "whenToUse": [
+        "Collect longer, multi-line free-form text — comments, descriptions, notes",
+        "Give users room to write more than a single line comfortably"
+      ],
+      "whenNotToUse": [
+        "A single line of text — use an Input",
+        "Choosing from a fixed set of options — use a Select or Radio group"
+      ],
+      "variants": {
+        "error": {
+          "false": "Default — neutral border and focus ring.",
+          "true": "Error — destructive border and ring to flag invalid input."
+        }
+      },
+      "states": {
+        "default": "Resting, empty or filled.",
+        "focus": "Keyboard focus — shows the focus ring.",
+        "error": "Invalid — destructive border and ring.",
+        "disabled": "Dimmed and non-interactive."
+      },
+      "dos": [
+        "Always pair with a visible label",
+        "Show format or length hints as helper text",
+        "Reserve space for error text to avoid layout shift"
+      ],
+      "donts": [
+        "Don't use placeholder text as the only label",
+        "Don't validate on every keystroke before the first blur",
+        "Don't fix the height so short that users can't see what they wrote"
+      ],
+      "accessibility": {
+        "role": "textbox (multiline)",
+        "keyboard": [
+          "Standard text editing and caret navigation",
+          "Tab moves focus to and from the field"
+        ],
+        "notes": [
+          "Associate a visible <label> with the field programmatically",
+          "The error state sets aria-invalid and links the message via aria-describedby",
+          "Users can resize vertically; don't disable resize without reason"
+        ]
+      },
+      "tokensUsed": [
+        "color/bg/subtle",
+        "color/text/primary",
+        "color/text/muted",
+        "color/border/default",
+        "color/danger/default",
+        "radius/md",
+        "space/3",
+        "font/size/300",
+        "Focus Ring"
+      ],
+      "status": "stable"
+    },
+    {
+      "name": "Tooltip",
+      "summary": "Shows a brief hint on hover or focus.",
+      "description": "A lightweight text hint that reveals on hover or keyboard focus of its trigger. It can be placed on any of four sides (top / right / bottom / left) with an arrow pointing back to the trigger, and binds its surface, text, radius, and elevation to the system's semantic tokens. Because it reveals on focus, the trigger must itself be focusable.",
+      "whenToUse": [
+        "Add a short, supplementary hint to a control — what an icon button does",
+        "Clarify a label or value without taking up permanent space"
+      ],
+      "whenNotToUse": [
+        "Essential information a user must not miss — put it inline",
+        "Rich or interactive content — use a Popover instead"
+      ],
+      "variants": {
+        "side": {
+          "top": "Bubble above the trigger — the default.",
+          "right": "Bubble to the right of the trigger.",
+          "bottom": "Bubble below the trigger.",
+          "left": "Bubble to the left of the trigger."
+        }
+      },
+      "states": {
+        "hidden": "Resting — the bubble is hidden.",
+        "visible": "Revealed on hover or focus of the trigger."
+      },
+      "dos": [
+        "Keep the text short — a phrase, not a paragraph",
+        "Attach the tooltip to a focusable trigger so keyboard users get it too",
+        "Use it for supplementary hints, not essential instructions"
+      ],
+      "donts": [
+        "Don't hide essential information only inside a tooltip",
+        "Don't put links, buttons, or form fields inside — use a Popover",
+        "Don't attach a tooltip to a non-focusable element — keyboard users can't reach it"
+      ],
+      "accessibility": {
+        "role": "tooltip",
+        "keyboard": [
+          "Reveals on focus of the trigger and hides on blur",
+          "Escape should dismiss it while the trigger stays focused"
+        ],
+        "notes": [
+          "The bubble carries role=\"tooltip\"; the trigger must be focusable",
+          "Reveals on both hover and focus so it isn't pointer-only",
+          "Keep the hint supplementary — don't make it the only source of critical info"
+        ]
+      },
+      "tokensUsed": [
+        "color/bg/muted",
+        "color/text/primary",
+        "radius/md",
+        "space/1",
+        "space/2",
+        "font/size/200",
+        "Elevation"
       ],
       "status": "stable"
     }

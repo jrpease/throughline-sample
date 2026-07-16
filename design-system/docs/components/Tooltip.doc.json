@@ -1,0 +1,69 @@
+{
+  "name": "Tooltip",
+  "summary": "Shows a brief hint on hover or focus.",
+  "description": "A lightweight text hint that reveals on hover or keyboard focus of its trigger. It can be placed on any of four sides (top / right / bottom / left) with an arrow pointing back to the trigger, and binds its surface, text, radius, and elevation to the system's semantic tokens. Because it reveals on focus, the trigger must itself be focusable.",
+  "whenToUse": [
+    "Add a short, supplementary hint to a control — what an icon button does",
+    "Clarify a label or value without taking up permanent space"
+  ],
+  "whenNotToUse": [
+    "Essential information a user must not miss — put it inline",
+    "Rich or interactive content — use a Popover instead"
+  ],
+  "variants": {
+    "side": {
+      "top": "Bubble above the trigger — the default.",
+      "right": "Bubble to the right of the trigger.",
+      "bottom": "Bubble below the trigger.",
+      "left": "Bubble to the left of the trigger."
+    }
+  },
+  "states": {
+    "hidden": "Resting — the bubble is hidden.",
+    "visible": "Revealed on hover or focus of the trigger."
+  },
+  "dos": [
+    "Keep the text short — a phrase, not a paragraph",
+    "Attach the tooltip to a focusable trigger so keyboard users get it too",
+    "Use it for supplementary hints, not essential instructions"
+  ],
+  "donts": [
+    "Don't hide essential information only inside a tooltip",
+    "Don't put links, buttons, or form fields inside — use a Popover",
+    "Don't attach a tooltip to a non-focusable element — keyboard users can't reach it"
+  ],
+  "accessibility": {
+    "role": "tooltip",
+    "keyboard": [
+      "Reveals on focus of the trigger and hides on blur",
+      "Escape should dismiss it while the trigger stays focused"
+    ],
+    "notes": [
+      "The bubble carries role=\"tooltip\"; the trigger must be focusable",
+      "Reveals on both hover and focus so it isn't pointer-only",
+      "Keep the hint supplementary — don't make it the only source of critical info"
+    ]
+  },
+  "tokensUsed": [
+    "color/bg/muted",
+    "color/text/primary",
+    "radius/md",
+    "space/1",
+    "space/2",
+    "font/size/200",
+    "Elevation"
+  ],
+  "status": "stable",
+  "updatedAt": "2026-07-15",
+  "provenance": {
+    "description": "ai-inferred",
+    "whenToUse": "best-practice",
+    "whenNotToUse": "best-practice",
+    "variants": "ai-inferred+framework",
+    "states": "ai-inferred",
+    "dos": "best-practice",
+    "donts": "best-practice",
+    "accessibility": "w3c-apg+framework",
+    "tokensUsed": "ai-inferred"
+  }
+}

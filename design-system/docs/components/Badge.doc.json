@@ -1,0 +1,71 @@
+{
+  "name": "Badge",
+  "summary": "Labels a status, count, or category.",
+  "description": "A small pill-shaped label for short status, counts, or categories. It comes in four tones (default / secondary / destructive / outline), takes an optional leading icon, and binds its color, spacing, and full-radius shape to the system's semantic tokens.",
+  "whenToUse": [
+    "Call out a status, state, or category — \"Active\", \"Beta\", \"3 new\"",
+    "Attach a short, at-a-glance label to another element"
+  ],
+  "whenNotToUse": [
+    "Triggering an action — use a Button",
+    "A removable or selectable token in an input — use a Chip"
+  ],
+  "variants": {
+    "variant": {
+      "default": "Solid brand fill — highest emphasis, for the primary status.",
+      "secondary": "Muted fill — neutral, lower-emphasis labels.",
+      "destructive": "Solid danger fill — errors, blocked, or critical states.",
+      "outline": "Bordered with a transparent fill — the quietest tone."
+    }
+  },
+  "states": {
+    "default": "Static label — a Badge is presentational and has no interactive states."
+  },
+  "dos": [
+    "Keep the text to a word or two",
+    "Bind the color to a semantic tone that matches the meaning",
+    "Pair color with text or an icon so the meaning survives without color"
+  ],
+  "donts": [
+    "Don't rely on color alone to convey status",
+    "Don't put an interactive control inside a badge — use a Button or Chip",
+    "Don't write full sentences — a badge is a label, not a message"
+  ],
+  "accessibility": {
+    "role": "none (presentational text)",
+    "keyboard": [
+      "Not interactive and not focusable"
+    ],
+    "notes": [
+      "Renders as inline text, so the label is read in reading order",
+      "Convey status with text or an icon, not color alone (WCAG 1.4.1)",
+      "A leading icon is decorative (aria-hidden) — the text carries the meaning"
+    ]
+  },
+  "tokensUsed": [
+    "color/brand/primary",
+    "color/brand/onPrimary",
+    "color/bg/muted",
+    "color/text/primary",
+    "color/danger/default",
+    "color/danger/onDanger",
+    "color/border/default",
+    "radius/full",
+    "space/1",
+    "space/2",
+    "font/size/100"
+  ],
+  "status": "stable",
+  "updatedAt": "2026-07-15",
+  "provenance": {
+    "description": "ai-inferred",
+    "whenToUse": "best-practice",
+    "whenNotToUse": "best-practice",
+    "variants": "ai-inferred+framework",
+    "states": "ai-inferred",
+    "dos": "best-practice",
+    "donts": "best-practice",
+    "accessibility": "w3c-apg+framework",
+    "tokensUsed": "ai-inferred"
+  }
+}

@@ -1,0 +1,60 @@
+{/* docFingerprint: 14cc7d07f9012941 — generated from Switch.doc.json by docs render. Do not edit by hand; change the record and re-render via /document-component. */}
+
+import { Meta } from "@storybook/blocks";
+import * as Stories from "./Switch.stories";
+
+<Meta of={Stories} />
+
+# Switch
+
+_Toggles a single setting on or off._
+
+A toggle for a single on/off setting that takes effect immediately, rendered as a button with role="switch". The track fills with the brand color when on and a muted color when off, with an adaptive thumb whose visible edge is carried by a strong border. It covers off, on, and disabled states and binds every color and the focus ring to the system's semantic tokens.
+
+## When to use
+
+- Turn a single setting on or off with an immediate effect
+- Offer a binary preference that doesn't need a separate Save
+
+## When not to use
+
+- A choice that only applies after submitting a form — use a Checkbox
+- Choosing one of several options — use a Radio group
+
+## Do
+
+- Use a clear label that reads as an on/off state
+- Apply the change immediately when toggled
+- Keep the label stable — don't relabel the switch as it flips
+
+## Don't
+
+- Don't require a separate Save for a switch — that's a Checkbox pattern
+- Don't use a switch for non-binary choices
+- Don't rely on the thumb position alone — pair with a visible label
+
+## Variants
+
+### checked
+
+- `false` — Off — muted track, thumb to the left.
+- `true` — On — brand track, thumb slid to the right.
+
+## States
+
+- `default` — Resting (off or on).
+- `focus` — Keyboard focus — shows the focus ring.
+- `disabled` — Dimmed and non-interactive.
+
+## Accessibility
+
+- **Role:** `switch`
+- **Keyboard:** Space toggles the switch
+- **Keyboard:** Tab moves focus to and from the control
+- On/off is exposed via aria-checked
+- The thumb keeps a &gt;=3:1 edge against the track via a strong border for low-vision users
+- Disabled switches are dimmed and not interactive
+
+## Tokens used
+
+`color/brand/primary` · `color/bg/muted` · `color/bg/canvas` · `color/border/strong` · `radius/full` · `space/1` · `Focus Ring`

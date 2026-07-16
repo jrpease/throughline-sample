@@ -1,0 +1,58 @@
+{/* docFingerprint: a1ce7449bd2cae89 — generated from Spinner.doc.json by docs render. Do not edit by hand; change the record and re-render via /document-component. */}
+
+import { Meta } from "@storybook/blocks";
+import * as Stories from "./Spinner.stories";
+
+<Meta of={Stories} />
+
+# Spinner
+
+_Indicates that something is loading._
+
+A continuously spinning loader that signals an indeterminate wait — an action in progress or a region still loading. It comes in three sizes (sm / md / lg), takes its color from the foreground token, and exposes an accessible "Loading" status to assistive technology.
+
+## When to use
+
+- Signal that an action is in progress — a button submitting, a panel fetching
+- Fill a region that is still loading when you can't show real content yet
+
+## When not to use
+
+- Showing how far along a known task is — use a determinate progress bar
+- Long or content-heavy loads where a skeleton better previews the layout
+
+## Do
+
+- Give the spinner an accessible label so screen readers announce the wait
+- Match the size to its context — small inside controls, larger for regions
+- Pair a longer wait with a short message so users know what's happening
+
+## Don't
+
+- Don't use a spinner for progress you can actually measure
+- Don't leave a spinner running with no resolution or timeout
+- Don't rely on the spin alone — expose a text status for assistive tech
+
+## Variants
+
+### size
+
+- `sm` — 16px — inline with text or inside a small control like a button.
+- `md` — 24px — default, for standalone or region-level loading.
+- `lg` — 32px — prominent, for full-panel or page-level waits.
+
+## States
+
+- `default` — Continuously animating (spinning) — the spinner has no resting or interactive states.
+
+## Accessibility
+
+- **Role:** `status`
+- **Keyboard:** Not interactive and not focusable — it conveys status only
+- Wrapper carries role="status" with an aria-label (defaults to "Loading")
+- The spinning glyph is aria-hidden so only the status text is announced
+- role="status" announces politely without stealing focus
+
+## Tokens used
+
+`color/text/primary` · `space/2` · `space/3` · `space/4`

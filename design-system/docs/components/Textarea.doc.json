@@ -1,0 +1,71 @@
+{
+  "name": "Textarea",
+  "summary": "Collects multi-line free-form text.",
+  "description": "The multi-line sibling of Input: a styled native textarea that fills its container, grows vertically as needed, and shares Input's token-driven border, background, and focus ring. It covers default, focus, error, and disabled states and can flag invalid input with a destructive border and ring.",
+  "whenToUse": [
+    "Collect longer, multi-line free-form text — comments, descriptions, notes",
+    "Give users room to write more than a single line comfortably"
+  ],
+  "whenNotToUse": [
+    "A single line of text — use an Input",
+    "Choosing from a fixed set of options — use a Select or Radio group"
+  ],
+  "variants": {
+    "error": {
+      "false": "Default — neutral border and focus ring.",
+      "true": "Error — destructive border and ring to flag invalid input."
+    }
+  },
+  "states": {
+    "default": "Resting, empty or filled.",
+    "focus": "Keyboard focus — shows the focus ring.",
+    "error": "Invalid — destructive border and ring.",
+    "disabled": "Dimmed and non-interactive."
+  },
+  "dos": [
+    "Always pair with a visible label",
+    "Show format or length hints as helper text",
+    "Reserve space for error text to avoid layout shift"
+  ],
+  "donts": [
+    "Don't use placeholder text as the only label",
+    "Don't validate on every keystroke before the first blur",
+    "Don't fix the height so short that users can't see what they wrote"
+  ],
+  "accessibility": {
+    "role": "textbox (multiline)",
+    "keyboard": [
+      "Standard text editing and caret navigation",
+      "Tab moves focus to and from the field"
+    ],
+    "notes": [
+      "Associate a visible <label> with the field programmatically",
+      "The error state sets aria-invalid and links the message via aria-describedby",
+      "Users can resize vertically; don't disable resize without reason"
+    ]
+  },
+  "tokensUsed": [
+    "color/bg/subtle",
+    "color/text/primary",
+    "color/text/muted",
+    "color/border/default",
+    "color/danger/default",
+    "radius/md",
+    "space/3",
+    "font/size/300",
+    "Focus Ring"
+  ],
+  "status": "stable",
+  "updatedAt": "2026-07-15",
+  "provenance": {
+    "description": "ai-inferred",
+    "whenToUse": "best-practice",
+    "whenNotToUse": "best-practice",
+    "variants": "ai-inferred+framework",
+    "states": "ai-inferred",
+    "dos": "best-practice",
+    "donts": "best-practice",
+    "accessibility": "w3c-apg+framework",
+    "tokensUsed": "ai-inferred"
+  }
+}

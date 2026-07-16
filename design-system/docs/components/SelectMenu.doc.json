@@ -1,0 +1,66 @@
+{
+  "name": "Select Menu",
+  "summary": "The dropdown surface that holds selectable options.",
+  "description": "The popover surface opened from a Select trigger — a bordered, elevated panel with role=\"listbox\" that holds a list of Select Menu Items passed as its content. It comes in three sizes (sm / md / lg) and binds its surface, border, radius, and elevation to the system's semantic tokens.",
+  "whenToUse": [
+    "Present the list of options opened from a Select trigger",
+    "Group a set of Select Menu Items into one scrollable, elevated surface"
+  ],
+  "whenNotToUse": [
+    "A menu of actions or commands — use a Menu, not a listbox",
+    "Free-form text entry — use an Input or Textarea"
+  ],
+  "variants": {
+    "size": {
+      "sm": "Compact — pairs with a small Select trigger.",
+      "md": "Default size for most menus.",
+      "lg": "Roomier — pairs with a large Select trigger."
+    }
+  },
+  "states": {
+    "default": "Open surface holding its items; visibility is controlled by the Select."
+  },
+  "dos": [
+    "Fill it with Select Menu Items and keep them consistently sized",
+    "Match the menu size to the Select trigger that opens it",
+    "Let long lists scroll rather than overflowing the surface"
+  ],
+  "donts": [
+    "Don't mix unrelated actions into an option listbox",
+    "Don't nest another menu surface inside a single option",
+    "Don't hardcode its elevation or radius — they come from tokens"
+  ],
+  "accessibility": {
+    "role": "listbox",
+    "keyboard": [
+      "Arrow keys move through options; Enter selects",
+      "Escape closes the menu and returns focus to the trigger"
+    ],
+    "notes": [
+      "Carries role=\"listbox\"; its children are role=\"option\"",
+      "Selection and active option are exposed via aria-selected and focus",
+      "Opened and closed from the Select trigger, which owns the expanded state"
+    ]
+  },
+  "tokensUsed": [
+    "color/bg/canvas",
+    "color/text/primary",
+    "color/border/subtle",
+    "radius/md",
+    "space/1",
+    "Elevation"
+  ],
+  "status": "stable",
+  "updatedAt": "2026-07-15",
+  "provenance": {
+    "description": "ai-inferred",
+    "whenToUse": "best-practice",
+    "whenNotToUse": "best-practice",
+    "variants": "ai-inferred+framework",
+    "states": "ai-inferred",
+    "dos": "best-practice",
+    "donts": "best-practice",
+    "accessibility": "w3c-apg+framework",
+    "tokensUsed": "ai-inferred"
+  }
+}
