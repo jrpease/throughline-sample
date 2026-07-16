@@ -98,8 +98,8 @@ Full local validation run clean: `tokens:a11y` **ALL PASS** (both modes, 18 chec
 (CI + Chromatic build green; Chromatic "UI Tests" was blocked pending a plan/billing limit,
 not a real diff).
 
-**Remaining manual item:** set the **Cover** frame as the Figma file thumbnail (right-click →
-*Set as thumbnail*) — the Figma API can't do this. Still not done.
+**Remaining manual item:** ~~set the **Cover** frame as the Figma file thumbnail~~ — **done**
+(set manually 2026-07-16; the Figma API can't do this).
 
 ## 2026-07-05 — Accessibility & architecture retrofit (v0.13 representation)
 
@@ -224,8 +224,8 @@ from design to code."
 - **Figma default variable mode is Dark** (mode id `4:1`; Light is `4:2`). Do NOT
   pin/override the mode without a reason — let nodes inherit the default. (There's
   a memory note about this; the cover page initially got wrongly pinned to Light.)
-- **Cover page thumbnail is a manual step.** The Figma API can't set a file
-  thumbnail — right-click the Cover frame in Figma → **Set as thumbnail**. Not yet done.
+- **Cover page thumbnail — done** (set manually 2026-07-16). The Figma API can't
+  set a file thumbnail, so this was a manual right-click → **Set as thumbnail** step.
 - **All 14 components are documented** (doc record + Figma description + doc-card
   Usage frame + Storybook MDX + digest). Re-run `/throughline:document-component`
   for a component after its API changes; `docs:check` gates drift.
@@ -308,7 +308,7 @@ pnpm storybook        # dev server on :6006
 
 ## Open loops / suggested next steps
 
-- [ ] Set the Cover frame as the file thumbnail (manual, in Figma).
+- [x] ~~Set the Cover frame as the file thumbnail (manual, in Figma).~~ — done 2026-07-16.
 - [ ] (Optional) Publish the Figma library → unlocks Code Connect + typed
       instance-swap dropdowns; then re-run component-builder for the upgrade pass.
 - [ ] Add more components via `/throughline:new-component` — new components should
