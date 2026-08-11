@@ -5,7 +5,66 @@ machine-readable state, see `design-system.json` (or run
 `/throughline:design-system-status`). This doc captures the **context and
 decisions** that aren't in the manifest.
 
-_Last updated: 2026-07-16 — usage docs for the 11 remaining components, **merged to `main` via PR #13**. Everything below is on `main`._
+_Last updated: 2026-08-11 — doc-card builder dogfood; Button/Input/Card usage bands re-rendered, **merged to `main` via PR #15 + PR #17**. Everything below is on `main`._
+
+## 2026-08-11 — Doc-card builder dogfood (Button, Input, Card)
+
+Live-Figma test of the ThroughLine plugin's new deterministic doc-card builder
+(plugin **PR #30**, branch `feat/doc-card-builder`, run here via `--plugin-dir`).
+Re-rendered the `Usage` band of Button, Input, and Card with the canonical builder
+— one `figma_execute` call per card, no hand-built usage body. **No doc record was
+edited**: all three canonical fingerprints came back unchanged, so this was a pure
+surface re-render, not a re-authoring.
+
+Landed as two PRs:
+- **PR #15** — refreshed `scripts/docs-check.mjs` + `docs-check.test.mjs` and added
+  `scripts/lib/doc-card-plan.mjs`, `doc-card-plan.test.mjs`, `doc-card-render.figma.js`
+  from the plugin branch. Prerequisite: without it the new drift class cannot fire.
+- **PR #17** — the manifest stamps. (PR #16 was the same content; GitHub auto-closed
+  it when #15's branch was deleted on merge. Superseded, not lost.)
+
+New in the manifest: `surfaces.docCard.renderer`, stamped from the builder's
+**returned summary** — never by re-reading the card.
+
+| Component | render | renderer | Summary | cardWidth |
+|---|---|---|---|---|
+| Button | `d7cd64433c84d07c` → `2ffebd9e` | `2` | 3 rows, 9 blocks | 1440 = 3 × 480 |
+| Input | `847df8ee9750823c` → `8c7ccaa7` | `2` | 3 rows, 8 blocks | 2400 = 5 × 480 |
+| Card | `934576e85662a56b` → `fa16e1e8` | `2` | 3 rows, 7 blocks | 1440 = 3 × 480 |
+
+Verified per card: ComponentSet node id identical before/after (`10:872`, `12:466`,
+`12:577`), variant counts intact (108/18/2), both Card footer Button instances
+(`12:548`, `12:568`) still attached to main `10:63` — not detached. Post-build audit
+read-back passes incl. item 11. Per-card render time 272 / 173 / 95 ms against the
+30 s `figma_execute` ceiling.
+
+**Gotchas worth remembering:**
+- **`docs:check` can lie.** The repo's `scripts/` are written once by
+  `storybook-chromatic-builder` setup and **never auto-refresh** from the plugin
+  (`scripts/install.mjs` only serves the cursor/codex/generic adapter targets, staging
+  into `.throughline/scripts/`). Before this session the repo carried the pre-renderer
+  `docs-check.mjs`, so `layout-upgrade-available` could not fire and `docs:check`
+  reported a confident `✓ no drift` that meant nothing — **exit 0, no warning**. Diff
+  `scripts/` against the plugin worktree before trusting it.
+- **A dev plugin (`--plugin-dir`) shadows the enabled marketplace copy entirely**, even
+  at an identical `name` + `version` (feature branches don't bump the version). Only one
+  `throughline:` namespace is exposed. To tell which won, match a loaded skill's
+  frontmatter `description:` against both copies on disk — they diverge.
+- **The Select Menu two-band design collides with the new builder.** The deliberate
+  `Usage — Select Menu` / `Usage — Select Menu Item` pattern (see 2026-07-16 below)
+  has no child named exactly `Usage`, so the builder's idempotency guard
+  `findChild(n => n.name === 'Usage')` returns null and it would **append a third,
+  duplicate band** instead of rebuilding. Do not re-render that card until the plugin
+  handles it.
+- **No doc card has a `Specimen` band** — all 13 fall through the builder's legacy
+  `findOne(COMPONENT_SET)` path, which is what drives the column calculation.
+
+Seven plugin-side bugs were filed on **[plugin PR #30]** — not addressed here.
+
+Validation clean: `docs:check` exit 0, Button/Input/Card no longer report
+`layout-upgrade-available`; `pnpm test:scripts` 32/32.
+
+[plugin PR #30]: https://github.com/jrpease/throughline/pull/30#issuecomment-5251625347
 
 ## 2026-07-16 — Usage docs for the 11 remaining components
 
@@ -315,6 +374,12 @@ pnpm storybook        # dev server on :6006
       also be documented via `/throughline:document-component`.
 - [ ] Token changes flow through `/sync-figma-tokens` (opens a PR; Chromatic re-snapshots).
 - [x] ~~Document all 14 components~~ — done (PR #12 + PR #13).
+- [ ] **Re-render the other 11 doc cards** with the canonical builder — they still
+      report `layout-upgrade-available` (informational; `docs:check` stays exit 0).
+      **Blocked on the plugin fixes** — re-rendering `Select Menu — Documentation`
+      as-is would append a duplicate `Usage` band (see 2026-08-11 gotchas).
+- [ ] Once plugin PR #30 lands, re-run the `scripts/` refresh — the repo does not
+      pick up plugin-side script changes on its own.
 
 ## How to resume in a new session
 
