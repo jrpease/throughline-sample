@@ -227,7 +227,8 @@
             },
             "docCard": {
               "src": "73a4867a2a5248d4",
-              "render": "d7cd64433c84d07c"
+              "render": "2ffebd9e",
+              "renderer": "2"
             },
             "storybookMdx": {
               "src": "73a4867a2a5248d4",
@@ -250,7 +251,8 @@
             },
             "docCard": {
               "src": "25b4bb89aa167109",
-              "render": "847df8ee9750823c"
+              "render": "8c7ccaa7",
+              "renderer": "2"
             },
             "storybookMdx": {
               "src": "25b4bb89aa167109",
@@ -273,7 +275,8 @@
             },
             "docCard": {
               "src": "c354e4fd864a8fd7",
-              "render": "934576e85662a56b"
+              "render": "fa16e1e8",
+              "renderer": "2"
             },
             "storybookMdx": {
               "src": "c354e4fd864a8fd7",
