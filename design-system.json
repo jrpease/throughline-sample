@@ -19,7 +19,18 @@
     "coverPageBuilt": true,
     "canPublish": true,
     "libraryPublished": true,
-    "publishedAt": "2026-06-03T00:00:00Z"
+    "publishedAt": "2026-06-03T00:00:00Z",
+    "docCardVariables": {
+      "textDefault": "color/text/primary",
+      "textMuted": "color/text/secondary",
+      "tonePositive": "color/success/default",
+      "toneNegative": "color/danger/default",
+      "border": "color/border/default",
+      "spacePadding": "space/inset/lg",
+      "spaceRowGap": "space/gap/xl",
+      "spaceBlockGap": "space/gap/lg",
+      "spaceItemGap": "space/gap/sm"
+    }
   },
   "tokens": {
     "intakeMode": "generative",
@@ -157,7 +168,8 @@
             },
             "docCard": {
               "src": "0d965b3f82efb6b4",
-              "render": "8b13af1b55514890"
+              "render": "9cb3c709",
+              "renderer": "4"
             },
             "storybookMdx": {
               "src": "0d965b3f82efb6b4",
@@ -227,8 +239,8 @@
             },
             "docCard": {
               "src": "56d945ccc902a7da",
-              "render": "9c23410b",
-              "renderer": "3"
+              "render": "33a918f4",
+              "renderer": "4"
             },
             "storybookMdx": {
               "src": "56d945ccc902a7da",
@@ -251,8 +263,8 @@
             },
             "docCard": {
               "src": "82b0f3a778c49b25",
-              "render": "6b597df7",
-              "renderer": "3"
+              "render": "dc0b4788",
+              "renderer": "4"
             },
             "storybookMdx": {
               "src": "82b0f3a778c49b25",
@@ -275,8 +287,8 @@
             },
             "docCard": {
               "src": "4dcd19d6c41b95f7",
-              "render": "b0869e7f",
-              "renderer": "3"
+              "render": "99add41b",
+              "renderer": "4"
             },
             "storybookMdx": {
               "src": "4dcd19d6c41b95f7",
@@ -299,7 +311,8 @@
             },
             "docCard": {
               "src": "a1ce7449bd2cae89",
-              "render": "5d82b90b9c0e31ba"
+              "render": "760268cd",
+              "renderer": "4"
             },
             "storybookMdx": {
               "src": "a1ce7449bd2cae89",
@@ -322,7 +335,8 @@
             },
             "docCard": {
               "src": "ff71370d3e66b48f",
-              "render": "1137450d086e6215"
+              "render": "33a7df1f",
+              "renderer": "4"
             },
             "storybookMdx": {
               "src": "ff71370d3e66b48f",
@@ -345,7 +359,8 @@
             },
             "docCard": {
               "src": "5c48511d559718ba",
-              "render": "f39c3a63e8af4da9"
+              "render": "509d36d9",
+              "renderer": "4"
             },
             "storybookMdx": {
               "src": "5c48511d559718ba",
@@ -368,7 +383,8 @@
             },
             "docCard": {
               "src": "e5a53df120aa51a0",
-              "render": "36b899cf049f73e4"
+              "render": "3a6dc444",
+              "renderer": "4"
             },
             "storybookMdx": {
               "src": "e5a53df120aa51a0",
@@ -391,7 +407,8 @@
             },
             "docCard": {
               "src": "ef538fafb97bb031",
-              "render": "734f3b23fb25ea04"
+              "render": "28309e24",
+              "renderer": "4"
             },
             "storybookMdx": {
               "src": "ef538fafb97bb031",
@@ -414,7 +431,8 @@
             },
             "docCard": {
               "src": "14cc7d07f9012941",
-              "render": "49bbb8f0b33bf674"
+              "render": "8ff62fa4",
+              "renderer": "4"
             },
             "storybookMdx": {
               "src": "14cc7d07f9012941",
@@ -437,7 +455,8 @@
             },
             "docCard": {
               "src": "7609b79609801994",
-              "render": "30509a5e604aeb21"
+              "render": "30d41194",
+              "renderer": "4"
             },
             "storybookMdx": {
               "src": "7609b79609801994",
@@ -460,7 +479,8 @@
             },
             "docCard": {
               "src": "15847a241c7d654c",
-              "render": "17b63a8be0005432"
+              "render": "fed7608d",
+              "renderer": "4"
             },
             "storybookMdx": {
               "src": "15847a241c7d654c",
