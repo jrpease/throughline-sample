@@ -60,12 +60,23 @@ async function renderDocCard({ card, record, vars, bodyTextStyle }) {
   let eyebrowFont = { family: bodyFont.family, style: 'Bold' };
   try { await figma.loadFontAsync(eyebrowFont); } catch (e) { eyebrowFont = bodyFont; }
 
-  // Measure the specimen: the band named "Specimen", or (older cards) the
-  // component set inside the card.
-  const specimen = card.findChild((n) => n.name === 'Specimen')
-    || card.findOne((n) => n.type === 'COMPONENT_SET');
+  // One component per doc card: a band like "Usage — Select Menu Item" means this
+  // card documents multiple components. Rendering here would append a band we
+  // don't own and silently accumulate — refuse and ask for the card to be split.
+  // Checked before the specimen lookup so a multi-component card always gets
+  // this error, never a possible "no COMPONENT_SET found" from the lookup below.
+  const foreign = card.findChild((n) => n.name !== 'Usage' && n.name.startsWith('Usage'));
+  if (foreign) {
+    throw new Error('renderDocCard: card contains band "' + foreign.name
+      + '" — one component per doc card; split this card so each component owns its own card before re-rendering');
+  }
+
+  // Measure the specimen: the card's COMPONENT_SET is the specimen contract —
+  // its width drives the column calculation. (No named "Specimen" band lookup:
+  // no real card has ever used one, so that path never executed.)
+  const specimen = card.findOne((n) => n.type === 'COMPONENT_SET');
   if (!specimen) {
-    throw new Error('renderDocCard: no "Specimen" frame or COMPONENT_SET found inside the card');
+    throw new Error('renderDocCard: no COMPONENT_SET found inside the card — the specimen band must contain the component set');
   }
 
   const plan = planDocCard(record, specimen.width, { fontSize: bodyTextStyle.fontSize });
@@ -117,6 +128,7 @@ async function renderDocCard({ card, record, vars, bodyTextStyle }) {
   usage.name = 'Usage';
   usage.layoutMode = 'VERTICAL';
   usage.fills = [];
+  usage.clipsContent = false;
   card.appendChild(usage);
   usage.resize(usageWidth, usage.height);
   usage.counterAxisSizingMode = 'FIXED';  // VERTICAL frame: counter = width
