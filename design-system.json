@@ -19,7 +19,18 @@
     "coverPageBuilt": true,
     "canPublish": true,
     "libraryPublished": true,
-    "publishedAt": "2026-06-03T00:00:00Z"
+    "publishedAt": "2026-06-03T00:00:00Z",
+    "docCardVariables": {
+      "textDefault": "color/text/primary",
+      "textMuted": "color/text/secondary",
+      "tonePositive": "color/success/default",
+      "toneNegative": "color/danger/default",
+      "border": "color/border/default",
+      "spacePadding": "space/inset/lg",
+      "spaceRowGap": "space/gap/xl",
+      "spaceBlockGap": "space/gap/lg",
+      "spaceItemGap": "space/gap/sm"
+    }
   },
   "tokens": {
     "intakeMode": "generative",
@@ -227,8 +238,8 @@
             },
             "docCard": {
               "src": "56d945ccc902a7da",
-              "render": "9c23410b",
-              "renderer": "3"
+              "render": "33a918f4",
+              "renderer": "4"
             },
             "storybookMdx": {
               "src": "56d945ccc902a7da",
@@ -251,8 +262,8 @@
             },
             "docCard": {
               "src": "82b0f3a778c49b25",
-              "render": "6b597df7",
-              "renderer": "3"
+              "render": "dc0b4788",
+              "renderer": "4"
             },
             "storybookMdx": {
               "src": "82b0f3a778c49b25",
@@ -275,8 +286,8 @@
             },
             "docCard": {
               "src": "4dcd19d6c41b95f7",
-              "render": "b0869e7f",
-              "renderer": "3"
+              "render": "99add41b",
+              "renderer": "4"
             },
             "storybookMdx": {
               "src": "4dcd19d6c41b95f7",
