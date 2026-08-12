@@ -216,23 +216,23 @@
       },
       "Button": {
         "status": "stable",
-        "updatedAt": "2026-07-14",
+        "updatedAt": "2026-08-11",
         "doc": {
           "path": "design-system/docs/components/Button.doc.json",
-          "fingerprint": "73a4867a2a5248d4",
+          "fingerprint": "56d945ccc902a7da",
           "surfaces": {
             "figmaDescription": {
-              "src": "73a4867a2a5248d4",
-              "render": "e678c5059f63585f"
+              "src": "56d945ccc902a7da",
+              "render": "4ba128758f0f9131"
             },
             "docCard": {
-              "src": "73a4867a2a5248d4",
-              "render": "2ffebd9e",
-              "renderer": "2"
+              "src": "56d945ccc902a7da",
+              "render": "9c23410b",
+              "renderer": "3"
             },
             "storybookMdx": {
-              "src": "73a4867a2a5248d4",
-              "render": "81a7961056c9c645",
+              "src": "56d945ccc902a7da",
+              "render": "f4e645451ceb1e6a",
               "file": "packages/ui/src/components/Button/Button.mdx"
             }
           }
@@ -240,23 +240,23 @@
       },
       "Input": {
         "status": "stable",
-        "updatedAt": "2026-07-14",
+        "updatedAt": "2026-08-11",
         "doc": {
           "path": "design-system/docs/components/Input.doc.json",
-          "fingerprint": "25b4bb89aa167109",
+          "fingerprint": "82b0f3a778c49b25",
           "surfaces": {
             "figmaDescription": {
-              "src": "25b4bb89aa167109",
-              "render": "c6db21e3086c81ce"
+              "src": "82b0f3a778c49b25",
+              "render": "50efe0ca275f281f"
             },
             "docCard": {
-              "src": "25b4bb89aa167109",
-              "render": "8c7ccaa7",
-              "renderer": "2"
+              "src": "82b0f3a778c49b25",
+              "render": "6b597df7",
+              "renderer": "3"
             },
             "storybookMdx": {
-              "src": "25b4bb89aa167109",
-              "render": "0f0107b62f688bdc",
+              "src": "82b0f3a778c49b25",
+              "render": "39780619aee501fc",
               "file": "packages/ui/src/components/Input/Input.mdx"
             }
           }
@@ -264,23 +264,23 @@
       },
       "Card": {
         "status": "stable",
-        "updatedAt": "2026-07-14",
+        "updatedAt": "2026-08-11",
         "doc": {
           "path": "design-system/docs/components/Card.doc.json",
-          "fingerprint": "c354e4fd864a8fd7",
+          "fingerprint": "4dcd19d6c41b95f7",
           "surfaces": {
             "figmaDescription": {
-              "src": "c354e4fd864a8fd7",
-              "render": "4f9def2eb3761a82"
+              "src": "4dcd19d6c41b95f7",
+              "render": "69aa33675c39ba2f"
             },
             "docCard": {
-              "src": "c354e4fd864a8fd7",
-              "render": "fa16e1e8",
-              "renderer": "2"
+              "src": "4dcd19d6c41b95f7",
+              "render": "b0869e7f",
+              "renderer": "3"
             },
             "storybookMdx": {
-              "src": "c354e4fd864a8fd7",
-              "render": "bc46d417f5137eec",
+              "src": "4dcd19d6c41b95f7",
+              "render": "5a6b881c89f798a5",
               "file": "packages/ui/src/components/Card/Card.mdx"
             }
           }

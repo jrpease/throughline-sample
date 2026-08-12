@@ -1,33 +1,34 @@
 {
   "name": "Card",
   "summary": "Groups related content and actions about a single subject.",
-  "description": "A surface that groups related content and actions about one subject. It has two variants — default (bordered) and elevated (shadow) — and is built from composable parts (header, title, description, content, footer), with slots for an Avatar in the header and a Button in the footer. Background, border, radius, and elevation are bound to semantic tokens.",
+  "description": "A container that gathers everything about one subject — a person, a product, a project — so it reads as a single unit in a list or a grid. Give each card one clear main action; a card with several competing actions stops being one unit.",
   "whenToUse": [
-    "Group related content and actions about a single subject"
+    "Several pieces of information belong to one subject and should be scanned together.",
+    "The page shows a list or grid of comparable items."
   ],
   "whenNotToUse": [
-    "Primary page layout scaffolding",
-    "A bare list of text with no grouping"
+    "You need page-level layout structure. Use the page's own layout instead.",
+    "The content is a plain run of text with nothing to group. Leave it ungrouped."
   ],
   "variants": {
     "variant": {
-      "default": "Bordered surface — the default.",
-      "elevated": "Raised with a shadow (Elevation) instead of a border — for emphasis or layering over content."
+      "default": "The everyday choice, separated from the page by a thin edge.",
+      "elevated": "Lifts off the page, for a card that sits above other content or needs emphasis."
     }
   },
   "dos": [
-    "Make the primary action obvious",
-    "Keep one main call-to-action per card"
+    "Make the main action obvious.",
+    "Keep one main call-to-action per card."
   ],
   "donts": [
-    "Don't nest cards more than one level deep",
-    "Don't make the whole card and an inner button separately clickable in conflicting ways"
+    "Don't nest cards more than one level deep.",
+    "Don't make the card and a button inside it separately clickable."
   ],
   "accessibility": {
     "notes": [
-      "Card renders a plain container with no implicit role — add role and aria-labelledby only if it's a meaningful region or is itself interactive",
-      "If the whole card is clickable, give it an accessible name and keyboard access",
-      "Don't rely on the shadow alone to convey meaning"
+      "A card is just a container with no meaning of its own. Add a role and a name only when it is a landmark region or is itself clickable.",
+      "If the whole card is clickable, give it an accessible name and make it reachable by keyboard.",
+      "Don't let the lift be the only thing carrying meaning; anyone who can't see it needs the same information in words."
     ]
   },
   "tokensUsed": [
@@ -48,9 +49,9 @@
     "font/size/400"
   ],
   "status": "stable",
-  "updatedAt": "2026-07-14",
+  "updatedAt": "2026-08-11",
   "provenance": {
-    "description": "imported+ai-inferred",
+    "description": "imported+user",
     "whenToUse": "best-practice",
     "whenNotToUse": "best-practice",
     "variants": "ai-inferred",

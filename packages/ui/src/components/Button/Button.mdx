@@ -1,4 +1,4 @@
-{/* docFingerprint: 73a4867a2a5248d4 — generated from Button.doc.json by docs render. Do not edit by hand; change the record and re-render via /document-component. */}
+{/* docFingerprint: 56d945ccc902a7da — generated from Button.doc.json by docs render. Do not edit by hand; change the record and re-render via /document-component. */}
 
 import { Meta } from "@storybook/blocks";
 import * as Stories from "./Button.stories";
@@ -9,62 +9,61 @@ import * as Stories from "./Button.stories";
 
 _Triggers an action or event._
 
-A clickable control that triggers an action — submitting a form, confirming a decision, or opening a dialog. It comes in six emphasis variants across three sizes, supports optional leading and trailing icons and a loading state, and binds every color, spacing, radius, and type value to the system's semantic tokens.
+A clickable control that starts an action: saving a form, confirming a choice, opening a dialog. Its emphasis levels signal how important an action is, so the choice of variant is the main decision when you use it.
 
 ## When to use
 
-- Trigger an action or event — submit, confirm, open a dialog
-- Give a view a single, clear primary action
+- The user needs to make something happen on the current page, like saving, confirming, or opening a dialog.
+- A view needs one obvious primary action.
 
 ## When not to use
 
-- Navigating to another page or URL — use a Link (the link variant looks like a link but still triggers an action)
+- The control takes the user to another page or URL. Use a Link; the link variant only looks like a link and still triggers an action.
 
 ## Do
 
-- Lead the label with a verb
-- Keep one primary (default) button per view
-- Keep labels short — about three words or fewer
+- Lead the label with a verb.
+- Keep one primary button per view.
+- Keep labels to about three words.
 
 ## Don't
 
-- Don't use a button for navigation — use a Link
-- Don't stack multiple primary buttons in one view
-- Don't disable a button without telling the user why
+- Don't use a button to navigate. Use a Link.
+- Don't stack two primary buttons in one view.
+- Don't disable a button without telling the user why.
 
 ## Variants
 
 ### variant
 
-- `default` — Highest-emphasis, solid brand fill — the one primary action in a view.
-- `secondary` — Medium-emphasis, muted fill — sits alongside a primary action.
-- `destructive` — Solid danger fill — irreversible or destructive actions such as delete.
-- `outline` — Bordered with a transparent fill — low emphasis that still needs a visible edge.
-- `ghost` — No fill until hover — lowest emphasis, for toolbars and dense UI.
-- `link` — Styled as an inline text link — least chrome.
+- `default` — The one main action in a view.
+- `secondary` — A supporting action that sits beside the main one.
+- `destructive` — An action that deletes something or cannot be undone.
+- `outline` — A quieter action that still needs a visible edge.
+- `ghost` — The quietest action, for toolbars and dense layouts.
+- `link` — An action that reads as inline text.
 
 ### size
 
-- `sm` — Compact — dense layouts and toolbars.
-- `md` — Default size for most uses.
-- `lg` — Prominent — hero or high-emphasis moments.
+- `sm` — For dense layouts and toolbars.
+- `md` — The default size for most uses.
+- `lg` — For hero moments that need extra presence.
 
 ## States
 
-- `default` — Resting state.
-- `hover` — Pointer over the button — fill shifts to the hover token.
-- `focus` — Keyboard focus — shows the focus ring (neutral ring, or the on-fill ring over solid variants).
-- `disabled` — Non-interactive and not focusable; reduced opacity.
-- `loading` — Shows a spinner in place of the leading icon and disables the button until the action resolves.
+- `default` — At rest and ready to be clicked.
+- `hover` — The pointer is over the button and it lightens to invite a click.
+- `focus` — The button has keyboard focus and shows a focus ring.
+- `disabled` — Can't be clicked or tabbed to.
+- `loading` — The action is running; a spinner replaces the leading icon until it finishes.
 
 ## Accessibility
 
 - **Role:** `button`
-- **Keyboard:** Enter activates the button
-- **Keyboard:** Space activates the button
-- Renders a native &lt;button&gt;, so role="button" is implicit
-- An icon-only button needs an aria-label
-- Disabled and loading buttons are not focusable
+- **Keyboard:** Enter activates the button.
+- **Keyboard:** Space activates the button.
+- An icon-only button needs an aria-label so screen readers can announce it.
+- A disabled or loading button can't take keyboard focus. Say why it is unavailable somewhere a screen reader will reach.
 
 ## Tokens used
 

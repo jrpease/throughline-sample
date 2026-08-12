@@ -1,46 +1,47 @@
 {
   "name": "Input",
   "summary": "Collects a single line of free-form text.",
-  "description": "A single-line text field for free-form input. It comes in three sizes with default, focus, error, and disabled states, and an optional leading icon. Border, background, radius, and type are bound to semantic tokens; the focus state uses the focus-ring and border/focus tokens and the error state uses the danger tokens.",
+  "description": "A single-line field for text the user types themselves, like a name, an email address, or a search query. It always needs a visible label, and the error state is what most changes how you use it: reserve room for the message so the layout doesn't jump.",
   "whenToUse": [
-    "Collect a single line of free-form text — a name, email, or search query"
+    "The answer is short, open-ended text that you can't offer as a list of choices.",
+    "The user is searching or filtering and needs to type freely."
   ],
   "whenNotToUse": [
-    "Choosing from a fixed set of options — use Select or Radio",
-    "Long, multi-line text — use Textarea"
+    "The answer comes from a fixed set of options. Use Select for many choices or Radio for a few.",
+    "The answer runs to several lines, like a comment or a description. Use Textarea."
   ],
   "variants": {
     "size": {
-      "sm": "Compact — dense forms and toolbars.",
-      "md": "Default size for most forms.",
-      "lg": "Prominent — large or high-emphasis forms."
+      "sm": "For dense forms and toolbars.",
+      "md": "The default size for most forms.",
+      "lg": "For prominent, high-emphasis forms."
     }
   },
   "states": {
-    "default": "Resting state.",
-    "focus": "Keyboard focus — shows the focus ring and the border shifts to border/focus.",
-    "error": "Invalid input — border and ring use the danger token.",
-    "disabled": "Non-interactive; reduced opacity and the field can't be edited."
+    "default": "At rest and ready to accept typing.",
+    "focus": "The field has keyboard focus and shows a focus ring.",
+    "error": "What the user typed didn't pass validation, and the message says why.",
+    "disabled": "Can't be typed in or tabbed to."
   },
   "dos": [
-    "Always pair the field with a visible label",
-    "Show format hints as helper text",
-    "Reserve space for error text to avoid layout shift"
+    "Pair every field with a visible label.",
+    "Put format hints in helper text.",
+    "Reserve space for the error message."
   ],
   "donts": [
-    "Don't use placeholder text as the only label",
-    "Don't validate on every keystroke before the first blur"
+    "Don't use the placeholder as the only label. Add a real label.",
+    "Don't validate on every keystroke before the first blur."
   ],
   "accessibility": {
     "role": "textbox",
     "keyboard": [
-      "Standard text-editing keys",
-      "Tab moves focus to and from the field"
+      "Standard text-editing keys apply.",
+      "Tab moves focus to and from the field."
     ],
     "notes": [
-      "Every input needs a programmatically associated <label> — a placeholder is not a label",
-      "In the error state, set aria-invalid and link the message with aria-describedby",
-      "The leading icon is decorative (aria-hidden)"
+      "Give every field a label element that points at it. A placeholder disappears as soon as the user types, so it can't do this job.",
+      "In the error state, set aria-invalid and link the message with aria-describedby so screen readers announce it.",
+      "Mark a decorative leading icon aria-hidden so it isn't announced."
     ]
   },
   "tokensUsed": [
@@ -64,9 +65,9 @@
     "Focus Ring"
   ],
   "status": "stable",
-  "updatedAt": "2026-07-14",
+  "updatedAt": "2026-08-11",
   "provenance": {
-    "description": "imported+ai-inferred",
+    "description": "imported+user",
     "whenToUse": "best-practice",
     "whenNotToUse": "best-practice",
     "variants": "ai-inferred",
