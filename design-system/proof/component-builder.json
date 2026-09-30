@@ -1,0 +1,40 @@
+{
+  "stage": "component-builder",
+  "subjects": {
+    "Chip": {
+      "at": "2026-09-30T17:28:43.000Z",
+      "changed": [
+        "Built Chip as a COMPONENT_SET with 12 variants (variant filled/outline x 6 states)",
+        "Bound fills, strokes, padding, gap and radius to semantic variables"
+      ],
+      "checks": [
+        {
+          "name": "structural-read-back",
+          "method": "attested",
+          "result": "pass",
+          "evidence": "COMPONENT_SET 412:537, 12 children, axes variant/state"
+        },
+        {
+          "name": "state-baseline",
+          "method": "attested",
+          "result": "pass",
+          "evidence": "state axis: Default, Hover, Focus, Active, Selected, Disabled"
+        },
+        {
+          "name": "figma-name",
+          "method": "attested",
+          "result": "pass",
+          "evidence": "Figma node named Chip"
+        },
+        {
+          "name": "focus-indicator",
+          "method": "attested",
+          "result": "pass",
+          "evidence": "shadcn: 2 focus variants (412:517, 412:529) carry a visible DROP_SHADOW, spread 4, bound to color/focus/ring"
+        }
+      ],
+      "screenshot": "412:537",
+      "advancedBecause": "The executor's read-back, state check and focus-indicator check all passed on the first pass."
+    }
+  }
+}

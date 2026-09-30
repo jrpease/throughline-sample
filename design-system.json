@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 7,
   "user": {
     "codingLevel": "new"
   },
@@ -151,7 +151,8 @@
       "Textarea",
       "Tooltip",
       "Select Menu",
-      "Select Menu Item"
+      "Select Menu Item",
+      "Chip"
     ],
     "meta": {
       "Tooltip": {
@@ -523,5 +524,31 @@
     "repository-builder",
     "token-sync-layer",
     "storybook-chromatic-builder"
-  ]
+  ],
+  "verification": {
+    "path": "design-system/proof",
+    "stages": {
+      "component-builder": {
+        "at": "2026-09-30T17:28:43.000Z",
+        "adoptedAt": "2026-09-30T17:28:43.000Z",
+        "exempt": [
+          "Avatar",
+          "Badge",
+          "Button",
+          "Card",
+          "Checkbox",
+          "Input",
+          "Radio",
+          "Select",
+          "Select Menu",
+          "Select Menu Item",
+          "Spinner",
+          "Switch",
+          "Textarea",
+          "Tooltip"
+        ],
+        "fingerprint": "35924300db0660c3"
+      }
+    }
+  }
 }
