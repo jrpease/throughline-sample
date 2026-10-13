@@ -193,7 +193,8 @@
             },
             "docCard": {
               "src": "9ccc2c0f7482424e",
-              "render": "8102f4966a7fd6a6"
+              "render": "8d5ddf46",
+              "renderer": "4"
             },
             "storybookMdx": {
               "src": "9ccc2c0f7482424e",
@@ -216,7 +217,8 @@
             },
             "docCard": {
               "src": "5535d843089ef629",
-              "render": "4fb2e1ed1f54faeb"
+              "render": "8de7c551",
+              "renderer": "4"
             },
             "storybookMdx": {
               "src": "5535d843089ef629",
