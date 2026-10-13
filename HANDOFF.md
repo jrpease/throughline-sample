@@ -5,7 +5,7 @@ machine-readable state, see `design-system.json` (or run
 `/throughline:design-system-status`). This doc captures the **context and
 decisions** that aren't in the manifest.
 
-_Last updated: 2026-10-13 — doc cards at renderer 4 (PR #19 + PR #20); Select Menu card split still open. Everything below is on `main`._
+_Last updated: 2026-10-13 — doc cards at renderer 4 (PR #19 + PR #20); Select Menu card split and all 14 cards stamped (PR #22)._
 
 ## 2026-08-12 — Doc cards re-voiced and moved to renderer 4 (PR #19, PR #20)
 
@@ -21,19 +21,25 @@ _Last updated: 2026-10-13 — doc cards at renderer 4 (PR #19 + PR #20); Select 
   plugin's own build script reads it. Recorded `figma.docCardVariables` (the nine
   role → variable-name mappings) so later renders read it instead of re-deriving it.
 
-12 of 14 components now stamp `docCard.renderer: "4"`. **Select Menu and Select Menu
-Item are unstamped**: they share one card (`24:773`), and the builder refuses any card
-holding a band named `Usage — …` — one component per card.
+That left Select Menu and Select Menu Item unstamped: they shared one card (`24:773`),
+and the builder refuses any card holding a band named `Usage — …` — one component per card.
 
-**Splitting that card** (not done yet — see open loops):
-- Give Select Menu Item its own `Select Menu Item — Documentation` card. **Move** the
-  real `Select Menu Item` set (`23:752`) into it — don't clone it. It has 12 live
-  instances (9 + 3 across variants), many inside the `Select Menu` set (`118:857`);
-  a cloned set would be a new main component, and the instances wouldn't follow.
-- Each card keeps only its own band, renamed to exactly `Usage`.
-- The card's status chip frame (`24:777`) is named `Frame`, not `Status Pill` like the
-  other 12, so the builder's header check would throw on it too. Rename it as part of
-  the split.
+**2026-10-13 — card split (PR #22).** Select Menu Item now has its own
+`Select Menu Item — Documentation` card (`437:1000`), right after Select Menu's.
+- The real `Select Menu Item` set (`23:752`) was **moved** into it, not cloned. It has
+  12 live instances (9 + 3 across variants), many inside the `Select Menu` set
+  (`118:857`); a clone would be a new main component and the instances wouldn't follow.
+  Both set ids and all 12 instances verified unchanged after the move.
+- Each card keeps only its own band, named exactly `Usage`.
+- The status chip frame (`24:777`) was named `Frame`, not `Status Pill` like the other
+  12, so the builder's header check would have thrown. Renamed.
+- Both rendered with the canonical builder and stamped from its summary:
+  Select Menu 3 cols / 1440, render `8d5ddf46`; Select Menu Item 4 cols / 1920 (two
+  variant axes), render `8de7c551`. Both hashes reproduce from the repo's own
+  `planDocCard`. **All 14 cards are now at renderer 4.**
+- Figma script runs need an allow rule for
+  `mcp__plugin_throughline_figma-console__figma_execute` — auto mode blocks them as
+  shared-resource writes otherwise, even with approval given in chat.
 
 ## 2026-08-11 — Doc-card builder dogfood (Button, Input, Card)
 
@@ -403,8 +409,7 @@ pnpm storybook        # dev server on :6006
 - [ ] Token changes flow through `/sync-figma-tokens` (opens a PR; Chromatic re-snapshots).
 - [x] ~~Document all 14 components~~ — done (PR #12 + PR #13).
 - [x] ~~Re-render the other 11 doc cards~~ — done for 9 (PR #20).
-- [ ] **Split the Select Menu doc card**, then render and stamp both cards at
-      renderer 4 (see 2026-08-12).
+- [x] ~~Split the Select Menu doc card~~ — done; all 14 cards at renderer 4 (PR #22).
 - [ ] Re-run the `scripts/` refresh whenever the plugin's doc scripts move — the repo
       doesn't pick up plugin-side script changes on its own (last refresh: renderer 4, PR #20).
 
