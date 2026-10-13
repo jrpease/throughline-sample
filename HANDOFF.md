@@ -37,6 +37,10 @@ and the builder refuses any card holding a band named `Usage — …` — one co
   Select Menu 3 cols / 1440, render `8d5ddf46`; Select Menu Item 4 cols / 1920 (two
   variant axes), render `8de7c551`. Both hashes reproduce from the repo's own
   `planDocCard`. **All 14 cards are now at renderer 4.**
+- Live Figma pass (read-only), same session: all 28 surfaces `docs:check` lists as
+  `edit-unverified` checked out — each of the 14 components has exactly one component
+  set whose description carries its `tl:doc` fingerprint, and exactly one doc card whose
+  hidden `Doc Fingerprint` node matches the manifest.
 - Figma script runs need an allow rule for
   `mcp__plugin_throughline_figma-console__figma_execute` — auto mode blocks them as
   shared-resource writes otherwise, even with approval given in chat.
