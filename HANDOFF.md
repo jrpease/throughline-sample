@@ -5,7 +5,35 @@ machine-readable state, see `design-system.json` (or run
 `/throughline:design-system-status`). This doc captures the **context and
 decisions** that aren't in the manifest.
 
-_Last updated: 2026-08-11 — doc-card builder dogfood; Button/Input/Card usage bands re-rendered, **merged to `main` via PR #15 + PR #17**. Everything below is on `main`._
+_Last updated: 2026-10-13 — doc cards at renderer 4 (PR #19 + PR #20); Select Menu card split still open. Everything below is on `main`._
+
+## 2026-08-12 — Doc cards re-voiced and moved to renderer 4 (PR #19, PR #20)
+
+- **PR #19** — refreshed the doc scripts from `throughline@0.15.0-doc-card.1`
+  (renderer 2 → 3, plus the new `docs-lint.mjs` and its `docs:lint` npm script, which
+  the refresh path doesn't register on its own). Re-authored the Button, Input, and Card
+  records against the doc-writing standard (35 lint warnings → 0) and re-rendered all
+  three cards. Inline-code backticks are left out of record prose: the card renders them
+  literally and Figma strips them from the description, so one string rendered three ways.
+- **PR #20** — refreshed the scripts again to renderer 4, re-stamped Button/Input/Card,
+  and rendered the other nine cards (Textarea, Select, Checkbox, Radio, Spinner, Tooltip,
+  Avatar, Switch, Badge). Removed `scripts/lib/doc-card-render.figma.js` — only the
+  plugin's own build script reads it. Recorded `figma.docCardVariables` (the nine
+  role → variable-name mappings) so later renders read it instead of re-deriving it.
+
+12 of 14 components now stamp `docCard.renderer: "4"`. **Select Menu and Select Menu
+Item are unstamped**: they share one card (`24:773`), and the builder refuses any card
+holding a band named `Usage — …` — one component per card.
+
+**Splitting that card** (not done yet — see open loops):
+- Give Select Menu Item its own `Select Menu Item — Documentation` card. **Move** the
+  real `Select Menu Item` set (`23:752`) into it — don't clone it. It has 12 live
+  instances (9 + 3 across variants), many inside the `Select Menu` set (`118:857`);
+  a cloned set would be a new main component, and the instances wouldn't follow.
+- Each card keeps only its own band, renamed to exactly `Usage`.
+- The card's status chip frame (`24:777`) is named `Frame`, not `Status Pill` like the
+  other 12, so the builder's header check would throw on it too. Rename it as part of
+  the split.
 
 ## 2026-08-11 — Doc-card builder dogfood (Button, Input, Card)
 
@@ -374,12 +402,11 @@ pnpm storybook        # dev server on :6006
       also be documented via `/throughline:document-component`.
 - [ ] Token changes flow through `/sync-figma-tokens` (opens a PR; Chromatic re-snapshots).
 - [x] ~~Document all 14 components~~ — done (PR #12 + PR #13).
-- [ ] **Re-render the other 11 doc cards** with the canonical builder — they still
-      report `layout-upgrade-available` (informational; `docs:check` stays exit 0).
-      **Blocked on the plugin fixes** — re-rendering `Select Menu — Documentation`
-      as-is would append a duplicate `Usage` band (see 2026-08-11 gotchas).
-- [ ] Once plugin PR #30 lands, re-run the `scripts/` refresh — the repo does not
-      pick up plugin-side script changes on its own.
+- [x] ~~Re-render the other 11 doc cards~~ — done for 9 (PR #20).
+- [ ] **Split the Select Menu doc card**, then render and stamp both cards at
+      renderer 4 (see 2026-08-12).
+- [ ] Re-run the `scripts/` refresh whenever the plugin's doc scripts move — the repo
+      doesn't pick up plugin-side script changes on its own (last refresh: renderer 4, PR #20).
 
 ## How to resume in a new session
 
