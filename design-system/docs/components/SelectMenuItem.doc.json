@@ -23,9 +23,7 @@
   "states": {
     "default": "Resting option.",
     "hover": "Pointer over the row — subtle background.",
-    "focused": "Keyboard navigation highlight — muted background with a focus ring.",
-    "selected": "The current value — subtle fill and trailing check.",
-    "disabled": "Dimmed and non-interactive."
+    "focused": "Keyboard navigation highlight — muted background with a focus ring."
   },
   "dos": [
     "Keep option labels short and scannable",
@@ -62,7 +60,7 @@
     "font/size/200"
   ],
   "status": "stable",
-  "updatedAt": "2026-07-15",
+  "updatedAt": "2026-10-15",
   "provenance": {
     "description": "ai-inferred",
     "whenToUse": "best-practice",

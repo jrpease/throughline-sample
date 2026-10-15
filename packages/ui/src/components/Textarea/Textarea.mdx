@@ -1,4 +1,4 @@
-{/* docFingerprint: 7609b79609801994 — generated from Textarea.doc.json by docs render. Do not edit by hand; change the record and re-render via /document-component. */}
+{/* docFingerprint: a664b9c3e18e4d23 — generated from Textarea.doc.json by docs render. Do not edit by hand; change the record and re-render via /document-component. */}
 
 import { Meta } from "@storybook/blocks";
 import * as Stories from "./Textarea.stories";
@@ -9,7 +9,7 @@ import * as Stories from "./Textarea.stories";
 
 _Collects multi-line free-form text._
 
-The multi-line sibling of Input: a styled native textarea that fills its container, grows vertically as needed, and shares Input's token-driven border, background, and focus ring. It covers default, focus, error, and disabled states and can flag invalid input with a destructive border and ring.
+The multi-line sibling of Input: a styled native textarea that fills its container, grows vertically as needed, and shares Input's token-driven border, background, and focus ring. It comes in three sizes (sm / md / lg), covers default, hover, focus, active, error, and disabled states, and can flag invalid input with a destructive border and ring.
 
 ## When to use
 
@@ -35,15 +35,18 @@ The multi-line sibling of Input: a styled native textarea that fills its contain
 
 ## Variants
 
-### error
+### size
 
-- `false` — Default — neutral border and focus ring.
-- `true` — Error — destructive border and ring to flag invalid input.
+- `sm` — Compact — dense forms and toolbars.
+- `md` — Default size for most forms.
+- `lg` — Prominent — larger or high-emphasis forms.
 
 ## States
 
 - `default` — Resting, empty or filled.
+- `hover` — Pointer over the field — stronger border.
 - `focus` — Keyboard focus — shows the focus ring.
+- `active` — Being pressed — muted background.
 - `error` — Invalid — destructive border and ring.
 - `disabled` — Dimmed and non-interactive.
 
@@ -58,4 +61,4 @@ The multi-line sibling of Input: a styled native textarea that fills its contain
 
 ## Tokens used
 
-`color/bg/subtle` · `color/text/primary` · `color/text/muted` · `color/border/default` · `color/danger/default` · `radius/md` · `space/3` · `font/size/300` · `Focus Ring`
+`color/bg/subtle` · `color/text/primary` · `color/text/muted` · `color/border/default` · `color/danger/default` · `color/bg/muted` · `color/border/strong` · `radius/md` · `space/3` · `font/size/300` · `Focus Ring`

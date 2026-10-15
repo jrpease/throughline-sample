@@ -19,7 +19,9 @@
   },
   "states": {
     "default": "At rest and ready to accept typing.",
+    "hover": "The pointer is over the field and its border darkens.",
     "focus": "The field has keyboard focus and shows a focus ring.",
+    "active": "Being pressed; the field's background deepens.",
     "error": "What the user typed didn't pass validation, and the message says why.",
     "disabled": "Can't be typed in or tabbed to."
   },
@@ -65,7 +67,7 @@
     "Focus Ring"
   ],
   "status": "stable",
-  "updatedAt": "2026-08-11",
+  "updatedAt": "2026-10-15",
   "provenance": {
     "description": "imported+user",
     "whenToUse": "best-practice",

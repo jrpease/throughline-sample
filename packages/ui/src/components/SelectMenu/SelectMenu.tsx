@@ -32,12 +32,12 @@ SelectMenu.displayName = "SelectMenu";
 
 /**
  * SelectMenuItem — mirrors the Figma `Select Menu Item` (shadcn `SelectItem`).
- * One selectable row. The Figma `State` axis maps to code as:
- *   Default  → base styles
- *   Hover    → :hover           (bg-subtle)
- *   Focused  → :focus-visible   (bg-muted + border-focus ring)
- *   Selected → `selected` prop  (bg-subtle + trailing check, brand-primary)
- *   Disabled → `disabled` prop  (text-disabled, not interactive)
+ * One selectable row. The Figma axes map to code as:
+ *   selected      → `selected` prop  (bg-subtle + trailing check, brand-primary)
+ *   disabled      → `disabled` prop  (text-disabled, not interactive)
+ *   State=Default → base styles
+ *   State=Hover   → :hover           (bg-subtle)
+ *   State=Focused → :focus-visible   (bg-muted + border-focus ring)
  * The label is passed as `children`. The check icon is internal (lucide
  * `Check`), shown only when selected — not a swappable slot.
  */

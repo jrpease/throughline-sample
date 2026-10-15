@@ -1,4 +1,4 @@
-{/* docFingerprint: 15847a241c7d654c — generated from Select.doc.json by docs render. Do not edit by hand; change the record and re-render via /document-component. */}
+{/* docFingerprint: 84f5080b9179e29c — generated from Select.doc.json by docs render. Do not edit by hand; change the record and re-render via /document-component. */}
 
 import { Meta } from "@storybook/blocks";
 import * as Stories from "./Select.stories";
@@ -9,7 +9,7 @@ import * as Stories from "./Select.stories";
 
 _Chooses one option from a dropdown list._
 
-An accessible trigger for choosing one option from a list, wrapping a native select so it inherits the platform's open/close and keyboard behavior. A non-interactive chevron sits on the trailing edge. It comes in three sizes (sm / md / lg) with default, focus, error, and disabled states, and binds its background, border, radius, and focus ring to the system's semantic tokens.
+An accessible trigger for choosing one option from a list, wrapping a native select so it inherits the platform's open/close and keyboard behavior. A non-interactive chevron sits on the trailing edge. It comes in three sizes (sm / md / lg) with default, hover, focus, active, error, and disabled states, and binds its background, border, radius, and focus ring to the system's semantic tokens.
 
 ## When to use
 
@@ -41,15 +41,12 @@ An accessible trigger for choosing one option from a list, wrapping a native sel
 - `md` — Default size for most forms.
 - `lg` — Prominent — larger or high-emphasis forms.
 
-### error
-
-- `false` — Default — neutral border and focus ring.
-- `true` — Error — destructive border and ring to flag an invalid choice.
-
 ## States
 
 - `default` — Resting, showing the current value.
+- `hover` — Pointer over the trigger — stronger border.
 - `focus` — Keyboard focus — shows the focus ring.
+- `active` — Being pressed — muted background.
 - `error` — Invalid — destructive border and ring.
 - `disabled` — Dimmed and non-interactive.
 
@@ -64,4 +61,4 @@ An accessible trigger for choosing one option from a list, wrapping a native sel
 
 ## Tokens used
 
-`color/bg/subtle` · `color/text/primary` · `color/text/muted` · `color/border/default` · `color/danger/default` · `radius/md` · `space/3` · `space/4` · `font/size/200` · `font/size/300` · `Focus Ring`
+`color/bg/subtle` · `color/text/primary` · `color/text/muted` · `color/border/default` · `color/danger/default` · `color/bg/muted` · `color/border/strong` · `radius/md` · `space/3` · `space/4` · `font/size/200` · `font/size/300` · `Focus Ring`
