@@ -157,7 +157,7 @@
       "Tooltip": {
         "status": "final",
         "updatedAt": "2026-07-15",
-        "note": "promoted to component set with Placement axis (top/right/bottom/left)",
+        "note": "promoted to component set with side axis (top/right/bottom/left)",
         "doc": {
           "path": "design-system/docs/components/Tooltip.doc.json",
           "fingerprint": "0d965b3f82efb6b4",
@@ -206,23 +206,23 @@
       },
       "Select Menu Item": {
         "status": "final",
-        "updatedAt": "2026-07-15",
+        "updatedAt": "2026-10-15",
         "doc": {
           "path": "design-system/docs/components/SelectMenuItem.doc.json",
-          "fingerprint": "5535d843089ef629",
+          "fingerprint": "2931bf1a8116fb37",
           "surfaces": {
             "figmaDescription": {
-              "src": "5535d843089ef629",
-              "render": "4b131ead89d8ca1c"
+              "src": "2931bf1a8116fb37",
+              "render": "b95475174c995eae"
             },
             "docCard": {
-              "src": "5535d843089ef629",
-              "render": "8de7c551",
+              "src": "2931bf1a8116fb37",
+              "render": "05b58ae9",
               "renderer": "4"
             },
             "storybookMdx": {
-              "src": "5535d843089ef629",
-              "render": "d93c4c6525b7dac1",
+              "src": "2931bf1a8116fb37",
+              "render": "db7af99be5389ee0",
               "file": "packages/ui/src/components/SelectMenu/SelectMenuItem.mdx"
             }
           }
@@ -230,23 +230,23 @@
       },
       "Button": {
         "status": "stable",
-        "updatedAt": "2026-08-11",
+        "updatedAt": "2026-10-15",
         "doc": {
           "path": "design-system/docs/components/Button.doc.json",
-          "fingerprint": "56d945ccc902a7da",
+          "fingerprint": "e191e5aa0ddd1abe",
           "surfaces": {
             "figmaDescription": {
-              "src": "56d945ccc902a7da",
-              "render": "4ba128758f0f9131"
+              "src": "e191e5aa0ddd1abe",
+              "render": "75bb7a71c50e12a9"
             },
             "docCard": {
-              "src": "56d945ccc902a7da",
-              "render": "33a918f4",
+              "src": "e191e5aa0ddd1abe",
+              "render": "a3d1f3c2",
               "renderer": "4"
             },
             "storybookMdx": {
-              "src": "56d945ccc902a7da",
-              "render": "f4e645451ceb1e6a",
+              "src": "e191e5aa0ddd1abe",
+              "render": "b869f6dd3d1dbae2",
               "file": "packages/ui/src/components/Button/Button.mdx"
             }
           }
@@ -254,23 +254,23 @@
       },
       "Input": {
         "status": "stable",
-        "updatedAt": "2026-08-11",
+        "updatedAt": "2026-10-15",
         "doc": {
           "path": "design-system/docs/components/Input.doc.json",
-          "fingerprint": "82b0f3a778c49b25",
+          "fingerprint": "67c3ea504eeed2d0",
           "surfaces": {
             "figmaDescription": {
-              "src": "82b0f3a778c49b25",
-              "render": "50efe0ca275f281f"
+              "src": "67c3ea504eeed2d0",
+              "render": "6162b4252c5ee609"
             },
             "docCard": {
-              "src": "82b0f3a778c49b25",
-              "render": "dc0b4788",
+              "src": "67c3ea504eeed2d0",
+              "render": "e7e1023e",
               "renderer": "4"
             },
             "storybookMdx": {
-              "src": "82b0f3a778c49b25",
-              "render": "39780619aee501fc",
+              "src": "67c3ea504eeed2d0",
+              "render": "aebcdb7db4f66218",
               "file": "packages/ui/src/components/Input/Input.mdx"
             }
           }
@@ -398,23 +398,23 @@
       },
       "Radio": {
         "status": "stable",
-        "updatedAt": "2026-07-15",
+        "updatedAt": "2026-10-15",
         "doc": {
           "path": "design-system/docs/components/Radio.doc.json",
-          "fingerprint": "ef538fafb97bb031",
+          "fingerprint": "b31f07089828fd9f",
           "surfaces": {
             "figmaDescription": {
-              "src": "ef538fafb97bb031",
-              "render": "0e702ce5a1aaa354"
+              "src": "b31f07089828fd9f",
+              "render": "0caaa67c345fd123"
             },
             "docCard": {
-              "src": "ef538fafb97bb031",
-              "render": "28309e24",
+              "src": "b31f07089828fd9f",
+              "render": "c9e65e22",
               "renderer": "4"
             },
             "storybookMdx": {
-              "src": "ef538fafb97bb031",
-              "render": "5afbd6e90051fd6f",
+              "src": "b31f07089828fd9f",
+              "render": "3faecc071339808c",
               "file": "packages/ui/src/components/Radio/Radio.mdx"
             }
           }
@@ -422,23 +422,23 @@
       },
       "Switch": {
         "status": "stable",
-        "updatedAt": "2026-07-15",
+        "updatedAt": "2026-10-15",
         "doc": {
           "path": "design-system/docs/components/Switch.doc.json",
-          "fingerprint": "14cc7d07f9012941",
+          "fingerprint": "e3d2dc16905ef121",
           "surfaces": {
             "figmaDescription": {
-              "src": "14cc7d07f9012941",
-              "render": "5325c823cbd8e07c"
+              "src": "e3d2dc16905ef121",
+              "render": "8e83373ed29ec70b"
             },
             "docCard": {
-              "src": "14cc7d07f9012941",
-              "render": "8ff62fa4",
+              "src": "e3d2dc16905ef121",
+              "render": "ddd9adeb",
               "renderer": "4"
             },
             "storybookMdx": {
-              "src": "14cc7d07f9012941",
-              "render": "b1ae0791516137d8",
+              "src": "e3d2dc16905ef121",
+              "render": "2b7991714cb55b33",
               "file": "packages/ui/src/components/Switch/Switch.mdx"
             }
           }
@@ -446,23 +446,23 @@
       },
       "Textarea": {
         "status": "stable",
-        "updatedAt": "2026-07-15",
+        "updatedAt": "2026-10-15",
         "doc": {
           "path": "design-system/docs/components/Textarea.doc.json",
-          "fingerprint": "7609b79609801994",
+          "fingerprint": "a664b9c3e18e4d23",
           "surfaces": {
             "figmaDescription": {
-              "src": "7609b79609801994",
-              "render": "36567850806aa243"
+              "src": "a664b9c3e18e4d23",
+              "render": "f88f35567b71f178"
             },
             "docCard": {
-              "src": "7609b79609801994",
-              "render": "30d41194",
+              "src": "a664b9c3e18e4d23",
+              "render": "fb78a9b6",
               "renderer": "4"
             },
             "storybookMdx": {
-              "src": "7609b79609801994",
-              "render": "4935ca997fd0642b",
+              "src": "a664b9c3e18e4d23",
+              "render": "390d90b5154232db",
               "file": "packages/ui/src/components/Textarea/Textarea.mdx"
             }
           }
@@ -470,23 +470,23 @@
       },
       "Select": {
         "status": "stable",
-        "updatedAt": "2026-07-15",
+        "updatedAt": "2026-10-15",
         "doc": {
           "path": "design-system/docs/components/Select.doc.json",
-          "fingerprint": "15847a241c7d654c",
+          "fingerprint": "84f5080b9179e29c",
           "surfaces": {
             "figmaDescription": {
-              "src": "15847a241c7d654c",
-              "render": "32fd50ba139f5260"
+              "src": "84f5080b9179e29c",
+              "render": "4374ec5e2769bd39"
             },
             "docCard": {
-              "src": "15847a241c7d654c",
-              "render": "fed7608d",
+              "src": "84f5080b9179e29c",
+              "render": "cd7ea529",
               "renderer": "4"
             },
             "storybookMdx": {
-              "src": "15847a241c7d654c",
-              "render": "e1ce5731bbba8087",
+              "src": "84f5080b9179e29c",
+              "render": "163838e58487a0e0",
               "file": "packages/ui/src/components/Select/Select.mdx"
             }
           }

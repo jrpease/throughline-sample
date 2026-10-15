@@ -28,6 +28,7 @@
     "default": "At rest and ready to be clicked.",
     "hover": "The pointer is over the button and it lightens to invite a click.",
     "focus": "The button has keyboard focus and shows a focus ring.",
+    "active": "The button is being pressed, and its fill brightens until it's released.",
     "disabled": "Can't be clicked or tabbed to.",
     "loading": "The action is running; a spinner replaces the leading icon until it finishes."
   },
@@ -76,7 +77,7 @@
     "Focus Ring On Fill"
   ],
   "status": "stable",
-  "updatedAt": "2026-08-11",
+  "updatedAt": "2026-10-15",
   "provenance": {
     "description": "imported+user",
     "whenToUse": "best-practice",

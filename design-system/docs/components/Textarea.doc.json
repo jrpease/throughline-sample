@@ -1,7 +1,7 @@
 {
   "name": "Textarea",
   "summary": "Collects multi-line free-form text.",
-  "description": "The multi-line sibling of Input: a styled native textarea that fills its container, grows vertically as needed, and shares Input's token-driven border, background, and focus ring. It covers default, focus, error, and disabled states and can flag invalid input with a destructive border and ring.",
+  "description": "The multi-line sibling of Input: a styled native textarea that fills its container, grows vertically as needed, and shares Input's token-driven border, background, and focus ring. It comes in three sizes (sm / md / lg), covers default, hover, focus, active, error, and disabled states, and can flag invalid input with a destructive border and ring.",
   "whenToUse": [
     "Collect longer, multi-line free-form text — comments, descriptions, notes",
     "Give users room to write more than a single line comfortably"
@@ -11,14 +11,17 @@
     "Choosing from a fixed set of options — use a Select or Radio group"
   ],
   "variants": {
-    "error": {
-      "false": "Default — neutral border and focus ring.",
-      "true": "Error — destructive border and ring to flag invalid input."
+    "size": {
+      "sm": "Compact — dense forms and toolbars.",
+      "md": "Default size for most forms.",
+      "lg": "Prominent — larger or high-emphasis forms."
     }
   },
   "states": {
     "default": "Resting, empty or filled.",
+    "hover": "Pointer over the field — stronger border.",
     "focus": "Keyboard focus — shows the focus ring.",
+    "active": "Being pressed — muted background.",
     "error": "Invalid — destructive border and ring.",
     "disabled": "Dimmed and non-interactive."
   },
@@ -50,13 +53,15 @@
     "color/text/muted",
     "color/border/default",
     "color/danger/default",
+    "color/bg/muted",
+    "color/border/strong",
     "radius/md",
     "space/3",
     "font/size/300",
     "Focus Ring"
   ],
   "status": "stable",
-  "updatedAt": "2026-07-15",
+  "updatedAt": "2026-10-15",
   "provenance": {
     "description": "ai-inferred",
     "whenToUse": "best-practice",

@@ -1,7 +1,7 @@
 {
   "name": "Switch",
   "summary": "Toggles a single setting on or off.",
-  "description": "A toggle for a single on/off setting that takes effect immediately, rendered as a button with role=\"switch\". The track fills with the brand color when on and a muted color when off, with an adaptive thumb whose visible edge is carried by a strong border. It covers off, on, and disabled states and binds every color and the focus ring to the system's semantic tokens.",
+  "description": "A toggle for a single on/off setting that takes effect immediately, rendered as a button with role=\"switch\". The track fills with the brand color when on and a muted color when off, with an adaptive thumb whose visible edge is carried by a strong border. It covers on, off, hover, focus, active, and disabled states and binds every color and the focus ring to the system's semantic tokens.",
   "whenToUse": [
     "Turn a single setting on or off with an immediate effect",
     "Offer a binary preference that doesn't need a separate Save"
@@ -18,7 +18,9 @@
   },
   "states": {
     "default": "Resting (off or on).",
+    "hover": "The pointer is over the switch, ready to flip it.",
     "focus": "Keyboard focus — shows the focus ring.",
+    "active": "The switch is being pressed and flips when released.",
     "disabled": "Dimmed and non-interactive."
   },
   "dos": [
@@ -53,7 +55,7 @@
     "Focus Ring"
   ],
   "status": "stable",
-  "updatedAt": "2026-07-15",
+  "updatedAt": "2026-10-15",
   "provenance": {
     "description": "ai-inferred",
     "whenToUse": "best-practice",

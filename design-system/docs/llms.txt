@@ -90,13 +90,13 @@ A control for choosing exactly one option from a set, rendered as a button with 
 
 Chooses one option from a dropdown list.
 
-An accessible trigger for choosing one option from a list, wrapping a native select so it inherits the platform's open/close and keyboard behavior. A non-interactive chevron sits on the trailing edge. It comes in three sizes (sm / md / lg) with default, focus, error, and disabled states, and binds its background, border, radius, and focus ring to the system's semantic tokens.
+An accessible trigger for choosing one option from a list, wrapping a native select so it inherits the platform's open/close and keyboard behavior. A non-interactive chevron sits on the trailing edge. It comes in three sizes (sm / md / lg) with default, hover, focus, active, error, and disabled states, and binds its background, border, radius, and focus ring to the system's semantic tokens.
 
 **When to use:** Choose a single option from a moderate-to-long list; Save vertical space when a Radio group would be too many options
 **When not to use:** A short set of a few options that benefit from being visible — use Radios; Selecting more than one value — use a multi-select or checkboxes
 **Do:** Always pair with a visible label; Order options predictably (alphabetical, or by frequency); Provide a clear default or an unselected placeholder option
 **Don't:** Don't use a Select for only two or three visible options — use Radios; Don't hide critical actions inside a Select — it's for choosing values; Don't rely on the placeholder as the field's only label
-**Tokens:** color/bg/subtle, color/text/primary, color/text/muted, color/border/default, color/danger/default, radius/md, space/3, space/4, font/size/200, font/size/300, Focus Ring
+**Tokens:** color/bg/subtle, color/text/primary, color/text/muted, color/border/default, color/danger/default, color/bg/muted, color/border/strong, radius/md, space/3, space/4, font/size/200, font/size/300, Focus Ring
 
 ## Select Menu
 
@@ -138,7 +138,7 @@ A continuously spinning loader that signals an indeterminate wait — an action 
 
 Toggles a single setting on or off.
 
-A toggle for a single on/off setting that takes effect immediately, rendered as a button with role="switch". The track fills with the brand color when on and a muted color when off, with an adaptive thumb whose visible edge is carried by a strong border. It covers off, on, and disabled states and binds every color and the focus ring to the system's semantic tokens.
+A toggle for a single on/off setting that takes effect immediately, rendered as a button with role="switch". The track fills with the brand color when on and a muted color when off, with an adaptive thumb whose visible edge is carried by a strong border. It covers on, off, hover, focus, active, and disabled states and binds every color and the focus ring to the system's semantic tokens.
 
 **When to use:** Turn a single setting on or off with an immediate effect; Offer a binary preference that doesn't need a separate Save
 **When not to use:** A choice that only applies after submitting a form — use a Checkbox; Choosing one of several options — use a Radio group
@@ -150,13 +150,13 @@ A toggle for a single on/off setting that takes effect immediately, rendered as 
 
 Collects multi-line free-form text.
 
-The multi-line sibling of Input: a styled native textarea that fills its container, grows vertically as needed, and shares Input's token-driven border, background, and focus ring. It covers default, focus, error, and disabled states and can flag invalid input with a destructive border and ring.
+The multi-line sibling of Input: a styled native textarea that fills its container, grows vertically as needed, and shares Input's token-driven border, background, and focus ring. It comes in three sizes (sm / md / lg), covers default, hover, focus, active, error, and disabled states, and can flag invalid input with a destructive border and ring.
 
 **When to use:** Collect longer, multi-line free-form text — comments, descriptions, notes; Give users room to write more than a single line comfortably
 **When not to use:** A single line of text — use an Input; Choosing from a fixed set of options — use a Select or Radio group
 **Do:** Always pair with a visible label; Show format or length hints as helper text; Reserve space for error text to avoid layout shift
 **Don't:** Don't use placeholder text as the only label; Don't validate on every keystroke before the first blur; Don't fix the height so short that users can't see what they wrote
-**Tokens:** color/bg/subtle, color/text/primary, color/text/muted, color/border/default, color/danger/default, radius/md, space/3, font/size/300, Focus Ring
+**Tokens:** color/bg/subtle, color/text/primary, color/text/muted, color/border/default, color/danger/default, color/bg/muted, color/border/strong, radius/md, space/3, font/size/300, Focus Ring
 
 ## Tooltip
 

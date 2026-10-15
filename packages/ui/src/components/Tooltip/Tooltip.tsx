@@ -13,7 +13,7 @@ export interface TooltipProps {
 }
 
 /**
- * Tooltip — mirrors the Figma `Tooltip` component (Placement axis: top/right/bottom/left).
+ * Tooltip — mirrors the Figma `Tooltip` component (side axis: top/right/bottom/left).
  * A lightweight, CSS-driven hover/focus tooltip with no external positioning lib.
  * The bubble reveals on `group-hover` / `group-focus-within`, so the trigger
  * (`children`) must be focusable for keyboard users.

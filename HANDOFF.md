@@ -5,7 +5,41 @@ machine-readable state, see `design-system.json` (or run
 `/throughline:design-system-status`). This doc captures the **context and
 decisions** that aren't in the manifest.
 
-_Last updated: 2026-10-13 — doc cards at renderer 4 (PR #19 + PR #20); Select Menu card split and all 14 cards stamped (PR #22)._
+_Last updated: 2026-10-15 — Figma and the doc records agree again (this PR); doc cards at renderer 4 (PR #19 + PR #20); Select Menu card split and all 14 cards stamped (PR #22)._
+
+## 2026-10-15 — Figma and the doc records agree again
+
+`/throughline:drift` found eight components where Figma and the record disagreed.
+Each was settled against the code, and against the plugin's state baseline
+(`scripts/lib/component-states.mjs` in the plugin), which requires hover and active
+on buttons and inputs, and hover, active and selected on choice controls.
+
+- **Records gained the states Figma already drew.** Button `active`; Input, Switch,
+  Select and Textarea `hover` and `active`. The code still has none of these, so
+  **the code is now behind the records**: no `hover:`/`active:` styling in Input,
+  Select, Textarea or Switch, and no `:active` on Button. Select and Textarea list
+  `color/bg/muted` and `color/border/strong`, the tokens their new states use.
+- **Select and Textarea dropped the `error` variant axis.** It duplicated the
+  `error` state. Input already had it only as a state, which is how Figma draws it.
+- **Textarea gained `size` (sm / md / lg).** Figma had it, on purpose. The code
+  Textarea has no `size` prop yet: behind, like the states.
+- **Radio's axis is `checked`, not `selected`.** It matches Figma, Checkbox and
+  Switch. The code has no prop by either name; selection comes from RadioGroup.
+- **Tooltip's Figma axis is `side`, not `Placement`.** That's the code prop's name.
+  The manifest note and the `Tooltip.tsx` comment follow.
+- **Select Menu Item (`23:752`) is two booleans plus State in Figma**, like the
+  code: `selected` × `disabled` × `State` (Default / Hover / Focused), 12 variants.
+  Rebuilt in place, so its 12 instances (9 on the old Default, 3 on the old
+  Selected) still point at the same variants. Disabled rows look the same in every
+  State, as in the code, where a disabled row takes no pointer or focus. The
+  record's states lost `selected` and `disabled`, which are its variant axes now.
+- All seven records re-projected: Figma descriptions, doc cards (renderer 4,
+  every render hash matched the payload's), MDX, and the digest. `docs:check`
+  clean; drift's component check says all 14 match.
+
+Not fixed, seen on the way: the Select Menu Item check renders white in Figma
+where the code and record say brand; the Select Menu Item card's chip reads
+`Stable` while the manifest says `final`.
 
 ## 2026-08-12 — Doc cards re-voiced and moved to renderer 4 (PR #19, PR #20)
 

@@ -147,6 +147,7 @@
         "default": "At rest and ready to be clicked.",
         "hover": "The pointer is over the button and it lightens to invite a click.",
         "focus": "The button has keyboard focus and shows a focus ring.",
+        "active": "The button is being pressed, and its fill brightens until it's released.",
         "disabled": "Can't be clicked or tabbed to.",
         "loading": "The action is running; a spinner replaces the leading icon until it finishes."
       },
@@ -332,7 +333,9 @@
       },
       "states": {
         "default": "At rest and ready to accept typing.",
+        "hover": "The pointer is over the field and its border darkens.",
         "focus": "The field has keyboard focus and shows a focus ring.",
+        "active": "Being pressed; the field's background deepens.",
         "error": "What the user typed didn't pass validation, and the message says why.",
         "disabled": "Can't be typed in or tabbed to."
       },
@@ -392,7 +395,7 @@
         "Choosing from a long list — use a Select to save space"
       ],
       "variants": {
-        "selected": {
+        "checked": {
           "false": "Unselected — empty circle with a neutral border.",
           "true": "Selected — brand ring with a filled brand inner dot."
         }
@@ -440,7 +443,7 @@
     {
       "name": "Select",
       "summary": "Chooses one option from a dropdown list.",
-      "description": "An accessible trigger for choosing one option from a list, wrapping a native select so it inherits the platform's open/close and keyboard behavior. A non-interactive chevron sits on the trailing edge. It comes in three sizes (sm / md / lg) with default, focus, error, and disabled states, and binds its background, border, radius, and focus ring to the system's semantic tokens.",
+      "description": "An accessible trigger for choosing one option from a list, wrapping a native select so it inherits the platform's open/close and keyboard behavior. A non-interactive chevron sits on the trailing edge. It comes in three sizes (sm / md / lg) with default, hover, focus, active, error, and disabled states, and binds its background, border, radius, and focus ring to the system's semantic tokens.",
       "whenToUse": [
         "Choose a single option from a moderate-to-long list",
         "Save vertical space when a Radio group would be too many options"
@@ -454,15 +457,13 @@
           "sm": "Compact — dense forms and toolbars.",
           "md": "Default size for most forms.",
           "lg": "Prominent — larger or high-emphasis forms."
-        },
-        "error": {
-          "false": "Default — neutral border and focus ring.",
-          "true": "Error — destructive border and ring to flag an invalid choice."
         }
       },
       "states": {
         "default": "Resting, showing the current value.",
+        "hover": "Pointer over the trigger — stronger border.",
         "focus": "Keyboard focus — shows the focus ring.",
+        "active": "Being pressed — muted background.",
         "error": "Invalid — destructive border and ring.",
         "disabled": "Dimmed and non-interactive."
       },
@@ -494,6 +495,8 @@
         "color/text/muted",
         "color/border/default",
         "color/danger/default",
+        "color/bg/muted",
+        "color/border/strong",
         "radius/md",
         "space/3",
         "space/4",
@@ -582,9 +585,7 @@
       "states": {
         "default": "Resting option.",
         "hover": "Pointer over the row — subtle background.",
-        "focused": "Keyboard navigation highlight — muted background with a focus ring.",
-        "selected": "The current value — subtle fill and trailing check.",
-        "disabled": "Dimmed and non-interactive."
+        "focused": "Keyboard navigation highlight — muted background with a focus ring."
       },
       "dos": [
         "Keep option labels short and scannable",
@@ -676,7 +677,7 @@
     {
       "name": "Switch",
       "summary": "Toggles a single setting on or off.",
-      "description": "A toggle for a single on/off setting that takes effect immediately, rendered as a button with role=\"switch\". The track fills with the brand color when on and a muted color when off, with an adaptive thumb whose visible edge is carried by a strong border. It covers off, on, and disabled states and binds every color and the focus ring to the system's semantic tokens.",
+      "description": "A toggle for a single on/off setting that takes effect immediately, rendered as a button with role=\"switch\". The track fills with the brand color when on and a muted color when off, with an adaptive thumb whose visible edge is carried by a strong border. It covers on, off, hover, focus, active, and disabled states and binds every color and the focus ring to the system's semantic tokens.",
       "whenToUse": [
         "Turn a single setting on or off with an immediate effect",
         "Offer a binary preference that doesn't need a separate Save"
@@ -693,7 +694,9 @@
       },
       "states": {
         "default": "Resting (off or on).",
+        "hover": "The pointer is over the switch, ready to flip it.",
         "focus": "Keyboard focus — shows the focus ring.",
+        "active": "The switch is being pressed and flips when released.",
         "disabled": "Dimmed and non-interactive."
       },
       "dos": [
@@ -732,7 +735,7 @@
     {
       "name": "Textarea",
       "summary": "Collects multi-line free-form text.",
-      "description": "The multi-line sibling of Input: a styled native textarea that fills its container, grows vertically as needed, and shares Input's token-driven border, background, and focus ring. It covers default, focus, error, and disabled states and can flag invalid input with a destructive border and ring.",
+      "description": "The multi-line sibling of Input: a styled native textarea that fills its container, grows vertically as needed, and shares Input's token-driven border, background, and focus ring. It comes in three sizes (sm / md / lg), covers default, hover, focus, active, error, and disabled states, and can flag invalid input with a destructive border and ring.",
       "whenToUse": [
         "Collect longer, multi-line free-form text — comments, descriptions, notes",
         "Give users room to write more than a single line comfortably"
@@ -742,14 +745,17 @@
         "Choosing from a fixed set of options — use a Select or Radio group"
       ],
       "variants": {
-        "error": {
-          "false": "Default — neutral border and focus ring.",
-          "true": "Error — destructive border and ring to flag invalid input."
+        "size": {
+          "sm": "Compact — dense forms and toolbars.",
+          "md": "Default size for most forms.",
+          "lg": "Prominent — larger or high-emphasis forms."
         }
       },
       "states": {
         "default": "Resting, empty or filled.",
+        "hover": "Pointer over the field — stronger border.",
         "focus": "Keyboard focus — shows the focus ring.",
+        "active": "Being pressed — muted background.",
         "error": "Invalid — destructive border and ring.",
         "disabled": "Dimmed and non-interactive."
       },
@@ -781,6 +787,8 @@
         "color/text/muted",
         "color/border/default",
         "color/danger/default",
+        "color/bg/muted",
+        "color/border/strong",
         "radius/md",
         "space/3",
         "font/size/300",

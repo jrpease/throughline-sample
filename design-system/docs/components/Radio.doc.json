@@ -11,7 +11,7 @@
     "Choosing from a long list — use a Select to save space"
   ],
   "variants": {
-    "selected": {
+    "checked": {
       "false": "Unselected — empty circle with a neutral border.",
       "true": "Selected — brand ring with a filled brand inner dot."
     }
@@ -55,7 +55,7 @@
     "Focus Ring"
   ],
   "status": "stable",
-  "updatedAt": "2026-07-15",
+  "updatedAt": "2026-10-15",
   "provenance": {
     "description": "ai-inferred",
     "whenToUse": "best-practice",
