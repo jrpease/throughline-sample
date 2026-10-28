@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 8,
   "user": {
     "codingLevel": "new"
   },
@@ -29,7 +29,21 @@
       "spacePadding": "space/inset/lg",
       "spaceRowGap": "space/gap/xl",
       "spaceBlockGap": "space/gap/lg",
-      "spaceItemGap": "space/gap/sm"
+      "spaceItemGap": "space/gap/sm",
+      "surfaceBand": "color/bg/subtle",
+      "surfaceHeader": "color/bg/muted",
+      "textOnHeader": "color/brand/primary",
+      "radiusBand": "radius/lg",
+      "toneCaution": "color/warning/default"
+    },
+    "docCardTextStyles": {
+      "title": "Heading/S",
+      "bandTitle": "Heading/XS",
+      "body": "Body/Default",
+      "caption": "Caption"
+    },
+    "docKit": {
+      "fileKey": "OCiZiGpsJ4ncPD8r205BjC"
     }
   },
   "tokens": {
@@ -155,7 +169,7 @@
     ],
     "meta": {
       "Tooltip": {
-        "status": "final",
+        "status": "stable",
         "updatedAt": "2026-07-15",
         "note": "promoted to component set with side axis (top/right/bottom/left)",
         "doc": {
@@ -168,8 +182,9 @@
             },
             "docCard": {
               "src": "0d965b3f82efb6b4",
-              "render": "9cb3c709",
-              "renderer": "4"
+              "render": "51767f41",
+              "renderer": "5",
+              "recordHash": "c7b57f38"
             },
             "storybookMdx": {
               "src": "0d965b3f82efb6b4",
@@ -180,7 +195,7 @@
         }
       },
       "Select Menu": {
-        "status": "final",
+        "status": "stable",
         "updatedAt": "2026-07-15",
         "note": "promoted to component set with Size axis (sm/md/lg)",
         "doc": {
@@ -193,8 +208,9 @@
             },
             "docCard": {
               "src": "9ccc2c0f7482424e",
-              "render": "8d5ddf46",
-              "renderer": "4"
+              "render": "a556f6f6",
+              "renderer": "5",
+              "recordHash": "c256b843"
             },
             "storybookMdx": {
               "src": "9ccc2c0f7482424e",
@@ -205,7 +221,7 @@
         }
       },
       "Select Menu Item": {
-        "status": "final",
+        "status": "stable",
         "updatedAt": "2026-10-15",
         "doc": {
           "path": "design-system/docs/components/SelectMenuItem.doc.json",
@@ -217,8 +233,9 @@
             },
             "docCard": {
               "src": "2931bf1a8116fb37",
-              "render": "05b58ae9",
-              "renderer": "4"
+              "render": "5a2cc3f0",
+              "renderer": "5",
+              "recordHash": "e38af931"
             },
             "storybookMdx": {
               "src": "2931bf1a8116fb37",
@@ -241,8 +258,9 @@
             },
             "docCard": {
               "src": "e191e5aa0ddd1abe",
-              "render": "a3d1f3c2",
-              "renderer": "4"
+              "render": "a4f26129",
+              "renderer": "5",
+              "recordHash": "8c2ad467"
             },
             "storybookMdx": {
               "src": "e191e5aa0ddd1abe",
@@ -265,8 +283,9 @@
             },
             "docCard": {
               "src": "67c3ea504eeed2d0",
-              "render": "e7e1023e",
-              "renderer": "4"
+              "render": "5f85e803",
+              "renderer": "5",
+              "recordHash": "6dc54097"
             },
             "storybookMdx": {
               "src": "67c3ea504eeed2d0",
@@ -289,8 +308,9 @@
             },
             "docCard": {
               "src": "4dcd19d6c41b95f7",
-              "render": "99add41b",
-              "renderer": "4"
+              "render": "76da8392",
+              "renderer": "5",
+              "recordHash": "500e148a"
             },
             "storybookMdx": {
               "src": "4dcd19d6c41b95f7",
@@ -313,8 +333,9 @@
             },
             "docCard": {
               "src": "a1ce7449bd2cae89",
-              "render": "760268cd",
-              "renderer": "4"
+              "render": "65916735",
+              "renderer": "5",
+              "recordHash": "00e1ab36"
             },
             "storybookMdx": {
               "src": "a1ce7449bd2cae89",
@@ -337,8 +358,9 @@
             },
             "docCard": {
               "src": "ff71370d3e66b48f",
-              "render": "33a7df1f",
-              "renderer": "4"
+              "render": "e44bf9e3",
+              "renderer": "5",
+              "recordHash": "42c165c4"
             },
             "storybookMdx": {
               "src": "ff71370d3e66b48f",
@@ -361,8 +383,9 @@
             },
             "docCard": {
               "src": "5c48511d559718ba",
-              "render": "509d36d9",
-              "renderer": "4"
+              "render": "583beffe",
+              "renderer": "5",
+              "recordHash": "a199187c"
             },
             "storybookMdx": {
               "src": "5c48511d559718ba",
@@ -385,8 +408,9 @@
             },
             "docCard": {
               "src": "e5a53df120aa51a0",
-              "render": "3a6dc444",
-              "renderer": "4"
+              "render": "db26251b",
+              "renderer": "5",
+              "recordHash": "225811ad"
             },
             "storybookMdx": {
               "src": "e5a53df120aa51a0",
@@ -409,8 +433,9 @@
             },
             "docCard": {
               "src": "b31f07089828fd9f",
-              "render": "c9e65e22",
-              "renderer": "4"
+              "render": "38d5712c",
+              "renderer": "5",
+              "recordHash": "858295a3"
             },
             "storybookMdx": {
               "src": "b31f07089828fd9f",
@@ -433,8 +458,9 @@
             },
             "docCard": {
               "src": "e3d2dc16905ef121",
-              "render": "ddd9adeb",
-              "renderer": "4"
+              "render": "61e77291",
+              "renderer": "5",
+              "recordHash": "d87cdc6f"
             },
             "storybookMdx": {
               "src": "e3d2dc16905ef121",
@@ -457,8 +483,9 @@
             },
             "docCard": {
               "src": "a664b9c3e18e4d23",
-              "render": "fb78a9b6",
-              "renderer": "4"
+              "render": "647929c2",
+              "renderer": "5",
+              "recordHash": "b20b5c24"
             },
             "storybookMdx": {
               "src": "a664b9c3e18e4d23",
@@ -481,8 +508,9 @@
             },
             "docCard": {
               "src": "84f5080b9179e29c",
-              "render": "cd7ea529",
-              "renderer": "4"
+              "render": "e676dd7d",
+              "renderer": "5",
+              "recordHash": "8ee7f8ed"
             },
             "storybookMdx": {
               "src": "84f5080b9179e29c",
@@ -525,5 +553,9 @@
     "repository-builder",
     "token-sync-layer",
     "storybook-chromatic-builder"
-  ]
+  ],
+  "audit": {
+    "docSurface": null
+  },
+  "verification": null
 }
